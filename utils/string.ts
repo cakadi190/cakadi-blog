@@ -1,4 +1,5 @@
-import crypto from 'node:crypto';
+import md5 from 'md5';
+import { v4 as uuid } from 'uuid';
 
 /**
  * Generates a random string of specified length.
@@ -34,7 +35,7 @@ export const generateRandomInt = (min: number, max: number): number => {
  * @returns {string} The MD5 hash of the input string, represented as a hexadecimal string.
  */
 export const generateMd5 = (input: string) => {
-  return crypto.createHash('md5').update(input).digest('hex');
+  return md5(input);
 }
 
 /**
@@ -43,5 +44,5 @@ export const generateMd5 = (input: string) => {
  * @returns {string} A randomly generated UUID v4.
  */
 export const generateUUID = (): string => {
-  return crypto.randomUUID();
+  return uuid();
 };

@@ -1,7 +1,7 @@
 <template>
 	<div class="page-preambule">
 		<div class="container">
-      <post-layout-header />
+      <lazy-post-layout-header />
 		</div>
 	</div>
 </template>

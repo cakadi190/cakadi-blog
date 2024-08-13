@@ -15,11 +15,14 @@
     "@pinia/nuxt": "^0.5.3",
     "bootstrap": "^5.3.3",
     "crypto": "^1.0.1",
+    "crypto-js": "^4.2.0",
     "dayjs-nuxt": "^2.1.9",
     "jquery": "^3.7.1",
+    "md5": "^2.3.0",
     "nuxt": "^3.12.4",
     "pinia": "^2.2.1",
-    "sass": "1.76"
+    "sass": "1.76",
+    "uuid": "^10.0.0"
   },
   "devDependencies": {
     "@types/bootstrap": "^5.2.10",
