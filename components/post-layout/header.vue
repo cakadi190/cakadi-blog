@@ -1,9 +1,11 @@
 <template>
 	<div class="row" v-if="data">
     <div class="col-md-6">
-      <post-content-big :post="data[1]" />
+      <post-content-big-header :post="data[0]" />
     </div>
-    <div class="col-md-6"></div>
+    <div class="col-md-6">
+      <post-content-small-header :post="data" />
+    </div>
 	</div>
 </template>
 
