@@ -3,8 +3,8 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
 
   css: [
-    '~/assets/scss/base.scss',
     '~/assets/scss/extended.scss',
+    '~/assets/scss/base.scss',
   ],
 
   googleFonts: {
@@ -47,6 +47,13 @@ export default defineNuxtConfig({
     "dayjs-nuxt",
     "@pinia/nuxt"
   ],
+
+  dayjs: {
+    locales: ['id'],
+    plugins: ['relativeTime', 'utc', 'timezone', 'localizedFormat'],
+    defaultLocale: 'id',
+    defaultTimezone: 'Asia/Jakarta',
+  },
 
   routeRules: {
     '/': { prerender: true }

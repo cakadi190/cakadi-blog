@@ -2,6 +2,7 @@
   <div id="main-layouts">
     <partials-global-navbar-top />
     <slot />
+    <search-modal />
   </div>
 </template>
 

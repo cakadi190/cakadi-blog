@@ -11,7 +11,7 @@ export const useBootstrapFive = () => {
   const initPopover = () => {
     const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
     const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new window.bootstrap.Popover(popoverTriggerEl));
-  }
+  };
 
   /**
    * Initializes Bootstrap tooltips.
@@ -20,6 +20,11 @@ export const useBootstrapFive = () => {
   const initTooltip = () => {
     const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
     const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new window.bootstrap.Tooltip(tooltipTriggerEl));
+  };
+
+  const reinitModal = () => {
+    const modalList = document.querySelectorAll('.modal');
+    modalList.forEach(modalEl => new window.bootstrap.Modal(modalEl).dispose());
   }
 
   /**
@@ -29,11 +34,13 @@ export const useBootstrapFive = () => {
   const initAll = () => {
     initPopover();
     initTooltip();
+    reinitModal();
   }
 
   return {
     initAll,
     initPopover,
-    initTooltip
+    initTooltip,
+    reinitModal
   }
 }
