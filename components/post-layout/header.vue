@@ -1,7 +1,11 @@
 <template>
-	<div class="row" v-if="data">
+	<div class="row gy-4" v-if="data">
     <div class="col-md-6">
       <post-content-big-header :post="data[0]" />
+      <nuxt-link to="/artikel" class="btn d-none d-md-none d-lg-flex btn-outline-primary btn-lg btn-cta">
+        <span>Lihat Semua Artikel</span>
+        <icon name="fa6-solid:arrow-right" />
+      </nuxt-link>
     </div>
     <div class="col-md-6">
       <post-content-small-header :post="data" />
@@ -27,5 +31,14 @@ const { data, status, error } = await useLazyAsyncData<any[]>(
 );
 </script>
 
-<style>
+<style lang="scss" scoped>
+.btn-cta {
+  border-radius: 99rem;
+  padding: 1rem 2rem;
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: fit-content;
+}
 </style>

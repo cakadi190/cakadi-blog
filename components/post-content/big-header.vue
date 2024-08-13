@@ -1,5 +1,5 @@
 <template>
-	<nuxt-link :data-id="post.id" to="/" id="big-header-post">
+	<nuxt-link :data-id="post.id" :to="`/${post._dir}/${post._path.replace(/^\/[^\/]+\/[^\/]+\//, '')}`" id="big-header-post">
 		<div class="image-wrapper">
 			<nuxt-img :src="post.image" />
 			<div class="category">
@@ -7,7 +7,7 @@
 			</div>
 		</div>
 		<div class="post-content">
-			<h3 class="text-merriweather">{{ post.title }}</h3>
+			<h3 class="text-merriweather title">{{ post.title }}</h3>
 			<div class="post-meta">
 				<div class="author">
 					<nuxt-img :src="getGravatar(post.author.email)" />
@@ -110,6 +110,10 @@ defineProps<{
 	.post-content {
 		margin-top: 1.5rem;
 
+    .title {
+      line-height: 1.5;
+    }
+
 		.post-meta {
 			display: flex;
 			align-items: center;
@@ -136,8 +140,8 @@ defineProps<{
 				gap: 0.5rem;
 
 				img {
-					height: 32px;
-					width: 32px;
+					height: 24px;
+					width: 24px;
 					border-radius: 99rem;
 				}
 			}

@@ -20,7 +20,7 @@
 	}
 
 	.container {
-		padding-bottom: 10rem;
+		padding-bottom: 5rem;
 
 		@media screen and (max-width: 992px) {
 			padding-bottom: 2.5rem;

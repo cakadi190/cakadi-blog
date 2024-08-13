@@ -46,3 +46,13 @@ export const generateMd5 = (input: string) => {
 export const generateUUID = (): string => {
   return uuid();
 };
+
+/**
+ * Lower Casing Text
+ * 
+ * @param text Input from text that wanna lower cased
+ * @returns Lower cased string
+ */
+export const toLowerCase = (text: string) => {
+  return text.toLowerCase();
+}
