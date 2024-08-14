@@ -19,6 +19,7 @@
   "include": [
     "prisma/**/*.ts",
     ".nuxt",
+    ".nuxt/imports",
     ".",
     "./.nuxt/nuxt.d.ts",
     "...config/nuxt.*",

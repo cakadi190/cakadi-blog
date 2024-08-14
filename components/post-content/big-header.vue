@@ -38,6 +38,9 @@
 </template>
 
 <script lang="ts" setup>
+import { slugify } from '@/utils/url';
+import { getGravatar } from '#imports';
+
 defineProps<{
 	post: any;
 }>();
@@ -106,11 +109,6 @@ defineProps<{
 			background: var(--bs-primary);
 			color: var(--bs-white);
 		}
-
-		// @media screen and (max-width: 992px) {
-		// 	padding: 0.625rem 1rem;
-		// 	font-size: 0.75em;
-		// }
 
 		&::before {
 			position: absolute;
