@@ -1,6 +1,11 @@
 <template>
 	<div id="post-header-list">
-		<nuxt-link :to="`/${item._dir}/${item._path.replace(/^\/[^\/]+\/[^\/]+\//, '')}`" v-for="item in post" :key="item.id" class="post-item">
+		<nuxt-link
+			:to="`/${item._dir}/${item._path.replace(/^\/[^\/]+\/[^\/]+\//, '')}`"
+			v-for="item in post"
+			:key="item.id"
+			class="post-item"
+		>
 			<div class="image-wrapper">
 				<nuxt-img :src="item.image" />
 			</div>
@@ -53,10 +58,10 @@ defineProps<{
 		gap: 1.5rem;
 		text-decoration: none;
 		color: var(--bs-body-color);
-      
-      @media screen and (max-width: 992px) {
-        gap: 1rem;
-      }
+
+		@media screen and (max-width: 992px) {
+			gap: 1rem;
+		}
 
 		&:last-child {
 			border-bottom: 0;
@@ -73,12 +78,12 @@ defineProps<{
 			display: flex;
 			align-items: center;
 			justify-content: center;
-      
-      @media screen and (max-width: 992px) {
-        aspect-ratio: 1 / 1;
-        width: 5.75rem;
-        height: 5.75rem;
-      }
+
+			@media screen and (max-width: 992px) {
+				aspect-ratio: 1 / 1;
+				width: 5.75rem;
+				height: 5.75rem;
+			}
 
 			img {
 				position: absolute;
@@ -96,9 +101,9 @@ defineProps<{
 				font-size: 1.25rem;
 				line-height: 1.5;
 
-      @media screen and (max-width: 992px) {
-        font-size: 1.125rem;
-      }
+				@media screen and (max-width: 992px) {
+					font-size: 1rem;
+				}
 			}
 
 			.post-meta {
