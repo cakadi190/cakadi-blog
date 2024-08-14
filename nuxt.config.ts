@@ -28,7 +28,9 @@ export default defineNuxtConfig({
           id: 'dyslexia-fontloader'
         }
       ]
-    }
+    },
+    pageTransition: { name: 'page', mode: 'out-in' },
+    layoutTransition: { name: 'layout', mode: 'out-in' },
   },
 
   runtimeConfig: {

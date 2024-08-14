@@ -30,7 +30,7 @@
 				<time
 					class="date"
 					:datetime="$dayjs(post.created_at).utc().toString()"
-					>{{ $dayjs(post.created_at).format("LLLL") }}</time
+					>{{ $dayjs(post.created_at).format("LL") }}</time
 				>
 			</div>
 		</div>
