@@ -4,7 +4,7 @@
 			<post-content-big-header :post="data[0]" />
 			<nuxt-link
 				to="/artikel"
-				class="btn d-none d-md-none d-lg-flex btn-outline-primary btn-lg btn-cta"
+				class="btn d-none d-md-none d-lg-flex btn-primary btn-lg btn-cta"
 			>
 				<span>Lihat Semua Artikel</span>
 				<icon name="fa6-solid:arrow-right" />

@@ -13,7 +13,7 @@
 .page-preambule {
 	min-height: 25vh;
 	padding-top: 10rem;
-	background: #fafafa;
+	background: #f5f5f5;
 
   @at-root [data-bs-theme=dark] & {
     background: var(--bs-body-bg);

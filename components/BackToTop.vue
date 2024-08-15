@@ -1,6 +1,7 @@
 <template>
   <button 
     @click="scrollToTop" 
+    aria-label="Kembali Ke Atas"
     class="scroll-to-top"
     :class="{ 'show': showButton }"
   >

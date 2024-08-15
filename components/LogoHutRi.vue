@@ -1,5 +1,5 @@
 <template>
-  <nuxt-img :src="logoSource" :width="width" :height="height" />
+  <nuxt-img alt="Logo HUT RI Ke-79" :src="logoSource" :width="width" :height="height" />
 </template>
 
 <script lang="ts" setup>

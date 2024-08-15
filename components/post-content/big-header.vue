@@ -1,7 +1,7 @@
 <template>
 	<div :data-id="post.id" id="big-header-post">
 		<div class="image-wrapper">
-			<nuxt-img :src="post.image" />
+			<nuxt-img :src="post.image" :class="post.title" />
 		</div>
 		<nuxt-link
 			:to="`/kategori/${slugify(post.category[0])}`"
@@ -19,7 +19,7 @@
 			</nuxt-link>
 			<div class="post-meta">
 				<div class="author">
-					<nuxt-img :src="getGravatar(post.author.email)" />
+					<nuxt-img :alt="post.author.name" :src="getGravatar(post.author.email)" />
 					<span
 						class="d-flex gap-1 align-items-center"
 						v-if="post.author.email === 'cakadi190@gmail.com'"
@@ -79,7 +79,7 @@ defineProps<{
 		height: 25rem;
 		overflow: hidden;
 		border-radius: var(--bs-border-radius-xl);
-		border: 1px solid #fafafa;
+		border: 1px solid #f5f5f5;
 
     @at-root [data-bs-theme=dark] & {
       border-color: var(--bs-body-bg);
@@ -112,7 +112,7 @@ defineProps<{
 		position: absolute;
 		top: 0;
 		right: 0;
-		background-color: #fafafa;
+		background-color: #f5f5f5;
 		padding: 1.25rem 0.5rem;
 		border-radius: 0 0 0 var(--bs-border-radius-xl);
 		z-index: 2;
@@ -148,14 +148,14 @@ defineProps<{
 			top: 0;
 			left: -10px;
 			transform: scaleX(-1);
-			@include top-left-rounded(#fafafa);
+			@include top-left-rounded(#f5f5f5);
 		}
 
 		&::after {
 			bottom: -10px;
 			right: 0;
 			transform: scaleX(1) scaleY(-1) rotate(180deg);
-      @include bottom-right-rounded(#fafafa);
+      @include bottom-right-rounded(#f5f5f5);
 		}
 
     @at-root [data-bs-theme=dark] & {

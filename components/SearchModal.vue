@@ -12,7 +12,7 @@
 						placeholder="Cari Sesuatu Disini"
 						v-model="searchValue"
 					/>
-					<button class="close-button" @click="toggle">
+					<button class="close-button" @click="toggle" aria-label="Cari Artikel">
 						<icon name="ph:x-bold" />
 					</button>
 				</div>
