@@ -39,6 +39,30 @@ export default defineNuxtConfig({
     layoutTransition: { name: 'layout', mode: 'out-in' },
   },
 
+  
+  postcss: {
+    plugins: {
+      "autoprefixer": {},
+      "postcss-nested": {},
+      "postcss-custom-media": {}
+    }
+  },
+
+  dayjs: {
+    locales: ['id'],
+    plugins: ['relativeTime', 'utc', 'timezone', 'localizedFormat'],
+    defaultLocale: 'id',
+    defaultTimezone: 'Asia/Jakarta',
+  },
+  
+  critters: {
+    // Options passed directly to critters: https://github.com/GoogleChromeLabs/critters#critters-2
+    config: {
+      // Default: 'media'
+      preload: 'swap',
+    },
+  },
+
   runtimeConfig: {
     public: {
       baseUrl: process.env.BASE_URL,
@@ -53,15 +77,9 @@ export default defineNuxtConfig({
     "@nuxtjs/google-fonts",
     "@nuxt/image",
     "dayjs-nuxt",
+    '@nuxtjs/critters',
     "@pinia/nuxt"
   ],
-
-  dayjs: {
-    locales: ['id'],
-    plugins: ['relativeTime', 'utc', 'timezone', 'localizedFormat'],
-    defaultLocale: 'id',
-    defaultTimezone: 'Asia/Jakarta',
-  },
 
   routeRules: {
     '/': { prerender: true }

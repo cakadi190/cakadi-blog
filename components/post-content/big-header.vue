@@ -4,7 +4,7 @@
 			<nuxt-img
 				format="webp"
 				sizes="100vw sm:50vw md:400px"
-				densities="x1 x2 x3 x4"
+				densities="x1 x2"
 				:src="post.image"
 				:alt="post.title"
 			/>
@@ -27,7 +27,7 @@
 				<div class="author">
 					<nuxt-img
 						sizes="100vw sm:50vw md:400px"
-            densities="x1 x2 x3 x4"
+            densities="x1 x2"
 						format="webp"
 						:alt="post.author.name"
 						:src="getGravatar(post.author.email)"

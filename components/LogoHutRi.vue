@@ -3,7 +3,7 @@
 		format="webp"
 		alt="Logo HUT RI Ke-79"
 		sizes="100vw sm:50vw md:400px"
-		densities="x1 x2 x3 x4"
+		densities="x1 x2"
 		:src="logoSource"
 		:width="width"
 		:height="height"

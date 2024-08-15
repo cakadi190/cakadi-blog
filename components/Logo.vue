@@ -2,7 +2,7 @@
 	<nuxt-img
 		format="webp"
 		sizes="100vw sm:50vw md:400px"
-		densities="x1 x2 x3 x4"
+		densities="x1 x2"
 		alt="Logo Catatan Cak Adi"
 		:src="logoSource"
 		:width="width"
@@ -12,7 +12,7 @@
 	<nuxt-img
 		format="webp"
 		sizes="100vw sm:50vw md:400px"
-		densities="x1 x2 x3 x4"
+		densities="x1 x2"
 		alt="Logo Catatan Cak Adi"
 		:src="logoSourceSm"
 		:width="width"

@@ -9,7 +9,7 @@
 				<div class="category-card-image">
 					<nuxt-img
 						sizes="100vw sm:50vw md:400px"
-            densities="x1 x2 x3 x4"
+            densities="x1 x2"
 						format="webp"
 						:src="item.image"
 						:alt="`Kategori ${item.label}`"
