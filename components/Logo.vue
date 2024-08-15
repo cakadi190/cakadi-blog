@@ -1,5 +1,6 @@
 <template>
 	<nuxt-img
+		loading="lazy"
 		format="webp"
 		sizes="100vw sm:50vw md:400px"
 		densities="x1 x2"
@@ -10,6 +11,7 @@
 		class="d-lg-inline d-md-none d-none"
 	/>
 	<nuxt-img
+		loading="lazy"
 		format="webp"
 		sizes="100vw sm:50vw md:400px"
 		densities="x1 x2"

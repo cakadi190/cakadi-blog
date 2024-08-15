@@ -5,6 +5,7 @@
 	>
 		<div class="image-wrapper">
 			<nuxt-img
+				loading="lazy"
 				format="webp"
 				sizes="100vw sm:50vw md:400px"
 				densities="x1 x2"
@@ -18,8 +19,9 @@
 			<div class="post-meta">
 				<div class="author">
 					<nuxt-img
+						loading="lazy"
 						sizes="100vw sm:50vw md:400px"
-            densities="x1 x2"
+						densities="x1 x2"
 						format="webp"
 						:src="getGravatar(item.author.email)"
 						:alt="item.author.name"

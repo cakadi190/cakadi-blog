@@ -1,5 +1,6 @@
 <template>
 	<nuxt-img
+		loading="lazy"
 		format="webp"
 		alt="Logo HUT RI Ke-79"
 		sizes="100vw sm:50vw md:400px"

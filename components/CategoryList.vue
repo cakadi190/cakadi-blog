@@ -8,8 +8,9 @@
 			<nuxt-link :to="`/kategori/${item.slug}`" class="category-card">
 				<div class="category-card-image">
 					<nuxt-img
+						loading="lazy"
 						sizes="100vw sm:50vw md:400px"
-            densities="x1 x2"
+						densities="x1 x2"
 						format="webp"
 						:src="item.image"
 						:alt="`Kategori ${item.label}`"
