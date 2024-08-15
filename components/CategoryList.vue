@@ -7,7 +7,13 @@
 		>
 			<nuxt-link :to="`/kategori/${item.slug}`" class="category-card">
 				<div class="category-card-image">
-					<nuxt-img format="webp" :src="item.image" :alt="`Kategori ${item.label}`" />
+					<nuxt-img
+						sizes="100vw sm:50vw md:400px"
+            densities="x1 x2 x3 x4"
+						format="webp"
+						:src="item.image"
+						:alt="`Kategori ${item.label}`"
+					/>
 				</div>
 				<div class="category-content">
 					<h3 class="text-merriweather title">{{ item.label }}</h3>
@@ -55,15 +61,15 @@ const categories = computed(() => defaultCategory());
 		bottom: 0;
 		padding: 1rem;
 		z-index: 2;
-    transition: all 0.2s;
+		transition: all 0.2s;
 		left: 0;
 		right: 0;
 		text-align: center;
-    height: 50%;
+		height: 50%;
 		line-height: 1.5;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		background: linear-gradient(
 			to bottom,
 			transparent,
@@ -85,9 +91,9 @@ const categories = computed(() => defaultCategory());
 			}
 		}
 
-    .category-content {
-      transition: all 0.2s;
-    }
+		.category-content {
+			transition: all 0.2s;
+		}
 	}
 }
 </style>

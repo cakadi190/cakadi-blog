@@ -1,7 +1,13 @@
 <template>
 	<div :data-id="post.id" id="big-header-post">
 		<div class="image-wrapper">
-			<nuxt-img format="webp" :src="post.image" :alt="post.title" />
+			<nuxt-img
+				format="webp"
+				sizes="100vw sm:50vw md:400px"
+				densities="x1 x2 x3 x4"
+				:src="post.image"
+				:alt="post.title"
+			/>
 		</div>
 		<nuxt-link
 			:to="`/kategori/${slugify(post.category[0])}`"
@@ -19,7 +25,13 @@
 			</nuxt-link>
 			<div class="post-meta">
 				<div class="author">
-					<nuxt-img format="webp" :alt="post.author.name" :src="getGravatar(post.author.email)" />
+					<nuxt-img
+						sizes="100vw sm:50vw md:400px"
+            densities="x1 x2 x3 x4"
+						format="webp"
+						:alt="post.author.name"
+						:src="getGravatar(post.author.email)"
+					/>
 					<span
 						class="d-flex gap-1 align-items-center"
 						v-if="post.author.email === 'cakadi190@gmail.com'"
@@ -48,20 +60,20 @@ defineProps<{
 
 <style lang="scss" scoped>
 @function encode-color($string) {
-  @if type-of($string) == 'color' {
-    @return '%23' + str-slice('#{$string}', 2);
-  }
-  @return $string;
+	@if type-of($string) == "color" {
+		@return "%23" + str-slice("#{$string}", 2);
+	}
+	@return $string;
 }
 
 @mixin top-left-rounded($color) {
-  $encoded-color: encode-color($color);
-  background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 101 101' fill='#{$encoded-color}' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M101 0H0V101H1C1 45.7715 45.7715 1 101 1V0Z' fill='#{$encoded-color}'%3E%3C/path%3E%3C/svg%3E");
+	$encoded-color: encode-color($color);
+	background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 101 101' fill='#{$encoded-color}' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M101 0H0V101H1C1 45.7715 45.7715 1 101 1V0Z' fill='#{$encoded-color}'%3E%3C/path%3E%3C/svg%3E");
 }
 
 @mixin bottom-right-rounded($color) {
-  $encoded-color: encode-color($color);
-  background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 101 101' fill='#{$encoded-color}' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M101 0H0V101H1C1 45.7715 45.7715 1 101 1V0Z' fill='#{$encoded-color}'%3E%3C/path%3E%3C/svg%3E");
+	$encoded-color: encode-color($color);
+	background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 101 101' fill='#{$encoded-color}' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M101 0H0V101H1C1 45.7715 45.7715 1 101 1V0Z' fill='#{$encoded-color}'%3E%3C/path%3E%3C/svg%3E");
 }
 
 #big-header-post {
@@ -81,9 +93,9 @@ defineProps<{
 		border-radius: var(--bs-border-radius-xl);
 		border: 1px solid #f5f5f5;
 
-    @at-root [data-bs-theme=dark] & {
-      border-color: var(--bs-body-bg);
-    }
+		@at-root [data-bs-theme="dark"] & {
+			border-color: var(--bs-body-bg);
+		}
 
 		@media screen and (max-width: 992px) {
 			width: 100%;
@@ -155,17 +167,17 @@ defineProps<{
 			bottom: -10px;
 			right: 0;
 			transform: scaleX(1) scaleY(-1) rotate(180deg);
-      @include bottom-right-rounded(#f5f5f5);
+			@include bottom-right-rounded(#f5f5f5);
 		}
 
-    @at-root [data-bs-theme=dark] & {
-      &::before {
-        @include top-left-rounded(var(--bs-body-bg));
-      }
-      &::after {
-        @include bottom-right-rounded(var(--bs-body-bg));
-      }
-    }
+		@at-root [data-bs-theme="dark"] & {
+			&::before {
+				@include top-left-rounded(var(--bs-body-bg));
+			}
+			&::after {
+				@include bottom-right-rounded(var(--bs-body-bg));
+			}
+		}
 	}
 
 	.post-content {

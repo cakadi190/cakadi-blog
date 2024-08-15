@@ -1,25 +1,54 @@
 <template>
-  <nuxt-img format="webp" alt="Logo Catatan Cak Adi" :src="logoSource" :width="width" :height="height" class="d-lg-inline d-md-none d-none" />
-  <nuxt-img format="webp" alt="Logo Catatan Cak Adi" :src="logoSourceSm" :width="width" :height="height" class="d-lg-none" />
+	<nuxt-img
+		format="webp"
+		sizes="100vw sm:50vw md:400px"
+		densities="x1 x2 x3 x4"
+		alt="Logo Catatan Cak Adi"
+		:src="logoSource"
+		:width="width"
+		:height="height"
+		class="d-lg-inline d-md-none d-none"
+	/>
+	<nuxt-img
+		format="webp"
+		sizes="100vw sm:50vw md:400px"
+		densities="x1 x2 x3 x4"
+		alt="Logo Catatan Cak Adi"
+		:src="logoSourceSm"
+		:width="width"
+		:height="height"
+		class="d-lg-none"
+	/>
 </template>
 
 <script lang="ts" setup>
 const { isThemeDark } = useDarkMode();
 
 type LogoProps = {
-  width?: string | number;
-  height?: string | number;
+	width?: string | number;
+	height?: string | number;
 };
 
-const logoSource = computed(() => buildUrl(isThemeDark.value ? `/images/brands/logo-white-long.svg` : `/images/brands/logo-color-long.svg`));
-const logoSourceSm = computed(() => buildUrl(isThemeDark.value ? `/images/brands/icon-white.svg` : `/images/brands/icon-color.svg`));
+const logoSource = computed(() =>
+	buildUrl(
+		isThemeDark.value
+			? `/images/brands/logo-white-long.svg`
+			: `/images/brands/logo-color-long.svg`
+	)
+);
+const logoSourceSm = computed(() =>
+	buildUrl(
+		isThemeDark.value
+			? `/images/brands/icon-white.svg`
+			: `/images/brands/icon-color.svg`
+	)
+);
 
 withDefaults(defineProps<LogoProps>(), {
-  width: 250,
-  height: 'auto'
+	width: 250,
+	height: "auto",
 });
 </script>
 
 <style>
-
 </style>

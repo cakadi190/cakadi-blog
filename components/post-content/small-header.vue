@@ -4,14 +4,26 @@
 		class="post-item"
 	>
 		<div class="image-wrapper">
-			<nuxt-img format="webp" :alt="item.title" :src="item.image" />
+			<nuxt-img
+				format="webp"
+				sizes="100vw sm:50vw md:400px"
+				densities="x1 x2 x3 x4"
+				:alt="item.title"
+				:src="item.image"
+			/>
 		</div>
 		<div class="post-content">
 			<h3 class="text-merriweather title">{{ item.title }}</h3>
 
 			<div class="post-meta">
 				<div class="author">
-					<nuxt-img format="webp" :src="getGravatar(item.author.email)" :alt="item.author.name" />
+					<nuxt-img
+						sizes="100vw sm:50vw md:400px"
+            densities="x1 x2 x3 x4"
+						format="webp"
+						:src="getGravatar(item.author.email)"
+						:alt="item.author.name"
+					/>
 					<span
 						class="d-flex gap-1 align-items-center"
 						v-if="item.author.email === 'cakadi190@gmail.com'"
@@ -30,7 +42,7 @@
 </template>
 
 <script lang="ts" setup>
-import { getGravatar } from '#imports';
+import { getGravatar } from "#imports";
 
 defineProps<{
 	item: any;
@@ -46,7 +58,7 @@ defineProps<{
 	gap: 1.5rem;
 	text-decoration: none;
 	color: var(--bs-body-color);
-  align-items: center;
+	align-items: center;
 
 	@media screen and (max-width: 992px) {
 		gap: 1rem;
@@ -84,7 +96,7 @@ defineProps<{
 	.post-content {
 		display: flex;
 		flex-direction: column;
-    gap: .5rem;
+		gap: 0.5rem;
 
 		.title {
 			font-size: 1.25rem;
