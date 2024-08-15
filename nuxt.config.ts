@@ -22,10 +22,16 @@ export default defineNuxtConfig({
       },
       link: [
         {
-          rel: 'stylesheet',
+          rel: 'preconnect',
+          href: 'https://fonts.cdnfonts.com',
+          crossorigin: 'anonymous'
+        },
+        {
+          rel: 'preload',
           href: 'https://fonts.cdnfonts.com/css/open-dyslexic',
-          crossorigin: 'anonymous',
-          id: 'dyslexia-fontloader'
+          as: 'style',
+          onload: "this.onload=null;this.rel='stylesheet'",
+          crossorigin: 'anonymous'
         }
       ]
     },
