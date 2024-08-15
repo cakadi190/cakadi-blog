@@ -4,7 +4,7 @@
     <Title>{{ generatedTitle }}</Title>
     <Meta name="description" :content="description" />
     <Meta name="keywords" :content="keywords" />
-    <Meta name="author" content="Cak Adi" />
+    <Meta name="author" :content="author" />
     <Meta name="robots" :content="robots" />
     <Meta property="og:url" :content="generatedUrl" />
     <Meta property="og:title" :content="generatedTitle" />
@@ -32,6 +32,7 @@ interface SEOProps {
   locale?: string;
   robots?: string;
   type?: 'website' | 'article' | string;
+  author?: string;
 }
 
 const props = withDefaults(defineProps<SEOProps>(), {
@@ -40,7 +41,8 @@ const props = withDefaults(defineProps<SEOProps>(), {
   image: "/images/meta-image.png",
   locale: 'id',
   robots: 'index,follow',
-  type: 'website'
+  type: 'website',
+  author: 'Cak Adi'
 });
 
 const generatedUrl = computed(() => buildUrl(props.url));

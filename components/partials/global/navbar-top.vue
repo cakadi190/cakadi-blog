@@ -1,9 +1,9 @@
 <template>
 	<nav
-		class="navbar navbar-expand-lg border-bottom fixed-top"
+		class="navbar navbar-expand-lg fixed-top"
 		id="navbar-main"
 		aria-label="Navbar Main"
-    :class="{'bg-white border-light': currentScroll > 50}"
+    :class="{'scrolled': currentScroll > 10}"
 	>
 		<div class="container">
 			<button
@@ -98,6 +98,14 @@ onMounted(() => {
 
 <style lang="scss">
 .navbar#navbar-main {
+  transition: all .2s;
+  border-bottom: 1px solid rgba(var(--bs-body-color-rgb), .125);
+
+  &.scrolled {
+    background-color: var(--bs-body-bg);
+    border-bottom: 1px solid rgba(var(--bs-body-color-rgb), .125);
+  }
+  
 	.navbar-toggler {
 		padding: 0.5rem;
 		background: transparent;

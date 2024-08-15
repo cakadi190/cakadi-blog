@@ -11,8 +11,8 @@ type LogoProps = {
   height?: string | number;
 };
 
-const logoSource = computed(() => buildUrl(!isThemeDark ? `/images/brands/logo-white-long.svg` : `/images/brands/logo-color-long.svg`));
-const logoSourceSm = computed(() => buildUrl(!isThemeDark ? `/images/brands/icon-white.svg` : `/images/brands/icon-color.svg`));
+const logoSource = computed(() => buildUrl(isThemeDark.value ? `/images/brands/logo-white-long.svg` : `/images/brands/logo-color-long.svg`));
+const logoSourceSm = computed(() => buildUrl(isThemeDark.value ? `/images/brands/icon-white.svg` : `/images/brands/icon-color.svg`));
 
 withDefaults(defineProps<LogoProps>(), {
   width: 250,

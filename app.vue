@@ -32,3 +32,35 @@ onUpdated(initDyslexiaFont);
   filter: blur(1rem);
 }
 </style>
+
+<style>
+:root {
+  --scrollbar-thumb: var(--bs-primary);
+  --scrollbar-track: var(--bs-light);
+  --scrollbar-hover: var(--bs-gray-700);
+}
+
+/* Untuk Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
+
+/* Untuk WebKit (Chrome, Safari, dll.) */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-hover);
+}
+</style>

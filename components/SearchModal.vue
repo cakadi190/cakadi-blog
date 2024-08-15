@@ -147,6 +147,7 @@ const defaultCategories = ref([
 		color: var(--bs-body-color-rgb);
 		transition: all 0.3s;
 		position: absolute;
+    background: transparent;
 		left: 0;
 		right: 0;
     bottom: 0;

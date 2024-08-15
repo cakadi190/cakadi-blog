@@ -3,6 +3,7 @@
     <partials-global-navbar-top />
     <slot />
     <search-modal />
+    <back-to-top />
   </div>
 </template>
 

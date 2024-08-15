@@ -15,6 +15,10 @@
 	padding-top: 10rem;
 	background: #fafafa;
 
+  @at-root [data-bs-theme=dark] & {
+    background: var(--bs-body-bg);
+  }
+
 	@media screen and (max-width: 992px) {
 		padding-top: 7.5rem;
 	}

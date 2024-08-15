@@ -10,7 +10,7 @@ type LogoProps = {
   height?: string | number;
 };
 
-const logoSource = computed(() => buildUrl(!isThemeDark ? `/images/brands/hut-ri/logo-white-xxxhdpi.png` : `/images/brands/hut-ri/logo-color-xxxhdpi.png`));
+const logoSource = computed(() => buildUrl(isThemeDark.value ? `/images/brands/hut-ri/logo-white-xxxhdpi.png` : `/images/brands/hut-ri/logo-color-xxxhdpi.png`));
 
 withDefaults(defineProps<LogoProps>(), {
   width: 250,

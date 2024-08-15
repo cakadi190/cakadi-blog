@@ -6,6 +6,7 @@
 		/>
 
     <partials-home-post-header />
+    <partials-home-category-listing />
 	</div>
 </template>
 
