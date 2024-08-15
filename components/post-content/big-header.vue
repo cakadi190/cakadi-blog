@@ -1,7 +1,7 @@
 <template>
 	<div :data-id="post.id" id="big-header-post">
 		<div class="image-wrapper">
-			<nuxt-img format="webp" :src="post.image" :class="post.title" />
+			<nuxt-img format="webp" :src="post.image" :alt="post.title" />
 		</div>
 		<nuxt-link
 			:to="`/kategori/${slugify(post.category[0])}`"
