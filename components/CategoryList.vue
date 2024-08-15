@@ -31,6 +31,18 @@ const categories = computed(() => defaultCategory());
 </script>
 
 <style lang="scss" scoped>
+@function encode-color($string) {
+	@if type-of($string) == "color" {
+		@return "%23" + str-slice("#{$string}", 2);
+	}
+	@return $string;
+}
+
+@mixin absolute-rounded($color) {
+	$encoded-color: encode-color($color);
+	background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 101 101' fill='#{$encoded-color}' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M101 0H0V101H1C1 45.7715 45.7715 1 101 1V0Z' fill='#{$encoded-color}'%3E%3C/path%3E%3C/svg%3E");
+}
+
 .category-card {
 	position: relative;
 	text-decoration: none;
@@ -66,22 +78,42 @@ const categories = computed(() => defaultCategory());
 		left: 0;
 		right: 0;
 		text-align: center;
-		height: 50%;
 		line-height: 1.5;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		background: linear-gradient(
-			to bottom,
-			transparent,
-			color-mix(in srgb, var(--bs-body-bg) 75%, transparent),
-			color-mix(in srgb, var(--bs-body-bg) 100%, transparent)
-		);
+		padding-bottom: 0;
 
 		.title {
+      position: relative;
 			line-height: inherit;
-			font-size: 1.25rem;
+			font-size: 1rem;
 			margin-bottom: 0;
+			background: var(--bs-body-bg);
+			padding: 0.5rem 1rem;
+			border-radius: var(--bs-border-radius-lg) var(--bs-border-radius-lg) 0 0;
+
+			&::before,
+			&::after {
+				position: absolute;
+				content: "";
+				display: block;
+				width: 10px;
+				height: 10px;
+        @include absolute-rounded(#fff);
+			}
+
+      &::before {
+        bottom: 0;
+        left: -10px;
+        transform: rotate(180deg);
+      }
+
+      &::after {
+        bottom: 0;
+        right: -10px;
+        transform: rotate(270deg);
+      }
 		}
 	}
 

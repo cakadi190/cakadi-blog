@@ -16,29 +16,31 @@
 		<div class="post-content">
 			<h3 class="text-merriweather title">{{ item.title }}</h3>
 
-			<div class="post-meta">
-				<div class="author">
-					<nuxt-img
-						loading="lazy"
-						sizes="100vw sm:50vw md:400px"
-						densities="x1 x2"
-						format="webp"
-						:src="getGravatar(item.author.email)"
-						:alt="item.author.name"
-					/>
-					<span
-						class="d-flex gap-1 align-items-center"
-						v-if="item.author.email === 'cakadi190@gmail.com'"
-						>{{ item.author.name
-						}}<icon class="text-primary" name="solar:verified-check-bold"
-					/></span>
-				</div>
-				<time
-					class="date"
-					:datetime="$dayjs(item.created_at).utc().toString()"
-					>{{ $dayjs(item.created_at).format("LL") }}</time
-				>
-			</div>
+			<client-only>
+        <div class="post-meta">
+          <div class="author">
+            <nuxt-img
+              loading="lazy"
+              sizes="100vw sm:50vw md:400px"
+              densities="x1 x2"
+              format="webp"
+              :src="getGravatar(item.author.email)"
+              :alt="item.author.name"
+            />
+            <span
+              class="d-flex gap-1 align-items-center"
+              v-if="item.author.email === 'cakadi190@gmail.com'"
+              >{{ item.author.name
+              }}<icon class="text-primary" name="solar:verified-check-bold"
+            /></span>
+          </div>
+          <time
+            class="date"
+            :datetime="$dayjs(item.created_at).utc().toString()"
+            >{{ $dayjs(item.created_at).format("LL") }}</time
+          >
+        </div>
+      </client-only>
 		</div>
 	</nuxt-link>
 </template>
