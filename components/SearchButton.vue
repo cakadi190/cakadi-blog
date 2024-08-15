@@ -1,5 +1,5 @@
 <template>
-	<button @click="toggle">
+	<button @click="toggle" aria-label="Search Modal Button">
 		<Icon name="fa6-solid:magnifying-glass" />
 		<span v-if="withLabel">Cari</span>
 	</button>
