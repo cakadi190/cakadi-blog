@@ -39,7 +39,7 @@ export default defineNuxtConfig({
     layoutTransition: { name: 'layout', mode: 'out-in' },
   },
 
-  
+
   postcss: {
     plugins: {
       "autoprefixer": {},
@@ -48,13 +48,17 @@ export default defineNuxtConfig({
     }
   },
 
+  image: {
+    format: ['webp']
+  },
+
   dayjs: {
     locales: ['id'],
     plugins: ['relativeTime', 'utc', 'timezone', 'localizedFormat'],
     defaultLocale: 'id',
     defaultTimezone: 'Asia/Jakarta',
   },
-  
+
   critters: {
     // Options passed directly to critters: https://github.com/GoogleChromeLabs/critters#critters-2
     config: {
