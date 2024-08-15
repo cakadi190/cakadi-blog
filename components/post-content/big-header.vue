@@ -1,7 +1,7 @@
 <template>
 	<div :data-id="post.id" id="big-header-post">
 		<div class="image-wrapper">
-			<nuxt-img :src="post.image" :class="post.title" />
+			<nuxt-img format="webp" :src="post.image" :class="post.title" />
 		</div>
 		<nuxt-link
 			:to="`/kategori/${slugify(post.category[0])}`"
@@ -19,7 +19,7 @@
 			</nuxt-link>
 			<div class="post-meta">
 				<div class="author">
-					<nuxt-img :alt="post.author.name" :src="getGravatar(post.author.email)" />
+					<nuxt-img format="webp" :alt="post.author.name" :src="getGravatar(post.author.email)" />
 					<span
 						class="d-flex gap-1 align-items-center"
 						v-if="post.author.email === 'cakadi190@gmail.com'"

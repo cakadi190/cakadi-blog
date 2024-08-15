@@ -7,7 +7,7 @@
 		>
 			<nuxt-link :to="`/kategori/${item.slug}`" class="category-card">
 				<div class="category-card-image">
-					<nuxt-img :src="item.image" :alt="item.label" />
+					<nuxt-img format="webp" :src="item.image" :alt="item.label" />
 				</div>
 				<div class="category-content">
 					<h3 class="text-merriweather title">{{ item.label }}</h3>

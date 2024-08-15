@@ -4,14 +4,14 @@
 		class="post-item"
 	>
 		<div class="image-wrapper">
-			<nuxt-img :alt="item.title" :src="item.image" />
+			<nuxt-img format="webp" :alt="item.title" :src="item.image" />
 		</div>
 		<div class="post-content">
 			<h3 class="text-merriweather title">{{ item.title }}</h3>
 
 			<div class="post-meta">
 				<div class="author">
-					<nuxt-img :src="getGravatar(item.author.email)" :alt="item.author.name" />
+					<nuxt-img format="webp" :src="getGravatar(item.author.email)" :alt="item.author.name" />
 					<span
 						class="d-flex gap-1 align-items-center"
 						v-if="item.author.email === 'cakadi190@gmail.com'"

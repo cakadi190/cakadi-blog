@@ -1,6 +1,6 @@
 <template>
-  <nuxt-img alt="Logo Catatan Cak Adi" :src="logoSource" :width="width" :height="height" class="d-lg-inline d-md-none d-none" />
-  <nuxt-img alt="Logo Catatan Cak Adi" :src="logoSourceSm" :width="width" :height="height" class="d-lg-none" />
+  <nuxt-img format="webp" alt="Logo Catatan Cak Adi" :src="logoSource" :width="width" :height="height" class="d-lg-inline d-md-none d-none" />
+  <nuxt-img format="webp" alt="Logo Catatan Cak Adi" :src="logoSourceSm" :width="width" :height="height" class="d-lg-none" />
 </template>
 
 <script lang="ts" setup>
