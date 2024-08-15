@@ -1,6 +1,8 @@
 <template>
 	<button @click="toggle" aria-label="Search Modal Button">
-		<Icon name="fa6-solid:magnifying-glass" />
+		<ClientOnly>
+			<Icon name="fa6-solid:magnifying-glass" />
+		</ClientOnly>
 		<span v-if="withLabel">Cari</span>
 	</button>
 </template>
