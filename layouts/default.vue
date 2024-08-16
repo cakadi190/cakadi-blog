@@ -15,6 +15,11 @@ import { navMenu } from '@/utils/content';
 const navMenus = computed(() => navMenu());
 </script>
 
-<style>
-
+<style lang="scss">
+#main-layouts {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100svh;
+}
 </style>
