@@ -27,25 +27,37 @@ export default defineNuxtConfig({
           crossorigin: 'anonymous'
         },
         {
+          rel: 'preconnect',
+          href: 'https://cdnjs.cloudflare.com',
+          crossorigin: 'anonymous'
+        },
+        {
           rel: 'preload',
           href: 'https://fonts.cdnfonts.com/css/open-dyslexic',
           as: 'style',
           onload: "this.onload=null;this.rel='stylesheet'",
           crossorigin: 'anonymous'
-        }
+        },
+        {
+          rel: 'preload',
+          href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css',
+          as: 'style',
+          onload: "this.onload=null;this.rel='stylesheet'",
+          crossorigin: 'anonymous'
+        },
       ]
     },
     pageTransition: { name: 'page', mode: 'out-in' },
     layoutTransition: { name: 'layout', mode: 'out-in' },
   },
 
-  // postcss: {
-  //   plugins: {
-  //     "autoprefixer": {},
-  //     "postcss-nested": {},
-  //     "postcss-custom-media": {}
-  //   }
-  // },
+  postcss: {
+    plugins: {
+      "autoprefixer": {},
+      "postcss-nested": {},
+      "postcss-custom-media": {}
+    }
+  },
 
   image: {
     format: ['webp']

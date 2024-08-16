@@ -25,9 +25,6 @@
 						{{ item.title }}
 					</nuxt-link>
 				</li>
-				<li class="nav-item d-none d-md-none d-lg-inline-flex">
-					<search-button :with-label="false" class="nav-link" />
-				</li>
 			</ul>
 		</div>
 	</div>
@@ -48,7 +45,7 @@ defineProps<{
 	flex-direction: row;
 
 	img {
-		height: 36px !important;
+		height: 28px !important;
 		width: auto !important;
 	}
 }

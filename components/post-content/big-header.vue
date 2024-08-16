@@ -15,6 +15,37 @@
 			class="category"
 			v-if="post.category[0]"
 		>
+			<div class="decoration-before">
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					width="10"
+					height="10"
+					fill="currentColor"
+					viewBox="0 0 101 101"
+				>
+					<path
+						fill-rule="evenodd"
+						d="M101 0H0v101h1C1 45.772 45.772 1 101 1z"
+						clip-rule="evenodd"
+					/>
+				</svg>
+			</div>
+			<div class="decoration-after">
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					width="10"
+					height="10"
+					fill="currentColor"
+					viewBox="0 0 101 101"
+				>
+					<path
+						fill-rule="evenodd"
+						d="M101 0H0v101h1C1 45.772 45.772 1 101 1z"
+						clip-rule="evenodd"
+					/>
+				</svg>
+			</div>
+
 			<span>{{ post.category[0] }}</span>
 		</nuxt-link>
 		<div class="post-content">
@@ -59,29 +90,20 @@
 import { slugify } from "@/utils/url";
 import { getGravatar } from "#imports";
 
-defineProps<{
-	post: any;
-}>();
+const props = withDefaults(
+	defineProps<{
+		post: any;
+		color?: string;
+		isHeader?: boolean;
+	}>(),
+	{
+		color: "#f5f5f5",
+		isHeader: false,
+	}
+);
 </script>
 
-<style lang="scss" scoped>
-@function encode-color($string) {
-	@if type-of($string) == "color" {
-		@return "%23" + str-slice("#{$string}", 2);
-	}
-	@return $string;
-}
-
-@mixin top-left-rounded($color) {
-	$encoded-color: encode-color($color);
-	background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 101 101' fill='#{$encoded-color}' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M101 0H0V101H1C1 45.7715 45.7715 1 101 1V0Z' fill='#{$encoded-color}'%3E%3C/path%3E%3C/svg%3E");
-}
-
-@mixin bottom-right-rounded($color) {
-	$encoded-color: encode-color($color);
-	background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 101 101' fill='#{$encoded-color}' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M101 0H0V101H1C1 45.7715 45.7715 1 101 1V0Z' fill='#{$encoded-color}'%3E%3C/path%3E%3C/svg%3E");
-}
-
+<style lang="scss">
 #big-header-post {
 	text-decoration: none;
 	color: var(--bs-body-color);
@@ -94,10 +116,11 @@ defineProps<{
 
 	.image-wrapper {
 		position: relative;
-		height: 25rem;
+		width: 100%;
 		overflow: hidden;
 		border-radius: var(--bs-border-radius-xl);
-		border: 1px solid #f5f5f5;
+		border: 1px solid v-bind(color);
+		aspect-ratio: 16 / 9;
 
 		@at-root [data-bs-theme="dark"] & {
 			border-color: var(--bs-body-bg);
@@ -106,13 +129,11 @@ defineProps<{
 		@media screen and (max-width: 992px) {
 			width: 100%;
 			height: auto;
-			aspect-ratio: 16 / 9;
 		}
 
 		@media screen and (max-width: 576px) {
 			width: 100%;
 			height: auto;
-			aspect-ratio: 16 / 9;
 		}
 
 		img {
@@ -130,10 +151,36 @@ defineProps<{
 		position: absolute;
 		top: 0;
 		right: 0;
-		background-color: #f5f5f5;
+		background-color: v-bind(color);
 		padding: 1.25rem 0.5rem;
 		border-radius: 0 0 0 var(--bs-border-radius-xl);
 		z-index: 2;
+
+		.decoration-before,
+		.decoration-after {
+			position: absolute;
+			width: 10px;
+			height: 10px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: v-bind(color);
+
+			@at-root [data-bs-theme="dark"] & {
+				color: var(--bs-body-bg);
+			}
+		}
+
+		.decoration-before {
+			top: 0;
+			left: -10px;
+			transform: rotate(90deg);
+		}
+		.decoration-after {
+			right: 0;
+			bottom: -10px;
+			transform: rotate(90deg);
+		}
 
 		@at-root [data-bs-theme="dark"] & {
 			background: var(--bs-body-bg);
@@ -152,45 +199,21 @@ defineProps<{
 			background: var(--bs-primary);
 			color: var(--bs-white);
 		}
-
-		&::before,
-		&::after {
-			position: absolute;
-			content: "";
-			display: block;
-			width: 10px;
-			height: 10px;
-		}
-
-		&::before {
-			top: 0;
-			left: -10px;
-			transform: scaleX(-1);
-			@include top-left-rounded(#f5f5f5);
-		}
-
-		&::after {
-			bottom: -10px;
-			right: 0;
-			transform: scaleX(1) scaleY(-1) rotate(180deg);
-			@include bottom-right-rounded(#f5f5f5);
-		}
-
-		@at-root [data-bs-theme="dark"] & {
-			&::before {
-				@include top-left-rounded(var(--bs-body-bg));
-			}
-			&::after {
-				@include bottom-right-rounded(var(--bs-body-bg));
-			}
-		}
 	}
 
 	.post-content {
 		margin-top: 1.5rem;
 
+		@at-root #post-main-content & {
+			margin-top: 1rem;
+		}
+
 		.title {
 			line-height: 1.5;
+
+			@at-root #post-main-content & {
+				font-size: 1.25rem;
+			}
 
 			@media screen and (max-width: 992px) {
 				font-size: 1.25rem;

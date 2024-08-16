@@ -40,7 +40,7 @@ const categories = computed(() => defaultCategory());
 
 @mixin absolute-rounded($color) {
 	$encoded-color: encode-color($color);
-	background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 101 101' fill='#{$encoded-color}' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M101 0H0V101H1C1 45.7715 45.7715 1 101 1V0Z' fill='#{$encoded-color}'%3E%3C/path%3E%3C/svg%3E");
+	background-image: url("data:image/svg+xml,%3Csvg width='3' height='3' viewBox='0 0 101 101' fill='#{$encoded-color}' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M101 0H0V101H1C1 45.7715 45.7715 1 101 1V0Z' fill='#{$encoded-color}'%3E%3C/path%3E%3C/svg%3E");
 }
 
 .category-card {
@@ -85,7 +85,7 @@ const categories = computed(() => defaultCategory());
 		padding-bottom: 0;
 
 		.title {
-      position: relative;
+			position: relative;
 			line-height: inherit;
 			font-size: 1rem;
 			margin-bottom: 0;
@@ -98,22 +98,22 @@ const categories = computed(() => defaultCategory());
 				position: absolute;
 				content: "";
 				display: block;
-				width: 10px;
-				height: 10px;
-        @include absolute-rounded(#fff);
+				width: 3px;
+				height: 3px;
+				@include absolute-rounded(#fff);
 			}
 
-      &::before {
-        bottom: 0;
-        left: -10px;
-        transform: rotate(180deg);
-      }
+			&::before {
+				bottom: 0;
+				left: -3px;
+				transform: rotate(180deg);
+			}
 
-      &::after {
-        bottom: 0;
-        right: -10px;
-        transform: rotate(270deg);
-      }
+			&::after {
+				bottom: 0;
+				right: -3px;
+				transform: rotate(270deg);
+			}
 		}
 	}
 

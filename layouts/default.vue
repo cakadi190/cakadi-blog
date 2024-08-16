@@ -2,6 +2,7 @@
   <div id="main-layouts">
     <partials-global-navbar-top />
     <slot />
+    <partials-global-footer-main />
     <search-modal />
     <partials-global-navbar-sidenav :nav-menu="navMenus" />
     <back-to-top />

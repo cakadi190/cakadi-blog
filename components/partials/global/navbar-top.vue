@@ -1,6 +1,6 @@
 <template>
 	<nav
-		class="navbar navbar-expand-lg fixed-top"
+		class="navbar navbar-expand-xl fixed-top"
 		id="navbar-main"
 		aria-label="Navbar Main"
 		:class="{ scrolled: currentScroll > 10 }"

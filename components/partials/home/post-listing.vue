@@ -1,0 +1,77 @@
+<template>
+	<div class="container" id="post-wrapper-content">
+		<div class="row gy-4" id="post-main-content">
+			<main class="col-md-8">
+        <div class="row gy-4">
+          <div class="col-md-6" v-for="item in data" :key="item.title">
+            <post-content-big-header color="#fff" :post="item" />
+          </div>
+          <div class="col-md-12 justify-content-center d-flex mx-auto">
+            <nuxt-link
+              to="/artikel"
+              class="btn d-none d-md-none d-lg-flex btn-primary gap-2 align-items-center"
+            >
+              <span>Lihat Semua Artikel</span>
+              <icon name="fa6-solid:arrow-right" />
+            </nuxt-link>
+          </div>
+        </div>
+      </main>
+			<aside class="col-md-4">
+				<div class="sidebar-inner">
+					<sidebar-widget-socmed />
+          <sidebar-widget-donate />
+				</div>
+			</aside>
+		</div>
+	</div>
+</template>
+
+<script lang="ts" setup>
+const { data, status, error } = await useLazyAsyncData<any[]>(
+	"post-list",
+	() =>
+		(queryContent("articles") as any)
+			.where({ draft: { $eq: false } })
+			.limit(12)
+			.find(),
+	{
+		transform: (items) =>
+			items?.sort(
+				(a, b) =>
+					new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime()
+			),
+	}
+);
+</script>
+
+<style lang="scss">
+.sidebar-inner {
+  position: sticky;
+  top: 7.5rem;
+  
+	.widget {
+		margin-bottom: 2.5rem;
+    display: block;
+
+		.title {
+			display: flex;
+			position: relative;
+			height: 1.25rem;
+			font-size: 1.25rem;
+			margin-bottom: 1rem;
+			border-bottom: 1px solid rgba(var(--bs-body-color-rgb), 0.125);
+
+			span {
+				height: 2rem;
+				display: flex;
+				padding-bottom: 1rem;
+				position: absolute;
+				border-bottom: 2px solid var(--bs-primary);
+				left: 0;
+				bottom: 0;
+			}
+		}
+	}
+}
+</style>
