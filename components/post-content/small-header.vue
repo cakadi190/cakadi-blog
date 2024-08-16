@@ -16,29 +16,45 @@
 		<div class="post-content">
 			<h3 class="text-merriweather title">{{ item.title }}</h3>
 
-      <div class="post-meta">
-        <div class="author">
-          <nuxt-img
-            loading="lazy"
-            sizes="100vw sm:50vw md:400px"
-            densities="x1 x2"
-            format="webp"
-            :src="getGravatar(item.author.email)"
-            :alt="item.author.name"
-          />
-          <span
-            class="d-flex gap-1 align-items-center"
-            v-if="item.author.email === 'cakadi190@gmail.com'"
-            >{{ item.author.name
-            }}<icon class="text-primary" name="solar:verified-check-bold"
-          /></span>
-        </div>
-        <time
-          class="date"
-          :datetime="$dayjs(item.created_at).utc().toString()"
-          >{{ $dayjs(item.created_at).format("LL") }}</time
-        >
-      </div>
+			<div style="vertical-align: middle" class="post-meta">
+				<div class="author">
+					<nuxt-img
+						loading="lazy"
+						sizes="100vw sm:50vw md:400px"
+						densities="x1 x2"
+						format="webp"
+						:src="getGravatar(item.author.email)"
+						:alt="item.author.name"
+					/>
+					<span
+						class="d-flex gap-1 align-items-center lh-1"
+						v-if="item.author.email === 'cakadi190@gmail.com'"
+						style="vertical-align: middle"
+						>{{ item.author.name }}
+
+						<div
+							class="text-primary"
+							style="font-size: 1rem; vertical-align: middle"
+						>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="1em"
+								height="1em"
+								viewBox="0 0 24 24"
+							>
+								<path
+									fill="currentColor"
+									d="M10.95 12.7L9.5 11.275Q9.225 11 8.813 11t-.713.3q-.275.275-.275.7t.275.7l2.15 2.15q.3.3.7.3t.7-.3l4.25-4.25q.3-.3.287-.7t-.287-.7q-.3-.3-.712-.312t-.713.287zm-2.8 9.05L6.7 19.3l-2.75-.6q-.375-.075-.6-.387t-.175-.688L3.45 14.8l-1.875-2.15q-.25-.275-.25-.65t.25-.65L3.45 9.2l-.275-2.825q-.05-.375.175-.688t.6-.387l2.75-.6l1.45-2.45q.2-.325.55-.438t.7.038l2.6 1.1l2.6-1.1q.35-.15.7-.038t.55.438L17.3 4.7l2.75.6q.375.075.6.388t.175.687L20.55 9.2l1.875 2.15q.25.275.25.65t-.25.65L20.55 14.8l.275 2.825q.05.375-.175.688t-.6.387l-2.75.6l-1.45 2.45q-.2.325-.55.438t-.7-.038l-2.6-1.1l-2.6 1.1q-.35.15-.7.038t-.55-.438"
+								></path>
+							</svg></div
+					></span>
+				</div>
+				<time
+					class="date"
+					:datetime="$dayjs(item.created_at).utc().toString()"
+					>{{ $dayjs(item.created_at).format("LL") }}</time
+				>
+			</div>
 		</div>
 	</nuxt-link>
 </template>
