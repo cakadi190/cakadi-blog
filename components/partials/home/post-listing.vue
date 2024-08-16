@@ -40,7 +40,7 @@ const { data, status, error } = await useLazyAsyncData<any[]>(
 <style lang="scss">
 .sidebar-inner {
   position: sticky;
-  top: 7.5rem;
+  top: 6.25rem;
   
 	.widget {
 		margin-bottom: 2.5rem;

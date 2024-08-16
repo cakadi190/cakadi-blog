@@ -43,16 +43,12 @@ Berikut adalah langkah-langkah untuk mengimplementasikan middleware di Laravel:
 
 Pertama-tama, kita buat dulu middleware yang akan digunakan. Semisal saya contohkan untuk membatasi umur dengan mengetikkan perintah dibawah ini.
 
-::syntax
 
-```bash
+```bash [lpa.sh]
 php artisan make:middleware CheckAge
 ```
-
-::
 Nah, perintah itu nantinya membuat file middleware baru di `app/Http/Middleware/CheckAge.php`. Berikut adalah contoh sederhana middleware `CheckAge`:
 
-::syntax
 
 ```php
 <?php
@@ -84,8 +80,6 @@ class CheckAge
 }
 ```
 
-::
-
 ### 2. Mendaftarkan Middleware Ini Ke `Kernel.php`
 
 Setelah middleware dibuat, Kamu perlu mendaftarkannya di file `app/Http/Kernel.php`. Ada dua cara untuk mendaftarkan middleware: global dan kelompok.
@@ -94,7 +88,6 @@ Setelah middleware dibuat, Kamu perlu mendaftarkannya di file `app/Http/Kernel.p
 
 - **Middleware Kelompok**: Middleware kelompok diterapkan pada kelompok rute tertentu. Kamu dapat mendaftarkannya di properti `$middlewareGroups` dari class `Kernel`.
 
-::syntax
 
 ```php
 protected $routeMiddleware = [
@@ -114,23 +107,19 @@ protected $middlewareGroups = [
     ],
 ];
 ```
-::
 
 ### 3. Penerapan Middleware ke Routing
 
 Setelah middleware didaftarkan, Kamu dapat menggunakannya pada rute atau kelompok rute tertentu. Berikut adalah contoh penggunaannya:
 
-::syntax
 
 ```php
 Route::get('profile', function () {
     // ...
 })->middleware('check.age');
 ```
-::
 Kamu juga dapat menggunakan middleware pada kelompok rute:
 
-::syntax
 
 ```php
 Route::group(['middleware' => ['check.age']], function () {
@@ -143,11 +132,9 @@ Route::group(['middleware' => ['check.age']], function () {
     });
 });
 ```
-::
 
 atau
 
-::syntax
 ```php
 Route::middleware(['check-age'])->group(function() {
     Route::get('/', function () {
@@ -160,7 +147,6 @@ Route::middleware(['check-age'])->group(function() {
     // Dan routing lainnya
 });
 ```
-::
 
 ## Penutup
 

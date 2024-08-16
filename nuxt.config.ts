@@ -31,6 +31,7 @@ export default defineNuxtConfig({
           href: 'https://cdnjs.cloudflare.com',
           crossorigin: 'anonymous'
         },
+
         {
           rel: 'preload',
           href: 'https://fonts.cdnfonts.com/css/open-dyslexic',
@@ -45,6 +46,19 @@ export default defineNuxtConfig({
           onload: "this.onload=null;this.rel='stylesheet'",
           crossorigin: 'anonymous'
         },
+        {
+          rel: 'preload',
+          href: 'https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css',
+          as: 'style',
+          onload: "this.onload=null;this.rel='stylesheet'",
+          crossorigin: 'anonymous'
+        },
+      ],
+      script: [
+        {
+          defer: true,
+          src: 'https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js',
+        }
       ]
     },
     pageTransition: { name: 'page', mode: 'out-in' },
@@ -86,6 +100,13 @@ export default defineNuxtConfig({
     }
   },
 
+  content: {
+    highlight: {
+      theme: 'monokai',
+      langs: ['json', 'js', 'ts', 'html', 'css', 'vue', 'shell', 'mdc', 'md', 'yaml', 'php', 'apache', 'typescript', 'c#'],
+    }
+  },
+
   modules: [
     '@nuxt/content',
     "@nuxt/icon",
@@ -93,6 +114,7 @@ export default defineNuxtConfig({
     "@nuxt/image",
     "dayjs-nuxt",
     // '@nuxtjs/critters',
+    'nuxt-jsonld',
     "@pinia/nuxt",
     'nuxt-delay-hydration',
   ],

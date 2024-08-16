@@ -5,12 +5,14 @@
 			<NuxtPage />
 		</NuxtLayout>
 
-    <SpeedInsights />
+		<SpeedInsights />
 	</div>
 </template>
 
 <script setup lang="ts">
-import { SpeedInsights } from "@vercel/speed-insights/nuxt"
+import { SpeedInsights } from "@vercel/speed-insights/nuxt";
+import { Fancybox } from "@fancyapps/ui";
+import "@fancyapps/ui/dist/fancybox/fancybox.css";
 
 const { initDarkMode } = useDarkMode();
 const { initAll } = useBootstrapFive();
@@ -22,49 +24,55 @@ onMounted(initDarkMode);
 onUpdated(initDarkMode);
 onMounted(initDyslexiaFont);
 onUpdated(initDyslexiaFont);
+
+onMounted(() => {
+	Fancybox.bind("[data-fancybox]", {
+		// Your custom options
+	});
+});
 </script>
 
 <style lang="scss">
 .page-enter-active,
 .page-leave-active {
-  transition: all 0.4s;
+	transition: all 0.4s;
 }
 
 .page-enter-from,
 .page-leave-to {
-  opacity: 0;
-  filter: blur(1rem);
+	opacity: 0;
+	filter: blur(1rem);
 }
 </style>
 
 <style>
 :root {
-  --scrollbar-thumb: var(--bs-primary);
-  --scrollbar-track: var(--bs-light);
-  --scrollbar-hover: var(--bs-gray-700);
+	--scrollbar-thumb: var(--bs-primary);
+	--scrollbar-track: var(--bs-light);
+	--scrollbar-hover: var(--bs-gray-700);
 }
 
 /* Untuk Firefox */
 * {
-  scrollbar-width: thin;
-  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+	scrollbar-width: thin;
+	scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
 }
 
 /* Untuk WebKit (Chrome, Safari, dll.) */
 ::-webkit-scrollbar {
-  width: 12px;
+	width: 12px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--scrollbar-track);
+	background: var(--scrollbar-track);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--scrollbar-thumb);
-  border-radius: 6px;
+	background: var(--scrollbar-thumb);
+	border-radius: 6px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--scrollbar-hover);
+	background: var(--scrollbar-hover);
 }
 </style>

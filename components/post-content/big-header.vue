@@ -2,7 +2,7 @@
 	<div :data-id="post.id" id="big-header-post">
 		<div class="image-wrapper">
 			<nuxt-img
-				loading="lazy"
+				:loading="isLazy"
 				format="webp"
 				sizes="100vw sm:50vw md:400px"
 				densities="x1 x2"
@@ -107,12 +107,16 @@ const props = withDefaults(
 		post: any;
 		color?: string;
 		isHeader?: boolean;
+    lazyLoading?: boolean;
 	}>(),
 	{
 		color: "#f5f5f5",
 		isHeader: false,
+    lazyLoading: true
 	}
 );
+
+const isLazy = computed(() => props.lazyLoading ? 'lazy' : 'eager');
 </script>
 
 <style lang="scss">

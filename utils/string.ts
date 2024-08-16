@@ -56,3 +56,10 @@ export const generateUUID = (): string => {
 export const toLowerCase = (text: string) => {
   return text.toLowerCase();
 }
+
+export const unslugify = (slug: string): string => {
+  return slug
+    .split('-')
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ');
+};
