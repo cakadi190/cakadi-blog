@@ -39,13 +39,13 @@ export default defineNuxtConfig({
     layoutTransition: { name: 'layout', mode: 'out-in' },
   },
 
-  postcss: {
-    plugins: {
-      "autoprefixer": {},
-      "postcss-nested": {},
-      "postcss-custom-media": {}
-    }
-  },
+  // postcss: {
+  //   plugins: {
+  //     "autoprefixer": {},
+  //     "postcss-nested": {},
+  //     "postcss-custom-media": {}
+  //   }
+  // },
 
   image: {
     format: ['webp']
@@ -58,13 +58,13 @@ export default defineNuxtConfig({
     defaultTimezone: 'Asia/Jakarta',
   },
 
-  critters: {
-    // Options passed directly to critters: https://github.com/GoogleChromeLabs/critters#critters-2
-    config: {
-      // Default: 'media'
-      preload: 'js-lazy',
-    },
-  },
+  // critters: {
+  //   // Options passed directly to critters: https://github.com/GoogleChromeLabs/critters#critters-2
+  //   config: {
+  //     // Default: 'media'
+  //     preload: 'js-lazy',
+  //   },
+  // },
 
   runtimeConfig: {
     public: {
@@ -80,12 +80,21 @@ export default defineNuxtConfig({
     "@nuxtjs/google-fonts",
     "@nuxt/image",
     "dayjs-nuxt",
-    '@nuxtjs/critters',
+    // '@nuxtjs/critters',
     "@pinia/nuxt"
   ],
 
   routeRules: {
     '/': { prerender: true }
+  },
+
+  build: {
+    transpile: [
+      "@nuxt/icon",
+      "@iconify-json/fa6-solid",
+      "@iconify-json/ph",
+      "@iconify-json/solar",
+    ]
   },
 
   compatibilityDate: "2024-08-12"

@@ -1,47 +1,42 @@
 <template>
-	<Teleport to="body">
-		<div class="search-modal" v-if="isMounted" :class="{ open: isOpen }">
-			<div class="container">
-				<div class="search-wrapper">
-					<div class="icon">
-						<Icon name="ph:magnifying-glass-fill" />
-					</div>
-					<input
-						type="text"
-						class="search-input"
-						placeholder="Cari Sesuatu Disini"
-						v-model="searchValue"
-					/>
-					<button class="close-button" @click="toggle" aria-label="Cari Artikel">
-						<icon name="ph:x-bold" />
-					</button>
+	<div class="search-modal" v-if="isMounted" :class="{ open: isOpen }">
+		<div class="container">
+			<div class="search-wrapper">
+				<div class="icon">
+					<Icon name="ph:magnifying-glass-fill" />
 				</div>
+				<input
+					type="text"
+					class="search-input"
+					placeholder="Cari Sesuatu Disini"
+					v-model="searchValue"
+				/>
+				<button class="close-button" @click="toggle" aria-label="Cari Artikel">
+					<icon name="ph:x-bold" />
+				</button>
+			</div>
 
-				<div class="section" id="recent-post">
-					<h3 class="title">Artikel Terkini</h3>
-				</div>
+			<div class="section" id="recent-post">
+				<h3 class="title">Artikel Terkini</h3>
+			</div>
 
-				<div class="section" id="categories">
-					<h3 class="title">Cari Berdasarkan Topik</h3>
+			<div class="section" id="categories">
+				<h3 class="title">Cari Berdasarkan Topik</h3>
 
-          <ul class="categories-list">
-            <li
-              v-for="category in defaultCategories"
-              :key="category.slug"
-            >
-              <nuxt-link
-                :to="`/kategori/${category.slug}`"
-                class="category"
-                @click="toggle"
-              >
-                {{ category.name }}
-              </nuxt-link>
-            </li>
-          </ul>
-				</div>
+				<ul class="categories-list">
+					<li v-for="category in defaultCategories" :key="category.slug">
+						<nuxt-link
+							:to="`/kategori/${category.slug}`"
+							class="category"
+							@click="toggle"
+						>
+							{{ category.name }}
+						</nuxt-link>
+					</li>
+				</ul>
 			</div>
 		</div>
-	</Teleport>
+	</div>
 </template>
 
 <script lang="ts" setup>
@@ -50,16 +45,16 @@ const isMounted = ref(false);
 const searchValue = ref<string | null>(null);
 
 onMounted(() => {
-  isMounted.value = true;
+	isMounted.value = true;
 });
 
 const defaultCategories = ref([
-  { name: 'Teknologi', slug: 'teknologi' },
-  { name: 'Desain Grafis', slug: 'desain-grafis' },
-  { name: 'Coding', slug: 'coding' },
-  { name: 'Pramuka', slug: 'pramuka' },
-  { name: 'Pengalaman Hidup', slug: 'pengalaman-hidup' },
-  { name: 'Kuliah', slug: 'kuliah' },
+	{ name: "Teknologi", slug: "teknologi" },
+	{ name: "Desain Grafis", slug: "desain-grafis" },
+	{ name: "Coding", slug: "coding" },
+	{ name: "Pramuka", slug: "pramuka" },
+	{ name: "Pengalaman Hidup", slug: "pengalaman-hidup" },
+	{ name: "Kuliah", slug: "kuliah" },
 ]);
 </script>
 
@@ -75,13 +70,13 @@ const defaultCategories = ref([
 	transform: translateY(-100%);
 	transition: ease-in-out 0.3s;
 	opacity: 0;
-  // transform: scale(0);
-  z-index: 1200;
-  
+	// transform: scale(0);
+	z-index: 1200;
+
 	&.open {
-    transform: translateY(0);
+		transform: translateY(0);
 		opacity: 1;
-    // transform: scale(1);
+		// transform: scale(1);
 	}
 }
 
@@ -92,7 +87,7 @@ const defaultCategories = ref([
 	align-items: center;
 	justify-content: space-between;
 	margin-top: 3rem;
-  margin-bottom: 2rem;
+	margin-bottom: 2rem;
 
 	@media screen and (max-width: 992px) {
 		margin-top: 1rem;
@@ -136,7 +131,7 @@ const defaultCategories = ref([
 
 	.search-input {
 		width: 100%;
-    height: 100%;
+		height: 100%;
 		position: relative;
 		padding: 2rem 6rem;
 		z-index: 1;
@@ -147,10 +142,10 @@ const defaultCategories = ref([
 		color: var(--bs-body-color-rgb);
 		transition: all 0.3s;
 		position: absolute;
-    background: transparent;
+		background: transparent;
 		left: 0;
 		right: 0;
-    bottom: 0;
+		bottom: 0;
 
 		@media screen and (max-width: 992px) {
 			padding: 1rem 4.5rem;
@@ -168,59 +163,59 @@ const defaultCategories = ref([
 	.title {
 		font-weight: 600;
 		font-size: 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: .75rem;
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
 
-    &::before {
-      content: '';
-      width: .75rem;
-      height: .75rem;
-      background: var(--bs-primary);
-      border-radius: 99rem;
-    }
+		&::before {
+			content: "";
+			width: 0.75rem;
+			height: 0.75rem;
+			background: var(--bs-primary);
+			border-radius: 99rem;
+		}
 	}
 }
 
 #categories {
-  .categories-list {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    padding: 0;
-    margin: 0;
-    margin-top: 1.5rem;
-    gap: .5rem;
-    flex-wrap: wrap;
+	.categories-list {
+		list-style: none;
+		display: flex;
+		align-items: center;
+		padding: 0;
+		margin: 0;
+		margin-top: 1.5rem;
+		gap: 0.5rem;
+		flex-wrap: wrap;
 
-@media screen and (max-width: 992px) {
-  margin-top: 1rem;
-}
+		@media screen and (max-width: 992px) {
+			margin-top: 1rem;
+		}
 
-    li {
-      a {
-        text-decoration: none;
-        padding: .75rem 1.5rem;
-        font-size: 1.25em;
-        display: flex;
-        align-items: center;
-        color: var(--bs-body-color);
-        border: 1px solid rgba(var(--bs-body-color-rgb), .125);
-        border-radius: var(--bs-border-radius-lg);
-        transition: all .2s;
+		li {
+			a {
+				text-decoration: none;
+				padding: 0.75rem 1.5rem;
+				font-size: 1.25em;
+				display: flex;
+				align-items: center;
+				color: var(--bs-body-color);
+				border: 1px solid rgba(var(--bs-body-color-rgb), 0.125);
+				border-radius: var(--bs-border-radius-lg);
+				transition: all 0.2s;
 
-        @media screen and (max-width: 992px) {
-          font-size: 1em;
-          padding: .5rem 1rem;
-        }
+				@media screen and (max-width: 992px) {
+					font-size: 1em;
+					padding: 0.5rem 1rem;
+				}
 
-        &:hover {
-          background: var(--bs-primary);
-          color: var(--bs-white);
-          border-color: var(--bs-primary);
-        }
-      }
-    }
-  }
+				&:hover {
+					background: var(--bs-primary);
+					color: var(--bs-white);
+					border-color: var(--bs-primary);
+				}
+			}
+		}
+	}
 }
 </style>

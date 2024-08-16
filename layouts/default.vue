@@ -3,12 +3,15 @@
     <partials-global-navbar-top />
     <slot />
     <search-modal />
+    <partials-global-navbar-sidenav :nav-menu="navMenus" />
     <back-to-top />
   </div>
 </template>
 
 <script lang="ts" setup>
+import { navMenu } from '@/utils/content';
 
+const navMenus = computed(() => navMenu());
 </script>
 
 <style>

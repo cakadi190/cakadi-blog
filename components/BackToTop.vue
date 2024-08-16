@@ -50,6 +50,7 @@ onBeforeUnmount(() => {
   opacity: 0;
   transition: .3s all;
   margin-bottom: 1rem;
+  z-index: 10;
 
   &.show {
     margin-bottom: 0;

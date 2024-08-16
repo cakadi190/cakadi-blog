@@ -3,7 +3,7 @@
 		class="navbar navbar-expand-lg fixed-top"
 		id="navbar-main"
 		aria-label="Navbar Main"
-    :class="{'scrolled': currentScroll > 10}"
+		:class="{ scrolled: currentScroll > 10 }"
 	>
 		<div class="container">
 			<button
@@ -18,64 +18,51 @@
 			</button>
 			<nuxt-link class="navbar-brand" to="/">
 				<logo-hut-ri />
-        <div class="vr" />
+				<div class="vr" />
 				<logo />
 			</nuxt-link>
 			<search-button class="navbar-toggler" :with-label="false" />
 
-      <partials-global-navbar-menu :nav-menu="navMenu" />
-      <partials-global-navbar-sidenav :nav-menu="navMenu" />
+			<div class="collapse navbar-collapse">
+				<ul class="navbar-nav justify-content-end flex-grow-1">
+					<li class="nav-item" v-for="(item, index) in navMenus" :key="index">
+						<nuxt-link class="nav-link" :to="item.target">
+							{{ item.title }}
+						</nuxt-link>
+					</li>
+					<li class="nav-item d-none d-md-none d-lg-inline-flex">
+						<search-button :with-label="false" class="nav-link" />
+					</li>
+				</ul>
+			</div>
 		</div>
 	</nav>
 </template>
 
 <script lang="ts" setup>
+import { navMenu } from '@/utils/content';
+
 const currentScroll = ref(0);
-const navMenu = ref([
-	{
-		title: "Beranda",
-		target: "/",
-	},
-	{
-		title: "Desain Grafis",
-		target: "/kategori/desain-grafis",
-	},
-	{
-		title: "Coding",
-		target: "/kategori/coding",
-	},
-	{
-		title: "Teknologi",
-		target: "/kategori/teknologi",
-	},
-	{
-		title: "Pramuka",
-		target: "/kategori/pramuka",
-	},
-	{
-		title: "Pengalaman Hidup",
-		target: "/kategori/pengalaman-hidup",
-	},
-]);
+const navMenus = computed(() => navMenu());
 
 onMounted(() => {
-  currentScroll.value = window.scrollY;
-  window.addEventListener("scroll", () => {
-    currentScroll.value = window.scrollY;
-  });
+	currentScroll.value = window.scrollY;
+	window.addEventListener("scroll", () => {
+		currentScroll.value = window.scrollY;
+	});
 });
 </script>
 
 <style lang="scss">
 .navbar#navbar-main {
-  transition: all .2s;
-  border-bottom: 1px solid rgba(var(--bs-body-color-rgb), .125);
+	transition: all 0.2s;
+	border-bottom: 1px solid rgba(var(--bs-body-color-rgb), 0.125);
 
-  &.scrolled {
-    background-color: var(--bs-body-bg);
-    border-bottom: 1px solid rgba(var(--bs-body-color-rgb), .125);
-  }
-  
+	&.scrolled {
+		background-color: var(--bs-body-bg);
+		border-bottom: 1px solid rgba(var(--bs-body-color-rgb), 0.125);
+	}
+
 	.navbar-toggler {
 		padding: 0.5rem;
 		background: transparent;
@@ -95,8 +82,8 @@ onMounted(() => {
 		margin: 0;
 
 		img {
-      height: 32px !important;
-      width: auto !important;
+			height: 32px !important;
+			width: auto !important;
 
 			@media screen and (max-width: 992px) {
 				height: 42px !important;
