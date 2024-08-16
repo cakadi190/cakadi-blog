@@ -70,13 +70,13 @@ export default defineNuxtConfig({
     defaultTimezone: 'Asia/Jakarta',
   },
 
-  critters: {
-    // Options passed directly to critters: https://github.com/GoogleChromeLabs/critters#critters-2
-    config: {
-      // Default: 'media'
-      preload: 'js-lazy',
-    },
-  },
+  // critters: {
+  //   // Options passed directly to critters: https://github.com/GoogleChromeLabs/critters#critters-2
+  //   config: {
+  //     // Default: 'media'
+  //     preload: 'js-lazy',
+  //   },
+  // },
 
   runtimeConfig: {
     public: {
@@ -92,10 +92,11 @@ export default defineNuxtConfig({
     "@nuxtjs/google-fonts",
     "@nuxt/image",
     "dayjs-nuxt",
-    '@nuxtjs/critters',
+    // '@nuxtjs/critters',
     "@pinia/nuxt",
     'nuxt-delay-hydration',
   ],
+
   delayHydration: {
     mode: 'manual',
     debug: process.env.NODE_ENV === 'development',
