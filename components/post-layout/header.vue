@@ -7,13 +7,14 @@
 				class="btn d-none d-md-none d-lg-flex btn-primary btn-lg btn-cta"
 			>
 				<span>Lihat Semua Artikel</span>
-				<icon name="fa6-solid:arrow-right" />
+				<i class="fas fa-arrow-right"></i>
 			</nuxt-link>
 		</div>
 		<div class="col-md-6">
 			<div id="post-header-list">
+        <header-badge title="Artikel Terbaru" />
 				<post-content-small-header
-					v-for="item in data"
+					v-for="item in data.slice(1, 5)"
 					:key="item.id"
 					:item="item"
 				/>

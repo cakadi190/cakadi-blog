@@ -2,18 +2,10 @@
 	<div class="container" id="post-wrapper-content">
 		<div class="row gy-4" id="post-main-content">
 			<main class="col-md-8">
+        <header-line title="Daftar Artikel" :with-right-link="true" link="/artikel" external-link-text="Selengkapnya" />
         <div class="row gy-4">
           <div class="col-md-6" v-for="item in data" :key="item.title">
             <post-content-big-header color="#fff" :post="item" />
-          </div>
-          <div class="col-md-12 justify-content-center d-flex mx-auto">
-            <nuxt-link
-              to="/artikel"
-              class="btn d-none d-md-none d-lg-flex btn-primary gap-2 align-items-center"
-            >
-              <span>Lihat Semua Artikel</span>
-              <icon name="fa6-solid:arrow-right" />
-            </nuxt-link>
           </div>
         </div>
       </main>
@@ -57,7 +49,6 @@ const { data, status, error } = await useLazyAsyncData<any[]>(
 		.title {
 			display: flex;
 			position: relative;
-			height: 1.25rem;
 			font-size: 1.25rem;
 			margin-bottom: 1rem;
 			border-bottom: 1px solid rgba(var(--bs-body-color-rgb), 0.125);
@@ -66,7 +57,6 @@ const { data, status, error } = await useLazyAsyncData<any[]>(
 				height: 2rem;
 				display: flex;
 				padding-bottom: 1rem;
-				position: absolute;
 				border-bottom: 2px solid var(--bs-primary);
 				left: 0;
 				bottom: 0;

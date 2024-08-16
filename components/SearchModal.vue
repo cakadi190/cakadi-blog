@@ -3,7 +3,7 @@
 		<div class="container">
 			<div class="search-wrapper">
 				<div class="icon">
-					<Icon name="ph:magnifying-glass-fill" />
+					<i class="fas fa-search"></i>
 				</div>
 				<input
 					type="text"
@@ -12,7 +12,7 @@
 					v-model="searchValue"
 				/>
 				<button class="close-button" @click="toggle" aria-label="Cari Artikel">
-					<icon name="ph:x-bold" />
+					<i class="fas fa-x"></i>
 				</button>
 			</div>
 

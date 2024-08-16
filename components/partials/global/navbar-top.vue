@@ -14,7 +14,7 @@
 				aria-controls="navbarTop"
 				aria-label="Toggle navigation"
 			>
-				<icon name="fa6-solid:bars" />
+				<i class="fas fa-bars"></i>
 			</button>
 			<nuxt-link class="navbar-brand" to="/">
 				<logo-hut-ri />
