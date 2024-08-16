@@ -24,35 +24,33 @@
 			>
 				<h3 class="text-merriweather title">{{ post.title }}</h3>
 			</nuxt-link>
-			<client-only>
-				<div class="post-meta">
-					<div class="author">
-						<nuxt-img
-							loading="lazy"
-							sizes="100vw sm:50vw md:400px"
-							densities="x1 x2"
-							format="webp"
-							:alt="post.author.name"
-							:src="getGravatar(post.author.email)"
-						/>
-						<span
-							data-bs-toggle="tooltip"
-							data-bs-placement="top"
-							:title="'Penanda bahwa ini adalah pengguna yang terverifikasi atau sang pemilik situs'"
-							class="d-flex gap-1 align-items-center"
-							v-if="post.author.email === 'cakadi190@gmail.com'"
-						>
-							<span>{{ post.author.name }}</span>
-							<icon class="text-primary" name="solar:verified-check-bold" />
-						</span>
-					</div>
-					<time
-						class="date"
-						:datetime="$dayjs(post.created_at).utc().toString()"
-						>{{ $dayjs(post.created_at).format("LL") }}</time
+			<div class="post-meta">
+				<div class="author">
+					<nuxt-img
+						loading="lazy"
+						sizes="100vw sm:50vw md:400px"
+						densities="x1 x2"
+						format="webp"
+						:alt="post.author.name"
+						:src="getGravatar(post.author.email)"
+					/>
+					<span
+						data-bs-toggle="tooltip"
+						data-bs-placement="top"
+						:title="'Penanda bahwa ini adalah pengguna yang terverifikasi atau sang pemilik situs'"
+						class="d-flex gap-1 align-items-center"
+						v-if="post.author.email === 'cakadi190@gmail.com'"
 					>
+						<span>{{ post.author.name }}</span>
+						<icon class="text-primary" name="solar:verified-check-bold" />
+					</span>
 				</div>
-			</client-only>
+				<time
+					class="date"
+					:datetime="$dayjs(post.created_at).utc().toString()"
+					>{{ $dayjs(post.created_at).format("LL") }}</time
+				>
+			</div>
 		</div>
 	</div>
 </template>

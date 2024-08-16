@@ -39,7 +39,6 @@ export default defineNuxtConfig({
     layoutTransition: { name: 'layout', mode: 'out-in' },
   },
 
-
   postcss: {
     plugins: {
       "autoprefixer": {},
@@ -63,7 +62,7 @@ export default defineNuxtConfig({
     // Options passed directly to critters: https://github.com/GoogleChromeLabs/critters#critters-2
     config: {
       // Default: 'media'
-      preload: 'swap',
+      preload: 'js-lazy',
     },
   },
 
