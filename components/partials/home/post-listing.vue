@@ -5,7 +5,7 @@
         <header-line title="Daftar Artikel" :with-right-link="true" link="/artikel" external-link-text="Selengkapnya" />
         <div class="row gy-4">
           <div class="col-md-6" v-for="item in data" :key="item.title">
-            <post-content-big-header color="#fff" :post="item" />
+            <post-content-big-header :lazy-loading="false" color="#fff" :post="item" />
           </div>
         </div>
       </main>

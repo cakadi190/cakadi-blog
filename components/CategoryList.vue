@@ -9,7 +9,7 @@
 				<div class="category-card-image">
 					<nuxt-img
 						loading="lazy"
-						sizes="100vw sm:50vw md:400px"
+						sizes="100vw sm:50vw md:100px"
 						densities="x1 x2"
 						format="webp"
 						:src="item.image"
