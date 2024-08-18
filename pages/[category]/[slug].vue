@@ -6,6 +6,7 @@
 				:description="data.description"
 				:image="buildUrl(data.image)"
 				:author="data.author.name"
+        :url="metaUrl"
 			/>
 
 			<post-content-single :data="data" />
@@ -15,7 +16,11 @@
 
 <script lang="ts" setup>
 import { buildUrl } from "#imports";
+
 const { params } = useRoute();
+const { fullPath } = useRoute();
+
+const metaUrl = computed(() => buildUrl(fullPath));
 
 const { data } = await useAsyncData<any>("post-single", () => {
 	return (
