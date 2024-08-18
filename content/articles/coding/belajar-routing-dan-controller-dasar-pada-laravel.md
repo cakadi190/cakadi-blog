@@ -27,7 +27,6 @@ Routing adalah proses menentukan bagaimana aplikasi web merespons permintaan dar
 ## Membuat Route Sederhana
 
 Pertama, mari kita buat route sederhana. Buka file `routes/web.php` dan tambahkan kode berikut:
-::syntax
 
 ```php
 Route::get('/hello', function () {
@@ -35,13 +34,11 @@ Route::get('/hello', function () {
 });
 ```
 
-::
 Route di atas akan menangani permintaan GET ke URL `/hello` dan mengembalikan teks 'Hello, World!'. Sangat sederhana, bukan?
 
 ## Route dengan Parameter
 
 Laravel juga memungkinkan kita untuk membuat route dengan parameter dinamis. Misalnya, kita ingin membuat route yang menerima ID pengguna sebagai parameter:
-::syntax
 
 ```php
 Route::get('/user/{id}', function ($id) {
@@ -49,23 +46,17 @@ Route::get('/user/{id}', function ($id) {
 });
 ```
 
-::
-
 Dengan route ini, jika kita mengunjungi URL `/user/1`, kita akan mendapatkan teks 'User ID: 1'. Parameter `{id}` akan otomatis diisi dengan nilai yang kita masukkan di URL.
 
 ## Route dengan Controller
 
 Untuk aplikasi yang lebih kompleks, kita sebaiknya memisahkan logika aplikasi ke dalam controller. Mari kita buat route yang menggunakan controller. Pertama, kita buat controller dengan perintah Artisan:
-::syntax
 
 ```bash
 php artisan make:controller UserController
 ```
 
-::
-
 Setelah controller dibuat, kita bisa menambahkan metode di dalamnya. Misalnya, kita tambahkan metode `show`:
-::syntax
 
 ```php
 // app/Http/Controllers/UserController.php
@@ -82,21 +73,17 @@ class UserController extends Controller
 }
 ```
 
-::
 Kemudian, kita daftarkan route yang menggunakan controller ini:
-::syntax
 
 ```php
 Route::get('/user/{id}', [UserController::class, 'show']);
 ```
 
-::
 Dengan menggunakan syntax array `[UserController::class, 'show']`, Laravel akan mengarahkan permintaan ke metode `show` di `UserController`.
 
 ## Menambahkan Middleware ke Route
 
 Middleware adalah lapisan yang dapat digunakan untuk memeriksa atau memodifikasi permintaan HTTP yang masuk sebelum mencapai controller. Misalnya, kita bisa menambahkan middleware `auth` ke route:
-::syntax
 
 ```php
 Route::get('/dashboard', function () {
@@ -104,13 +91,11 @@ Route::get('/dashboard', function () {
 })->middleware('auth');
 ```
 
-::
 Route ini akan mengecek apakah pengguna sudah login sebelum mengakses dashboard.
 
 ## Route Groups
 
 Untuk menyederhanakan dan mengorganisir route, kita bisa menggunakan route groups. Misalnya, kita ingin menambahkan prefix ke beberapa route:
-::syntax
 
 ```php
 Route::prefix('admin')->group(function () {
@@ -124,7 +109,6 @@ Route::prefix('admin')->group(function () {
 });
 ```
 
-::
 Semua route di dalam group ini akan otomatis mendapatkan prefix `admin` di URL-nya, seperti `/admin/users` dan `/admin/settings`.
 
 ## Kesimpulan

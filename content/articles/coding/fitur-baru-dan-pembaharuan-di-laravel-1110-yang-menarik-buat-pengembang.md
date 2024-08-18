@@ -19,7 +19,7 @@ updated_at: 2024-06-09 18:50:01
 ---
 
 ::alert{type="info"}
-Artikel ini dilansir dari [Use a Closure with updateOrInsert() in Laravel 11.10](https://laravel-news.com/laravel-11-10-0){:target="_blank"}  oleh Laravel News.
+Artikel ini dilansir dari [Use a Closure with updateOrInsert() in Laravel 11.10](https://laravel-news.com/laravel-11-10-0){:target="\_blank"} oleh Laravel News.
 ::
 
 Halo, rek! Laravel 11.10 baru saja rilis dan membawa serangkaian fitur dan pembaruan yang pasti bikin kamu semangat. Bayangkan, sekarang kamu bisa lebih fleksibel dengan `updateOrInsert()`, dan ada dukungan keren untuk model yang dihapus dengan lembut saat menggunakan explicit route model binding.
@@ -30,7 +30,6 @@ Namun, gak cuman itu loh pembaharuannya. Penasaran apa aja pembaharuan dari Lara
 
 [Mark Eriksson](https://github.com/Markshall) berkontribusi dengan menambahkan kemampuan untuk melewatkan callback sebagai argumen kedua ke metode query builder `updateOrInsert()`. Di dalam callback, variabel boolean `$exists` dilewatkan sehingga Anda dapat menulis logika untuk memperbarui kolom spesifik berdasarkan apakah rekaman tersebut ada atau tidak:
 
-::syntax
 ```php
 DB::table('users')->updateOrInsert(
   ['user_id' => $user_id],
@@ -50,7 +49,6 @@ DB::table('users')->updateOrInsert(
   }
 );
 ```
-::
 
 Lihat [Pull Request #51566](https://github.com/laravel/framework/pull/51566) untuk detail implementasi lengkap.
 
@@ -60,7 +58,6 @@ Lihat [Pull Request #51566](https://github.com/laravel/framework/pull/51566) unt
 
 > PR ini memungkinkan resolusi model yang dihapus secara soft saat menggunakan fitur pemodelan rute eksplisit Laravel. Ini memungkinkan pengembang untuk menggunakan pemodelan rute eksplisit tanpa harus menyesuaikan logika resolusi saat berurusan dengan model yang dihapus secara soft. Untuk melakukannya, digunakan metode `withTrashed()` yang sama seperti pemodelan implisit.
 
-::syntax
 ```php
 // Sebelumnya
 Route::get('/users/{user}', ...);
@@ -72,7 +69,6 @@ Route::bind('user', function (string $value) {
 Route::get('/users/{user}', ...)->withTrashed();
 Route::model('user', User::class);
 ```
-::
 
 Lihat [Pull Request #51651](https://github.com/laravel/framework/pull/51651) untuk detail implementasi lengkap.
 

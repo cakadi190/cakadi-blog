@@ -1,18 +1,19 @@
 <template>
-	<div class="card mb-3 overflow-hidden" v-if="isMounted" :id="generateRandomString(10)" ref="elId">
+	<div class="card mb-3 overflow-hidden" v-if="isMounted">
 		<div class="card-header align-items-center d-flex gap-2 justify-content-between" style="background: var(--bs-body-bg)">
 			<span>{{ $props.filename ?? "Penampil Kode" }}</span>
 
 			<div v-if="$props.enableCopy">
 				<button class="btn btn-sm" @click="copyToClipBoard">
-					<i class="fas"
+					<i 
+            class="fas"
             :class="copied ? 'fa-check' : 'fa-copy'"
           ></i>
 				</button>
 			</div>
 		</div>
 		<div class="overflow-auto">
-			<pre :class="$props.class" class="mb-0 p-3 inline-code"><slot /></pre>
+			<pre :class="$props.class" class="mb-0 p-3 inline-code" :id="generateRandomString(10)" ref="elId"><slot /></pre>
 		</div>
 	</div>
 </template>
@@ -59,7 +60,7 @@ const copyToClipBoard = async () => {
   const elementTargetId = elId.value.getAttribute('id');
 
   try {
-    await copyFromElement(`#${elementTargetId} pre`);
+    await copyFromElement(`#${elementTargetId}`);
     copied.value = true;
     setTimeout(() => (copied.value = false), 2500);
   } catch (error) {

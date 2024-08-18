@@ -45,19 +45,15 @@ Laravel pertama kali dirilis oleh Taylor Otwell pada tahun 2011. Tujuan utama da
 Untuk memulai menggunakan Laravel, pastikan Anda telah menginstall Composer, yang merupakan dependency manager untuk PHP. Berikut adalah langkah-langkah dasar untuk memulai proyek Laravel:
 
 1. **Instalasi Composer**:
-    ::syntax
     ```bash
     composer create-project --prefer-dist laravel/laravel nama-proyek-anda
     ```
-    ::
 
 2. **Menjalankan Server Development**:
-    ::syntax
     ```bash
     cd nama-proyek-anda
     php artisan serve
     ```
-    ::
 
 3. **Mengakses Aplikasi**:
     Buka browser dan akses `http://localhost:8000` untuk melihat aplikasi Laravel yang baru saja Anda buat.

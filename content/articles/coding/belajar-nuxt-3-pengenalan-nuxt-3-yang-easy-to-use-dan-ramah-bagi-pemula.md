@@ -46,20 +46,16 @@ Nuxt.js pertama kali diperkenalkan pada tahun 2016 oleh Alexandre Chopin, Sebast
 Untuk memulai dengan Nuxt 3, pastikan Anda telah menginstall Node.js dan npm (Node Package Manager). Berikut adalah langkah-langkah dasar untuk memulai proyek Nuxt 3:
 
 1. **Instalasi Nuxt 3**:
-    ::syntax
     ```bash
     npx nuxi init nama-proyek-anda
     cd nama-proyek-anda
     npm install
     ```
-    ::
 
 2. **Menjalankan Server Development**:
-    ::syntax
     ```bash
     npm run dev
     ```
-    ::
 
 3. **Mengakses Aplikasi**:
     Buka browser dan akses `http://localhost:3000` untuk melihat aplikasi Nuxt 3 yang baru saja Anda buat.

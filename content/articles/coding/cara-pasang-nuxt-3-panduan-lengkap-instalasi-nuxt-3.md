@@ -34,11 +34,9 @@ Sebelum memulai, pastikan Anda sudah menginstall beberapa prasyarat berikut:
 
 Langkah pertama adalah membuat proyek Nuxt 3 baru menggunakan `npx`, alat baris perintah yang datang bersama npm. Jalankan perintah berikut di terminal atau command prompt Anda:
 
-::syntax
 ```bash
 npx nuxi init nama-proyek-anda
 ```
-::
 
 Gantilah `nama-proyek-anda` dengan nama proyek yang Anda inginkan.
 
@@ -46,31 +44,25 @@ Gantilah `nama-proyek-anda` dengan nama proyek yang Anda inginkan.
 
 Setelah proyek dibuat, masuk ke direktori proyek yang baru dengan perintah:
 
-::syntax
 ```bash
 cd nama-proyek-anda
 ```
-::
 
 ### 3. Menginstall Dependensi
 
 Selanjutnya, install semua dependensi yang diperlukan untuk proyek Nuxt 3 dengan menjalankan perintah berikut:
 
-::syntax
 ```bash
 npm install
 ```
-::
 
 ### 4. Menjalankan Server Development
 
 Setelah semua dependensi terpasang, Anda dapat menjalankan server development untuk melihat aplikasi Nuxt 3 Anda. Gunakan perintah berikut:
 
-::syntax
 ```bash
 npm run dev
 ```
-::
 
 ### 5. Mengakses Aplikasi
 
@@ -82,7 +74,6 @@ Setelah berhasil memasang dan menjalankan proyek Nuxt 3, Anda mungkin ingin mela
 
 Contoh konfigurasi sederhana di `nuxt.config.ts`:
 
-::syntax
 ```typescript
 export default defineNuxtConfig({
   // Global page headers
@@ -119,7 +110,6 @@ export default defineNuxtConfig({
   }
 })
 ```
-::
 
 ## Kesimpulan
 

@@ -39,7 +39,6 @@ PHP 8.4 hadir dengan beberapa fungsi pencarian array baru yang bakal bikin ngodi
 PHP 8.4 juga mengenalkan hook properti yang terinspirasi dari bahasa seperti Kotlin, C#, dan Swift. Dengan hook ini, kita bisa bikin logika akses dan modifikasi properti langsung di dalam kelas.
 
 Contoh:
-::syntax
 
 ```php
 class User implements Named
@@ -61,7 +60,7 @@ class User implements Named
 }
 ```
 
-::
+
 
 ## 3. Akses Anggota Tanpa Tanda Kurung Tambahan
 
@@ -70,45 +69,40 @@ Satu lagi fitur yang nggak kalah keren di PHP 8.4 adalah akses anggota langsung 
 Contoh:
 
 **Sintaks Lama (PHP <= 8.3):**
-::syntax
 ```php
 $request = (new Request())->withMethod('GET')->withUri('/hello-world');
 ```
-::
+
 **Sintaks Baru (PHP 8.4):**
-::syntax
 ```php
 $request = new Request()->withMethod('GET')->withUri('/hello-world');
 ```
-::
+
 
 ## 4. Dukungan Baru DOM HTML5
 PHP 8.4 menambahkan kelas `\Dom\HTMLDocument` yang bisa menerjemahkan kode HTML5 dengan benar. Kelas `\DOMDocument` yang lama masih tersedia untuk kompatibilitas ke belakang.
 
-::syntax
 ```php
 $doc = \Dom\HTMLDocument::createFromString($contents);
 ```
-::
+
 
 ## 5. Penggantian Sistem Deklarasi Tipe Data&nbsp;`null`
 PHP memiliki perilaku aneh di mana variabel yang diketikkan dengan nilai default `null` akan menjadi null secara otomatis:
 
-::syntax
 ```php
 function foo(string $bar = null) { ... }
 
 // Usang: Menandai parameter $bar secara implisit sebagai nullable sudah
 // tidak digunakan lagi, tipe nullable eksplisit harus digunakan sebagai gantinya
 ```
-::
+
 
 Perilaku ini sekarang _udah gak dipake_ lagi dan akan dihapus di PHP 9. Solusinya adalah dengan membuat Book secara tersirat dapat di-`null`-kan:
 
-::syntax
 ```php
 function foo(?string $bar = null) { ... }
 ```
-::
+
 
 Itu dia beberapa fitur keren di PHP 8.4 yang bakal bikin coding jadi lebih menyenangkan. Tunggu apalagi? _Stay tuned_ buat update selanjutnya sampai PHP 8.4 resmi dirilis!

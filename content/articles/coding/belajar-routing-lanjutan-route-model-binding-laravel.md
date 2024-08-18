@@ -13,8 +13,8 @@ tags:
 author:
   name: "Cak Adi"
   avatar: null
-  email: 'cakadi190@gmail.com'
-  description: 'Seorang Fullstack Web Developer yang berbasis di Kabupaten Ngawi yang suka sekali dengan desain dan juga hal yang berbau teknologi.'
+  email: "cakadi190@gmail.com"
+  description: "Seorang Fullstack Web Developer yang berbasis di Kabupaten Ngawi yang suka sekali dengan desain dan juga hal yang berbau teknologi."
 created_at: 2024-06-01 19:30:22
 updated_at: 2024-06-01 19:30:22
 ---
@@ -29,15 +29,12 @@ Route Model Binding adalah fitur di Laravel yang secara otomatis menyuntikkan mo
 
 Untuk menggunakan Route Model Binding, kita harus terlebih dahulu memiliki model dan route yang membutuhkan parameter model tersebut. Mari kita mulai dengan membuat model `Post`.
 
-::syntax
 ```bash
 php artisan make:model Post -m
 ```
-::
 
 Perintah di atas akan membuat model `Post` beserta file migrasinya. Selanjutnya, kita definisikan skema tabel untuk `Post` di file migrasi yang baru dibuat.
 
-::syntax
 ```php
 // database/migrations/xxxx_xx_xx_create_posts_table.php
 public function up()
@@ -50,15 +47,12 @@ public function up()
     });
 }
 ```
-::
 
 Jalankan migrasi untuk membuat tabel `posts` di database:
 
-::syntax
 ```bash
 php artisan migrate
 ```
-::
 
 Selanjutnya, kita tambahkan data dummy ke tabel `posts` menggunakan seeder atau Tinker.
 
@@ -66,7 +60,6 @@ Selanjutnya, kita tambahkan data dummy ke tabel `posts` menggunakan seeder atau 
 
 Sekarang kita buat route yang menggunakan Route Model Binding. Buka file `routes/web.php` dan tambahkan kode berikut:
 
-::syntax
 ```php
 use App\Models\Post;
 
@@ -74,7 +67,6 @@ Route::get('/posts/{post}', function (Post $post) {
     return view('post.show', ['post' => $post]);
 });
 ```
-::
 
 Pada route di atas, Laravel akan otomatis mencari `Post` berdasarkan parameter `{post}` dan menyuntikkan instance model `Post` yang sesuai ke dalam closure. Ini mengurangi kebutuhan untuk mengambil model secara manual di setiap route.
 
@@ -82,15 +74,12 @@ Pada route di atas, Laravel akan otomatis mencari `Post` berdasarkan parameter `
 
 Untuk aplikasi yang lebih terstruktur, kita sering menggunakan controller. Mari kita buat controller untuk `Post`.
 
-::syntax
 ```bash
 php artisan make:controller PostController
 ```
-::
 
 Tambahkan metode `show` di `PostController`:
 
-::syntax
 ```php
 // app/Http/Controllers/PostController.php
 namespace App\Http\Controllers;
@@ -105,17 +94,14 @@ class PostController extends Controller
     }
 }
 ```
-::
 
 Lalu, ubah route kita untuk menggunakan controller:
 
-::syntax
 ```php
 use App\Http\Controllers\PostController;
 
 Route::get('/posts/{post}', [PostController::class, 'show']);
 ```
-::
 
 Dengan cara ini, kita tetap mendapatkan manfaat dari Route Model Binding saat menggunakan controller.
 
@@ -123,7 +109,6 @@ Dengan cara ini, kita tetap mendapatkan manfaat dari Route Model Binding saat me
 
 Kadang kita perlu mengubah logika default dari Route Model Binding, misalnya menggunakan kolom lain selain `id` untuk pencarian model. Kita bisa menyesuaikan ini di metode `boot` dari `App\Providers\RouteServiceProvider`.
 
-::syntax
 ```php
 // app/Providers/RouteServiceProvider.php
 use App\Models\Post;
@@ -138,7 +123,6 @@ public function boot()
     });
 }
 ```
-::
 
 Dengan pengaturan di atas, Laravel akan mencari `Post` berdasarkan kolom `slug` bukan `id`.
 
@@ -146,10 +130,8 @@ Dengan pengaturan di atas, Laravel akan mencari `Post` berdasarkan kolom `slug` 
 
 Route Model Binding adalah fitur powerful di Laravel yang membantu kita menulis kode lebih bersih dan terstruktur. Dengan memahami dan memanfaatkan fitur ini, kita dapat mengurangi banyak kode boilerplate dan membuat aplikasi lebih mudah di-maintain. Selamat mencoba dan semoga bermanfaat!
 
-::syntax
 ```php
 Route::get('/posts/{post}', function (Post $post) {
     return view('post.show', ['post' => $post]);
 });
 ```
-::
