@@ -6,6 +6,7 @@
     <Meta name="keywords" :content="keywords" />
     <Meta name="author" :content="author" />
     <Meta name="robots" :content="robots" />
+    <Meta property="fb:app_id" content="1201538714206454" />
     <Meta property="og:url" :content="generatedUrl" />
     <Meta property="og:title" :content="generatedTitle" />
     <Meta property="og:description" :content="description" />
