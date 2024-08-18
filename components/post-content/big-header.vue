@@ -59,7 +59,7 @@
 				<div class="author">
 					<nuxt-img
 						loading="lazy"
-						sizes="100vw sm:50vw md:400px"
+						sizes="100vw sm:50vw md:200px lg:400px"
 						densities="x1 x2"
 						format="webp"
 						:alt="post.author.name"
