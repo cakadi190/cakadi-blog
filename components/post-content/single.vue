@@ -2,6 +2,10 @@
   <div id="post-single">
     <div class="meta-header">
       <div class="container">
+  
+        <time class="d-block mb-2 mb-lg-0 date" :datetime="$dayjs(data.created_at).utc().toString()">{{ $dayjs(data.created_at).format("LLLL")
+          }}</time>
+  
         <h1 class="title">{{ data.title }}</h1>
   
         <nav class="d-none d-md-none d-lg-inline-flex" aria-label="Breadcrumb Navigation">
@@ -28,7 +32,7 @@
     </div>
   
     <div class="container">
-      <div class="row">
+      <div class="row gy-4">
         <div class="col-md-8">
           <ContentRendererMarkdown :value="data" />
   
@@ -36,7 +40,7 @@
             <div>
               <i class="fas fa-folder"></i>
               <nuxt-link :to="`/kategori/${slugify(data.category[0])}`
-                          ">{{ unslugify(data.category[0]) }}</nuxt-link>
+                            ">{{ unslugify(data.category[0]) }}</nuxt-link>
             </div>
             <div>
               <i class="fas fa-tag"></i>
@@ -52,8 +56,8 @@
             <h4>Artikel ini ditulis oleh</h4>
   
             <div class="profile-wrapper">
-              <nuxt-img :preload="true" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 800px" densities="x1 x2"
-                format="webp" :alt="data.author.name" :src="getGravatar(data.author.email)" />
+              <nuxt-img :preload="true" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 800px"
+                densities="x1 x2" format="webp" :alt="data.author.name" :src="getGravatar(data.author.email)" />
   
               <div class="profile-info">
                 <h5 class="mb-2 align-items-center justify-content-center justify-content-lg-start d-flex gap-1 lh-1">

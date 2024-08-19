@@ -13,7 +13,7 @@
       </div>
     </div>
     <div class="overflow-auto">
-      <pre :class="$props.class" class="mb-0 p-3 inline-code" :id="elementId" ref="elId"><slot /></pre>
+      <pre :class="$props.class" class="mb-0 p-3 inline-code" ref="elId"><slot /></pre>
     </div>
   </div>
 </template>
@@ -22,52 +22,33 @@
 import { ref, onMounted, computed } from 'vue';
 import { copyFromElement } from '#imports';
 
-const props = defineProps({
-  code: {
-    type: String,
-    default: "",
-  },
-  language: {
-    type: String,
-    default: null,
-  },
-  filename: {
-    type: String,
-    default: null,
-  },
-  highlights: {
-    type: Array as () => number[],
-    default: () => [],
-  },
-  meta: {
-    type: String,
-    default: null,
-  },
-  class: {
-    type: String,
-    default: null,
-  },
-  enableCopy: {
-    type: Boolean,
-    default: true,
-  },
-  id: {
-    type: String,
-    default: null,
-  },
+const props = withDefaults(defineProps<{
+  code: string;
+  language: string | null;
+  filename: string | null;
+  highlights: number[];
+  meta: string | null;
+  class: string | null;
+  enableCopy: boolean;
+  id: string | null;
+}>(), {
+  code: '',
+  language: null,
+  filename: null,
+  highlights: () => [],
+  meta: null,
+  class: null,
+  enableCopy: true,
+  id: null,
 });
 
 const isMounted = ref(false);
 const elId = ref<null | HTMLElement>(null);
 const copied = ref(false);
 
-const elementId = computed(() => 
-  props.id || `code-viewer-${props.filename?.replace(/\s+/g, '-').toLowerCase() || 'default'}`
-);
-
 const copyToClipBoard = async () => {
   try {
-    await copyFromElement(`#${elementId.value}`);
+    await copyFromElement(elId.value);
     copied.value = true;
     setTimeout(() => (copied.value = false), 2500);
   } catch (error) {
@@ -80,11 +61,29 @@ onMounted(() => isMounted.value = true);
 
 <style lang="scss">
 pre {
+  box-sizing: border-box;
+  width: 100%;
   background: #2e2e2e;
   
   code {
     .line {
       display: block;
+      padding: 0.25em;
+
+      &::before {
+        content: attr(line);
+        margin-right: .5rem;
+        color: white;
+        opacity: .25;
+        display: inline-block;
+        min-width: 1.5rem;
+      }
+
+      &.highlight {
+        &::before {
+          opacity: 1;
+        }
+      }
     }
   }
 }

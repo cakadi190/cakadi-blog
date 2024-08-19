@@ -30,14 +30,21 @@ export const copyInputValue = async (inputSelector: string): Promise<string> => 
 
 /**
  * Menyalin semua konten teks dari elemen target ke clipboard.
- * @param {string} elementSelector - Selector dari elemen yang konten teksnya akan disalin.
+ * @param {string | HTMLElement} element - Selector string atau HTMLElement yang konten teksnya akan disalin.
  * @returns {Promise<string>} - Promise yang resolve dengan pesan sukses jika penyalinan berhasil.
  * @throws {Error} - Jika elemen tidak ditemukan atau penyalinan gagal.
  */
-export const copyFromElement = async (elementSelector: string): Promise<string> => {
-	const element = document.querySelector<HTMLElement>(elementSelector);
-	if (element) {
-		return copyToClipboard(element.textContent || '');
+export const copyFromElement = async (element: string | HTMLElement): Promise<string> => {
+	let targetElement: HTMLElement | null;
+
+	if (typeof element === 'string') {
+		targetElement = document.querySelector<HTMLElement>(element);
+	} else {
+		targetElement = element;
+	}
+
+	if (targetElement) {
+		return copyToClipboard(targetElement.textContent || '');
 	} else {
 		throw new Error('Element not found');
 	}

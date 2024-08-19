@@ -50,7 +50,7 @@ php artisan make:middleware CheckAge
 Nah, perintah itu nantinya membuat file middleware baru di `app/Http/Middleware/CheckAge.php`. Berikut adalah contoh sederhana middleware `CheckAge`:
 
 
-```php
+```php [CheckAge.php]{18-22}
 <?php
 
 namespace App\Http\Middleware;
