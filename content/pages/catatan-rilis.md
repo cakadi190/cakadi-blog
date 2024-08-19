@@ -7,6 +7,13 @@ updated_at: 2024-07-05 13:30:00
 
 Catatan Rilis ini berisi catatan perubahan dan pembaruan yang telah dilakukan pada situs ini. Kami berkomitmen untuk terus meningkatkan dan memperbarui konten serta fitur-fitur di situs ini untuk memberikan pengalaman terbaik kepada pengunjung.
 
+## Versi 2.0.1 (2024-08-19)
+- **Minor Change**: Perbaikan pada beberapa tampilan.
+
+## Versi 2.0.0 (2024-08-17)
+- **Pembaruan Desain**: Pembaharuan dan penyegaran desain pada situs.
+- **Atomic Pattern**: Mencoba sistem pengelompokan file baru.
+
 ### Versi 1.1.0 (2024-07-05)
 - **Core System Upgrade**: Upgrade versi dependensi nuxt ke 3.12.3.
 - **Post UI**: Memperbaiki tampilan post grid yang mana menghapus garis tepi.

@@ -1,8 +1,8 @@
 <template>
   <div :data-id="post.id" id="big-header-post">
     <div class="image-wrapper">
-      <nuxt-img :loading="isLazy" format="webp" sizes="100vw sm:50vw md:400px" densities="x1 x2" :src="post.image"
-        :alt="post.title" />
+      <nuxt-img :loading="isLazy" format="webp" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 800px"
+        densities="x1 x2" :src="post.image" :alt="post.title" />
     </div>
     <nuxt-link :to="`/kategori/${slugify(post.category[0])}`" class="category" v-if="post.category[0]">
       <div class="decoration-before">

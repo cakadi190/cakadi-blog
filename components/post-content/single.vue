@@ -21,7 +21,8 @@
         </nav>
   
         <a :href="buildUrl(data.image)" data-fancybox class="image-wrapper">
-          <nuxt-img sizes="100vw sm:50vw md:400px" densities="x1 x2" :src="buildUrl(data.image)" />
+          <nuxt-img sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 800px" densities="x1 x2"
+            :src="buildUrl(data.image)" />
         </a>
       </div>
     </div>
@@ -35,7 +36,7 @@
             <div>
               <i class="fas fa-folder"></i>
               <nuxt-link :to="`/kategori/${slugify(data.category[0])}`
-                      ">{{ unslugify(data.category[0]) }}</nuxt-link>
+                          ">{{ unslugify(data.category[0]) }}</nuxt-link>
             </div>
             <div>
               <i class="fas fa-tag"></i>
@@ -51,8 +52,8 @@
             <h4>Artikel ini ditulis oleh</h4>
   
             <div class="profile-wrapper">
-              <nuxt-img loading="lazy" sizes="100vw sm:50vw md:200px lg:400px" densities="x1 x2" format="webp"
-                :alt="data.author.name" :src="getGravatar(data.author.email)" />
+              <nuxt-img loading="lazy" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 800px" densities="x1 x2"
+                format="webp" :alt="data.author.name" :src="getGravatar(data.author.email)" />
   
               <div class="profile-info">
                 <h5 class="mb-2 align-items-center justify-content-center justify-content-lg-start d-flex gap-1 lh-1">
@@ -170,8 +171,8 @@ useJsonld({
     margin-bottom: 2rem;
     padding-bottom: 2rem;
     padding-top: 2rem;
-    border-top: 1px solid rgba(var(--bs-body-color-rgb), .125);
-    border-bottom: 1px solid rgba(var(--bs-body-color-rgb), .125);
+    border-top: 1px dashed rgba(var(--bs-body-color-rgb), .1);
+    border-bottom: 1px dashed rgba(var(--bs-body-color-rgb), .1);
 
     .profile-wrapper {
       display: flex;
@@ -186,7 +187,7 @@ useJsonld({
         border-radius: 50%;
         object-fit: cover;
         margin-right: 20px;
-        border: 3px solid #ffffff;
+        border: 3px dashed #ffffff;
       }
 
       .profile-info {
@@ -225,8 +226,8 @@ useJsonld({
     gap: .75rem;
     margin-top: 2rem;
     padding-top: 2rem;
-    border-top: 1px solid rgba(var(--bs-body-color-rgb), .125);
-    
+    border-top: 1px dashed rgba(var(--bs-body-color-rgb), .1);
+
     @media screen and (max-width: 992px) {
       align-items: flex-start;
     }
