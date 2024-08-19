@@ -1,7 +1,7 @@
 <template>
   <div :data-id="post.id" id="big-header-post">
     <div class="image-wrapper">
-      <nuxt-img :loading="isLazy" format="webp" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 800px"
+      <nuxt-img :preload="true" :loading="isLazy" format="webp" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 800px"
         densities="x1 x2" :src="post.image" :alt="post.title" />
     </div>
     <nuxt-link :to="`/kategori/${slugify(post.category[0])}`" class="category" v-if="post.category[0]">
@@ -24,7 +24,7 @@
       </nuxt-link>
       <div class="post-meta">
         <div class="author">
-          <nuxt-img loading="lazy" sizes="100vw sm:50vw md:200px lg:400px" densities="x1 x2" format="webp"
+          <nuxt-img :preload="true" sizes="100vw sm:50vw md:200px lg:400px" densities="x1 x2" format="webp"
             :alt="post.author.name" :src="getGravatar(post.author.email)" />
           <span class="d-flex gap-1 align-items-center lh-1" style="vertical-align: middle">
             {{ post.author.name }}

@@ -1,7 +1,7 @@
 <template>
   <nuxt-link :to="`/${item._dir}/${item._path.replace(/^\/[^\/]+\/[^\/]+\//, '')}`" class="post-item">
     <div class="image-wrapper">
-      <nuxt-img loading="lazy" format="webp" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 800px"
+      <nuxt-img :preload="true" format="webp" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 800px"
         densities="x1 x2" :alt="item.title" :src="item.image" />
     </div>
     <div class="post-content">
@@ -9,7 +9,7 @@
   
       <div style="vertical-align: middle" class="post-meta">
         <div class="author">
-          <nuxt-img loading="lazy" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 800px" densities="x1 x2"
+          <nuxt-img :preload="true" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 800px" densities="x1 x2"
             format="webp" :src="getGravatar(item.author.email)" :alt="item.author.name" />
           <span class="d-flex gap-1 align-items-center lh-1" v-if="item.author.email === 'cakadi190@gmail.com'"
             style="vertical-align: middle">{{ item.author.name }}

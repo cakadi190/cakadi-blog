@@ -1,8 +1,8 @@
 <template>
-  <nuxt-img loading="lazy" format="webp" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 800px"
+  <nuxt-img :preload="true" format="webp" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 800px"
     densities="x1 x2" alt="Logo Catatan Cak Adi" :src="logoSource" :width="width" :height="height"
     class="d-lg-inline d-md-none d-none" />
-  <nuxt-img loading="lazy" format="webp" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 800px"
+  <nuxt-img :preload="true" format="webp" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 800px"
     densities="x1 x2" alt="Logo Catatan Cak Adi" :src="logoSourceSm" :width="width" :height="height" class="d-lg-none" />
 </template>
 

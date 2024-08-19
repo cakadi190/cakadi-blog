@@ -21,8 +21,8 @@
         </nav>
   
         <a :href="buildUrl(data.image)" data-fancybox class="image-wrapper">
-          <nuxt-img sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 800px" densities="x1 x2"
-            :src="buildUrl(data.image)" loading="lazy" />
+          <nuxt-img :preload="true" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 800px" densities="x1 x2"
+            :src="buildUrl(data.image)" />
         </a>
       </div>
     </div>
@@ -52,7 +52,7 @@
             <h4>Artikel ini ditulis oleh</h4>
   
             <div class="profile-wrapper">
-              <nuxt-img loading="lazy" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 800px" densities="x1 x2"
+              <nuxt-img :preload="true" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 800px" densities="x1 x2"
                 format="webp" :alt="data.author.name" :src="getGravatar(data.author.email)" />
   
               <div class="profile-info">

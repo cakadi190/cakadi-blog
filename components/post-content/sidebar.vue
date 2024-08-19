@@ -2,7 +2,7 @@
   <nuxt-link :to="`/${post._dir}/${post._path.replace(/^\/[^\/]+\/[^\/]+\//, '')}`" class="article-list-wrapper"
     :data-title="post.title" :data-id="generateUUID()">
     <div class="article-img">
-      <nuxt-img :src="post.image" />
+      <nuxt-img :preload="true" :src="post.image" />
     </div>
     <div class="article-content">
       <h2>{{ limitChars(post.title, 50) }}</h2>
