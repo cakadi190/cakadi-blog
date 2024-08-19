@@ -6,7 +6,7 @@ export default defineEventHandler(async (event) => {
   const data = await serverQueryContent(event).find();
 
   // Buat rute untuk setiap item data
-  const contentRoutes = data?.filter(data => data.draft === false).sort(
+  const routes = data?.filter(data => data.draft === false).sort(
 		(a, b) =>
 			new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime()
 	).map(item => ({
@@ -15,11 +15,6 @@ export default defineEventHandler(async (event) => {
 		priority: 0.9,
 		lastmod: item.updated_at
 	})).filter((items) => items.url.includes('/artikel'));
-
-  // Gabungkan semua rute
-  const routes = [
-    ...contentRoutes,
-  ];
 
   const sitemap = generateSitemap(routes);
 

@@ -77,7 +77,7 @@
           <div id="comment-section">
             <h4>Komentar</h4>
   
-            <div class="alert-info alert">
+            <div class="alert-info alert mb-0">
               Bagian ini masih tahap pengerjaan ya. Nanti bakalan hadir dalam waktu dekat.
             </div>
           </div>
