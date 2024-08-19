@@ -37,6 +37,8 @@
     "@iconify-json/ph": "^1.1.14",
     "@iconify-json/solar": "^1.1.10",
     "@types/bootstrap": "^5.2.10",
-    "@types/jquery": "^3.5.30"
+    "@types/jquery": "^3.5.30",
+    "@types/md5": "^2.3.5",
+    "@types/uuid": "^10.0.0"
   }
 }

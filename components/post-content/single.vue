@@ -28,8 +28,24 @@
   
     <div class="container">
       <div class="row">
-        <div class="col-md-9">
+        <div class="col-md-8">
           <ContentRendererMarkdown :value="data" />
+  
+          <div class="meta-data">
+            <div>
+              <i class="fas fa-folder"></i>
+              <nuxt-link :to="`/kategori/${slugify(data.category[0])}`
+                      ">{{ unslugify(data.category[0]) }}</nuxt-link>
+            </div>
+            <div>
+              <i class="fas fa-tag"></i>
+              <span><span v-for="(tag, index) in data.tags" :key="index">
+                  <nuxt-link :to="`/topik/${slugify(tag)}`">{{ unslugify(tag)
+                    }}</nuxt-link>
+                  <span v-if="index + 1 < data.tags.length">, &nbsp;</span>
+                </span></span>
+            </div>
+          </div>
   
           <div id="author-section">
             <h4>Artikel ini ditulis oleh</h4>
@@ -42,7 +58,8 @@
                 <h5 class="mb-2 align-items-center justify-content-center justify-content-lg-start d-flex gap-1 lh-1">
                   {{ data.author.name }}
   
-                  <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Pengguna yang terverifikasi" v-if="data.author.email === 'cakadi190@gmail.com'" class="text-primary"
+                  <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Pengguna yang terverifikasi"
+                    v-if="data.author.email === 'cakadi190@gmail.com'" class="text-primary"
                     style="font-size: 1rem; vertical-align: middle">
                     <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
                       <path fill="currentColor"
@@ -55,19 +72,20 @@
               </div>
             </div>
           </div>
-
+  
           <div id="comment-section">
             <h4>Komentar</h4>
-
+  
             <div class="alert-info alert">
               Bagian ini masih tahap pengerjaan ya. Nanti bakalan hadir dalam waktu dekat.
             </div>
           </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-4">
           <aside class="sidebar-inner">
             <sidebar-widget-socmed />
             <sidebar-widget-donate />
+            <sidebar-widget-recent-articles />
           </aside>
         </div>
       </div>
@@ -112,7 +130,7 @@ useJsonld({
 });
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 #post-single {
   .meta-header {
     padding-top: 7.5rem;
@@ -196,6 +214,32 @@ useJsonld({
           margin-right: 0;
           margin-bottom: 15px;
         }
+      }
+    }
+  }
+
+  .meta-data {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: .75rem;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(var(--bs-body-color-rgb), .125);
+    
+    @media screen and (max-width: 992px) {
+      align-items: flex-start;
+    }
+
+    >* {
+      vertical-align: middle;
+      display: flex;
+      align-items: center;
+      gap: .325rem;
+
+
+      a {
+        text-decoration: none;
       }
     }
   }
