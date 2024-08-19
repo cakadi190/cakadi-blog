@@ -1,7 +1,18 @@
 <template>
   <div id="main-layouts">
     <partials-global-navbar-top />
-    <slot />
+    
+    <Suspense>
+      <template #default>
+        <div>
+          <slot />
+        </div>
+      </template>
+      <template #fallback>
+        <div>Loading...</div>
+      </template>
+    </Suspense>
+
     <partials-global-footer-main />
     <search-modal />
     <partials-global-navbar-sidenav :nav-menu="navMenus" />
@@ -10,9 +21,16 @@
 </template>
 
 <script lang="ts" setup>
+import { nextTick } from 'vue'
 import { navMenu } from '@/utils/content';
 
 const navMenus = computed(() => navMenu());
+
+onMounted(() => {
+  nextTick(() => {
+    // Any DOM-dependent code here
+  })
+})
 </script>
 
 <style lang="scss">

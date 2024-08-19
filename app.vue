@@ -1,9 +1,10 @@
 <template>
 	<div id="app-root" :style="getDyslexiaStyle">
-		<NuxtLayout>
-			<NuxtLoadingIndicator />
+    <nuxt-loading-indicator />
+    
+		<nuxt-layout>
 			<NuxtPage />
-		</NuxtLayout>
+		</nuxt-layout>
 
 		<SpeedInsights />
 	</div>

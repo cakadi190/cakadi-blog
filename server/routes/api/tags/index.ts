@@ -7,18 +7,22 @@ export default defineEventHandler(async (event) => {
 
   const tagSet = new Set(
     data.flatMap((item: any) =>
-      (item.category ?? []).map((category: string) => ({
-        name: category,
-        slug: slugify(category),
-        image: `/images/category/${slugify(category)}.png`,
-        thumb: `/images/category/${slugify(category)}-thumb.png`,
+      (item.tags ?? []).map((tag: string) => ({
+        name: tag,
+        slug: slugify(tag),
+        image: `${slugify(tag)}.png`,
+        thumb: `/images/category/${slugify(tag)}-thumb.png`,
       }))
     )
   );
 
-  const computedCategories = Array.from(tagSet);
+  const computedTags = Array.from(tagSet);
 
   const { res } = event.node;
   res.setHeader('Content-Type', 'application/json');
-  res.end(JSON.stringify(computedCategories));
+  res.end(JSON.stringify({
+    data: computedTags,
+    success: !!computedTags,
+    message: computedTags ? 'Success' : 'Tag not found',
+  }));
 });
