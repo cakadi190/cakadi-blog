@@ -1,7 +1,7 @@
 <template>
 	<div class="row gy-4" v-if="data">
 		<div class="col-md-6">
-			<post-content-big-header :post="data[0]" />
+			<post-content-big-header :lazy-loading="false" :post="data[0]" />
 			<nuxt-link
 				to="/artikel"
 				class="btn d-none d-md-none d-lg-flex btn-primary btn-lg btn-cta"
