@@ -27,7 +27,7 @@ Middleware adalah sebuah sistem pada sebuah perangkat lunak (_software_) yang ma
 
 Ibarat kata seperti kamu memiliki rumah yang megah nan mewah, namun ada orang lain yang ingin masuk ke dalam rumahmu, ntah itu tamu, maling atau keluargamu. Nah, middleware ini ibarat sebagai satpam pada rumahmu yang memberikan perlindungan dan keamanan dari ancaman tindak kriminal seperti pencuri, perampok, dan kejahatan lainnya. Bisa disimak ilustrasi dibawah ini supaya lebih paham.
 
-![Gambaran Awal Middleware](/uploads/content/middleware-laravel/gambaran-awal-middleware.webp){class="w-100 border rounded-3"}
+![Gambaran Cara Kerja Middleware](/uploads/content/middleware-laravel/gambaran-awal-middleware.webp){title="Gambaran Cara Kerja Middleware"}
 
 ## Cara Kerja Middleware
 

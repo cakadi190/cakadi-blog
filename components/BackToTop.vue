@@ -39,9 +39,9 @@ onBeforeUnmount(() => {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: var(--bs-primary);
-  color: white;
-  border: none;
+  background-color: var(--bs-white);
+  border: 1px solid #d6d6d6;
+  color: var(--bs-body-color);
   border-radius: 50%;
   width: 50px;
   height: 50px;
@@ -55,6 +55,12 @@ onBeforeUnmount(() => {
   &.show {
     margin-bottom: 0;
     opacity: 1;
+  }
+
+  &:hover {
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+    color: var(--bs-white);
   }
 }
 </style>
