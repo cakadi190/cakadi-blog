@@ -89,3 +89,5 @@ Teks editor sebenarnya bebas menggunakan berbagai aplikasi, yang penting bisa di
 ![Tampilan VSCode](/uploads/content/basic-html-preambule/vscode-screenshot.png){title="Tampilan Editor dari Visual Studio Code"}
 
 ### 2. Peramban (*Browser*)
+
+Untuk peramban juga demikian, kalian bebas memilih untuk menggunakan peramban apapun yang penting bisa digunakan untuk melihat dokumen yang akan dibuat. Seperti contohnya saya menggunakan [Google Chrome](https://www.google.com/chrome){target="_blank" noopener noreferer}.

@@ -91,8 +91,8 @@ onMounted(() => {
       &:before {
         display: block;
         content: " ";
-        margin-top: -6.25rem;
-        height: 6.25rem;
+        margin-top: -11rem;
+        height: 11rem;
         visibility: hidden;
       }
     }
