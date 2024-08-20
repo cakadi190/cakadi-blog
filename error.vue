@@ -12,19 +12,19 @@
             <p class="lead">{{ error.message }}</p>
   
             <a :href="buildUrl('/')" class="btn btn-primary">Kembali</a>
-            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample"
+            <!-- <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample"
               aria-expanded="false" aria-controls="collapseExample">
               Lihat Log Error
-            </button>
+            </button> -->
           </div>
   
-          <div class="collapse" id="collapseExample">
+          <!-- <div class="collapse" id="collapseExample">
             <div class="container">
               <div class="card card-body">
                 <div class="overflow-auto" v-html="error.stack" />
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </NuxtLayout>

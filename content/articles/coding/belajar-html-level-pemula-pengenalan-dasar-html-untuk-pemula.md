@@ -15,7 +15,7 @@ author:
   name: "Cak Adi"
   avatar: null
   email: "cakadi190@gmail.com"
-  description: "Seorang Fullstack Web Developer yang berbasis di Kabupaten Ngawi yang suka sekali dengan desain dan juga hal yang berbau teknologi."
+  description: "Seorang Fullstack Web Developer berbasis di Kabupaten Ngawi, dengan passion mendalam dalam desain dan teknologi. Kini, ia juga tengah mengeksplorasi ketertarikannya yang baru terhadap geografi, memperluas cakrawalanya dalam dunia yang penuh inspirasi dan inovasi."
 created_at: 2024-08-20 03:00:00
 updated_at: 2024-08-20 03:00:00 
 ---
@@ -36,3 +36,15 @@ Menurut Wikipedia, HTML merupakan sebuah bahasa markah yang digunakan untuk memb
 HTML merupakan sebuah bahasa markah yang mana didefinisikan oleh **penanda** untuk membuat dan membangun sebuah situs. Nah yang dimaksud penanda disini kita sebut saja **TAG**. HTML ini berperan penting dalam sebuah situs untuk menentukan struktur dan tata letak sebuah konten yang akan ditampilkan.
 
 Nah kalau digambarkan atau diilustrasikan, peran HTML itu akan seperti gambar dibawah ini.
+
+![Ilustrasi Fungsi HTML, CSS dan Javascript](/uploads/content/basic-html-preambule/ilustrasi-fungsi-html-css-js.png){title="Ilustrasi Fungsi HTML, CSS dan Javascript"}
+
+Seperti yang sudah dijelaskan sebelumnya, bahwa HTML itu tidaklah sendirian. Melainkan harus didampingi dengan bahasa lainnya untuk membentuk sebuah tampilan, tata letak dan desain situs web yang bagus dan baik untuk dilihat.
+
+Bayangkan sebuah website seperti tubuh manusia. HTML adalah tulangnya, yang memberi struktur dan bentuk. CSS adalah kulitnya, yang membuatnya terlihat menarik dan cantik. Sedangkan JavaScript adalah ototnya, yang membuat tubuh ini bergerak dan berinteraksi. Dengan ketiganya bekerja bersama, website menjadi hidup dan dinamis!
+
+## Awal Sejarah HTML Diciptakan
+
+Artikel ini akan memuat sedikit kisah dan cerita terciptanya HTML, sisanya bisa kalian baca pada artikel ini.
+
+::content-viewer{target="/coding/belajar-html-level-pemula-sejarah-perkembangan-html"}

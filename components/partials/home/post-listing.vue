@@ -11,6 +11,7 @@
       </main>
 			<aside class="col-md-4">
 				<div class="sidebar-inner">
+					<sidebar-widget-subscribe />
 					<sidebar-widget-socmed />
           <sidebar-widget-donate />
 				</div>

@@ -1,7 +1,7 @@
 <template>
   <div id="page-tags" class="pt-5 mt-5">
     <meta-seo :title="pageTitle" :description="pageDescription" :url="buildUrl(fullPath)" />
-
+  
     <div class="container mb-4 mt-5">
       <h1 class="text-merriweather">{{ pageTitle }}</h1>
       <p class="text-muted">{{ pageDescription }}</p>
@@ -43,7 +43,7 @@ const getArticlesByTag = async (tag: string) => {
   const { data } = await useAsyncData(
     `tag-articles-${tag}`,
     () => (queryContent('articles') as any) // Sesuaikan dengan direktori konten Anda
-      .where({ tags: { $contains: tag } })
+      .where({ tags: { $contains: tag }, draft: { $eq: false } })
       .find()
   );
 

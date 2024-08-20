@@ -8,7 +8,7 @@
     </div>
     <div class="container">
       <div class="row gy-4">
-        <ContentList path="/articles">
+        <ContentList path="/articles" :query="{ where: { draft: { $eq: false } } }">
           <template #default="{ list }">
             <div class="col-md-4" v-for="data in sortByDate(list)" :key="data._id">
               <post-content-big-header color="#fff" :post="data" />

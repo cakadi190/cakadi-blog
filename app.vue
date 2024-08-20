@@ -1,13 +1,13 @@
 <template>
-	<div id="app-root" :style="getDyslexiaStyle">
+  <div id="app-root" :style="getDyslexiaStyle">
     <nuxt-loading-indicator />
-    
-		<nuxt-layout>
-			<NuxtPage />
-		</nuxt-layout>
-
-		<SpeedInsights />
-	</div>
+  
+    <nuxt-layout>
+      <NuxtPage />
+    </nuxt-layout>
+  
+    <SpeedInsights />
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -27,53 +27,72 @@ onMounted(initDyslexiaFont);
 onUpdated(initDyslexiaFont);
 
 onMounted(() => {
-	Fancybox.bind("[data-fancybox]", {
-		// Your custom options
-	});
+  Fancybox.bind("[data-fancybox]", {
+    // Your custom options
+  });
 });
 </script>
 
 <style lang="scss">
 .page-enter-active,
 .page-leave-active {
-	transition: all 0.4s;
+  transition: all 0.4s;
 }
 
 .page-enter-from,
 .page-leave-to {
-	opacity: 0;
-	filter: blur(1rem);
+  opacity: 0;
+  filter: blur(1rem);
 }
 </style>
 
 <style>
 :root {
-	--scrollbar-thumb: var(--bs-primary);
-	--scrollbar-track: var(--bs-light);
-	--scrollbar-hover: var(--bs-gray-700);
+  --scrollbar-thumb: var(--bs-primary);
+  --scrollbar-track: var(--bs-light);
+  --scrollbar-hover: var(--bs-gray-700);
 }
 
 /* Untuk Firefox */
 * {
-	scrollbar-width: thin;
-	scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
 }
 
 /* Untuk WebKit (Chrome, Safari, dll.) */
 ::-webkit-scrollbar {
-	width: 12px;
+  width: 12px;
 }
 
 ::-webkit-scrollbar-track {
-	background: var(--scrollbar-track);
+  background: var(--scrollbar-track);
 }
 
 ::-webkit-scrollbar-thumb {
-	background: var(--scrollbar-thumb);
-	border-radius: 6px;
+  background: var(--scrollbar-thumb);
+  border-radius: 6px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-	background: var(--scrollbar-hover);
+  background: var(--scrollbar-hover);
+}
+</style>
+
+<style lang="scss">
+#post-single #content-wrapper {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    &:before {
+      display: block;
+      content: " ";
+      margin-top: -6.25rem;
+      height: 6.25rem;
+      visibility: hidden;
+    }
+  }
 }
 </style>

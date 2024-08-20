@@ -2,7 +2,7 @@
   <div id="content-wrapper">
     <ContentRenderer v-if="data" :value="data">
       <meta-seo :title="data.title" :description="data.description" :image="buildUrl(data.image)"
-        :author="data.author.name" :url="metaUrl" />
+        :author="data.author.name" :url="metaUrl" type="article" />
   
       <post-content-single :data="data" />
     </ContentRenderer>
@@ -26,4 +26,11 @@ const { data } = await useAsyncData<any>("post-single", () => {
     ) as any
   ).findOne();
 });
+
+if (!data.value) {
+  throw createError({
+    statusCode: 404,
+    statusMessage: 'Page Not Found'
+  })
+}
 </script>

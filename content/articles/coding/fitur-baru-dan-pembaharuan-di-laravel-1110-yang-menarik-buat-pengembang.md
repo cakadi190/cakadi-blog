@@ -9,11 +9,12 @@ tags:
   - Laravel
   - Laravel 11.10
   - Fitur Laravel
+  - Ngoding
 author:
   name: "Cak Adi"
   avatar: null
   email: "cakadi190@gmail.com"
-  description: "Seorang Fullstack Web Developer yang berbasis di Kabupaten Ngawi yang suka sekali dengan desain dan juga hal yang berbau teknologi."
+  description: "Seorang Fullstack Web Developer berbasis di Kabupaten Ngawi, dengan passion mendalam dalam desain dan teknologi. Kini, ia juga tengah mengeksplorasi ketertarikannya yang baru terhadap geografi, memperluas cakrawalanya dalam dunia yang penuh inspirasi dan inovasi."
 created_at: 2024-06-09 18:50:01
 updated_at: 2024-06-09 18:50:01
 ---

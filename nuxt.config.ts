@@ -12,7 +12,10 @@ export default defineNuxtConfig({
       'Fira Code': true,
       'Fira Sans': true,
       'Merriweather': true,
+      'Baskervville': true,
     },
+    download: true,
+    inject: true
   },
 
   app: {

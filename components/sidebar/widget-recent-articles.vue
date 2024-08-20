@@ -1,5 +1,5 @@
 <template>
-  <div class="widget" id="recent-articles">
+  <div class="widget" id="recent-articles" v-if="isLoaded">
     <h3 class="title"><span>Artikel Lainnya</span></h3>
 
     <div class="article-list">
@@ -23,6 +23,7 @@
 import { computed } from 'vue';
 import { useRoute } from 'vue-router';
 
+const isLoaded = ref<boolean>(false);
 const route = useRoute();
 const currentPath = computed(() => route.fullPath);
 
@@ -40,6 +41,8 @@ const filteredAndSortedArticles = computed(() => (list: any) => {
     .filter((item: any) => `/artikel${item._path}` !== route.path)
     .slice(0, 5);
 });
+
+onMounted(() => isLoaded.value = true);
 </script>
 
 <style>

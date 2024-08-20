@@ -34,7 +34,9 @@
     <div class="container">
       <div class="row gy-4">
         <div class="col-md-8">
-          <ContentRendererMarkdown :value="data" />
+          <div id="content-wrapper">
+            <ContentRendererMarkdown :value="data" />
+          </div>
   
           <div class="meta-data">
             <div>
