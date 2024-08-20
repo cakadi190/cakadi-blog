@@ -1,10 +1,10 @@
 <template>
-  <div class="card overflow-hidden">
+  <div class="card overflow-hidden" :style="{width: fitContent ? 'fit-content' : ''}" :class="{'mx-auto': fitContent}">
     <a :href="refinedSrc" class="card-img-top" :data-fancybox="gallery ? 'gallery' : ''" :data-src="refinedSrc"
       :data-caption="galleryCaption">
       <component :is="imgComponent" class="w-100 d-block" :src="refinedSrc" :alt="alt" :width="width" :height="height" />
     </a>
-    <div class="card-header border-0 border-top" v-if="title" v-html="title" />
+    <div class="card-header border-0 text-center border-top" v-if="title" v-html="title" />
   </div>
 </template>
 
@@ -22,6 +22,7 @@ const props = withDefaults(defineProps<{
   title?: string;
   gallery?: boolean;
   galleryCaption?: string;
+  fitContent?: boolean;
 }>(), {
   alt: '',
   src: '',

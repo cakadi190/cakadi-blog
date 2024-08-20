@@ -29,6 +29,9 @@ importers:
       '@pinia/nuxt':
         specifier: ^0.5.3
         version: 0.5.3(magicast@0.3.4)(rollup@4.20.0)(typescript@5.5.4)(vue@3.4.37(typescript@5.5.4))
+      '@stefanobartoletti/nuxt-social-share':
+        specifier: ^1.0.0
+        version: 1.0.0(magicast@0.3.4)(rollup@4.20.0)
       '@vercel/analytics':
         specifier: ^1.3.1
         version: 1.3.1
@@ -1136,6 +1139,9 @@ packages:
 
   '@socket.io/component-emitter@3.1.2':
     resolution: {integrity: sha512-9BCxFwvbGg/RsZK9tjXd8s4UcwR0MWeFQ1XEKIQVVvAGJyINdrqKMcTRyLoK8Rse1GjzLV9cwjWV1olXRWEXVA==}
+
+  '@stefanobartoletti/nuxt-social-share@1.0.0':
+    resolution: {integrity: sha512-smrfpagBbNaW9fNAZK/6c1rK/UXNgYWY4Iu1+S1C1hN94NBKSidoLE4R+k/X9aVT380Pc4CbgQiLO1mrVCCnOw==}
 
   '@trysound/sax@0.2.0':
     resolution: {integrity: sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA==}
@@ -5262,6 +5268,15 @@ snapshots:
   '@sindresorhus/merge-streams@2.3.0': {}
 
   '@socket.io/component-emitter@3.1.2': {}
+
+  '@stefanobartoletti/nuxt-social-share@1.0.0(magicast@0.3.4)(rollup@4.20.0)':
+    dependencies:
+      '@nuxt/kit': 3.12.4(magicast@0.3.4)(rollup@4.20.0)
+      defu: 6.1.4
+    transitivePeerDependencies:
+      - magicast
+      - rollup
+      - supports-color
 
   '@trysound/sax@0.2.0': {}
 

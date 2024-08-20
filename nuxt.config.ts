@@ -18,6 +18,11 @@ export default defineNuxtConfig({
     inject: true
   },
 
+  socialShare: {
+    baseUrl: process.env.BASE_URL,
+    label: false,
+  },
+
   app: {
     head: {
       htmlAttrs: {
@@ -120,6 +125,7 @@ export default defineNuxtConfig({
     'nuxt-jsonld',
     "@pinia/nuxt",
     'nuxt-delay-hydration',
+    "@stefanobartoletti/nuxt-social-share"
   ],
 
   delayHydration: {

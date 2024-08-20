@@ -44,7 +44,10 @@ const fetchArticles = async (category: string) => {
   const { data } = await useAsyncData(
     `category-articles-${category}`,
     () => (queryContent('articles') as any) // Sesuaikan dengan direktori konten Anda
-      .where({ category: { $contains: category } })
+      .where({ 
+        category: { $contains: category }, 
+        draft: { $eq: false }, 
+      })
       .find()
   );
 

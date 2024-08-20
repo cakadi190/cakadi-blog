@@ -53,7 +53,7 @@
   
             <button class="btn btn-sm" :class="{'btn-primary': i == accessbilityFontSizeNumber}" v-for="i in 4" :key="i" @click="changeFontSize(i)">{{ i }}x</button>
   
-            <div class="fw-normal d-none d-md-none d-lg-inline-flex lh-1 align-middle ms-auto">
+            <div class="fw-normal d-none d-md-none d-lg-inline-flex lh-1 align-items-center align-middle ms-auto">
               <span class="d-none d-md-none d-lg-inline">Fitur Aksesbilitas</span>
               <i class="fas fa-universal-access lh-1 align-middle d-lg-none"></i>
               <span>&nbsp;</span>
