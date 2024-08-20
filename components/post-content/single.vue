@@ -44,10 +44,16 @@
                 'Mode Gelap' }}</span>
             </button>
             <div class="vr" />
+            <button class="btn btn-sm lh-1 align-middle p-2 d-flex gap-2 align-items-center"
+              @click="() => toggleDyslexiaFont()">
+              <i class="fas fa-fw fa-universal-access"></i>
+              <span class="d-none d-sm-inline">{{ isDyslexiaFontEnabled ? 'Nonaktifkan' : 'Aktifkan' }} Font Disleksia</span>
+            </button>
+            <div class="vr" />
   
             <button class="btn btn-sm" :class="{'btn-primary': i == accessbilityFontSizeNumber}" v-for="i in 4" :key="i" @click="changeFontSize(i)">{{ i }}x</button>
   
-            <div class="fw-normal lh-1 align-middle ms-auto">
+            <div class="fw-normal d-none d-md-none d-lg-inline-flex lh-1 align-middle ms-auto">
               <span class="d-none d-md-none d-lg-inline">Fitur Aksesbilitas</span>
               <i class="fas fa-universal-access lh-1 align-middle d-lg-none"></i>
               <span>&nbsp;</span>
@@ -124,8 +130,9 @@
 
 <script lang="ts" setup>
 import { buildUrl, slugify, getGravatar, unslugify } from "#imports";
-import { useDarkMode } from "#imports";
+import { useDarkMode, useDyslexiaSettings } from "#imports";
 
+const { toggleDyslexiaFont, isDyslexiaFontEnabled } = useDyslexiaSettings();
 const { toggleDarkMode, isDarkMode } = useDarkMode();
 const accessbilityFontSize = ref<string>('1em');
 const accessbilityFontSizeNumber = ref<number>(1);
