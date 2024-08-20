@@ -9,6 +9,11 @@
   
         <h1 class="title mb-0 mb-lg-2">{{ data.title }}</h1>
   
+        <div class="social-share">
+          <SocialShare v-for="network in ['facebook', 'twitter', 'whatsapp', 'reddit', 'linkedin', 'email']" :key="network" :network="network"
+            :styled="true" aria-label="Share Yuk!" :label="false" class="social-item" />
+        </div>
+  
         <nav class="d-none d-md-none d-lg-inline-flex" aria-label="Breadcrumb Navigation">
           <ul class="breadcrumb mb-0">
             <li class="breadcrumb-item">
@@ -47,11 +52,13 @@
             <button class="btn btn-sm lh-1 align-middle p-2 d-flex gap-2 align-items-center"
               @click="() => toggleDyslexiaFont()">
               <i class="fas fa-fw fa-universal-access"></i>
-              <span class="d-none d-sm-inline">{{ isDyslexiaFontEnabled ? 'Nonaktifkan' : 'Aktifkan' }} Font Disleksia</span>
+              <span class="d-none d-sm-inline">{{ isDyslexiaFontEnabled ? 'Nonaktifkan' : 'Aktifkan' }} Font
+                Disleksia</span>
             </button>
             <div class="vr" />
   
-            <button class="btn btn-sm" :class="{'btn-primary': i == accessbilityFontSizeNumber}" v-for="i in 4" :key="i" @click="changeFontSize(i)">{{ i }}x</button>
+            <button class="btn btn-sm" :class="{'btn-primary': i == accessbilityFontSizeNumber}" v-for="i in 4" :key="i"
+              @click="changeFontSize(i)">{{ i }}x</button>
   
             <div class="fw-normal d-none d-md-none d-lg-inline-flex lh-1 align-items-center align-middle ms-auto">
               <span class="d-none d-md-none d-lg-inline">Fitur Aksesbilitas</span>
@@ -69,7 +76,7 @@
             <div>
               <i class="fas fa-folder"></i>
               <nuxt-link :to="`/kategori/${slugify(data.category[0])}`
-                                  ">{{ unslugify(data.category[0]) }}</nuxt-link>
+                                    ">{{ unslugify(data.category[0]) }}</nuxt-link>
             </div>
             <div>
               <i class="fas fa-tag"></i>
@@ -183,6 +190,28 @@ useJsonld({
 </script>
 
 <style lang="scss" scoped>
+.social-share {
+  position: fixed;
+  top: 6.25rem;
+  margin-left: -3rem;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+
+  .social-item {
+    color: white;
+    text-decoration: none;
+  }
+
+  @media screen and (max-width: 992px) {
+    position: relative;
+    margin-top: .5rem;
+    flex-direction: row;
+    top: unset;
+    margin-left: unset;
+  }
+}
+
 #post-single {
   .meta-header {
     padding-top: 7.5rem;
