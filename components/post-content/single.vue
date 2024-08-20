@@ -35,23 +35,27 @@
     <div class="container">
       <div class="row gy-4">
         <div class="col-md-8">
-          <div id="content-wrapper">
-            <div id="toolbar-accessbility" class="card card-body">
-              <button class="btn btn-sm lh-1 align-middle p-2 d-flex gap-2 align-items-center" @click="() => toggleDarkMode()">
-                <i class="fas fa-fw" :class="{'fa-moon': isDarkMode, 'fa-sun': !isDarkMode}"></i>
-                <span class="d-none d-sm-inline">Ganti Ke {{ isDarkMode ? 'Mode Terang' :
-                  'Mode Gelap' }}</span>
-              </button>
-              <div class="vr" />
-
-              <div class="fw-normal lh-1 align-middle ms-auto"> 
-                <span class="d-none d-md-none d-lg-inline">Fitur Aksesbilitas</span>
-                <i class="fas fa-universal-access lh-1 align-middle d-lg-none"></i>
-                <span>&nbsp;</span>
-                <span class="badge bg-info">Beta</span>
-              </div>
-            </div>
+          <!-- Toolbar accessbility -->
+          <div id="toolbar-accessbility" class="card card-body">
+            <button class="btn btn-sm lh-1 align-middle p-2 d-flex gap-2 align-items-center"
+              @click="() => toggleDarkMode()">
+              <i class="fas fa-fw" :class="{'fa-moon': isDarkMode, 'fa-sun': !isDarkMode}"></i>
+              <span class="d-none d-sm-inline">Ganti Ke {{ isDarkMode ? 'Mode Terang' :
+                'Mode Gelap' }}</span>
+            </button>
+            <div class="vr" />
   
+            <button class="btn btn-sm" :class="{'btn-primary': i == accessbilityFontSizeNumber}" v-for="i in 4" :key="i" @click="changeFontSize(i)">{{ i }}x</button>
+  
+            <div class="fw-normal lh-1 align-middle ms-auto">
+              <span class="d-none d-md-none d-lg-inline">Fitur Aksesbilitas</span>
+              <i class="fas fa-universal-access lh-1 align-middle d-lg-none"></i>
+              <span>&nbsp;</span>
+              <span class="badge bg-info">Beta</span>
+            </div>
+          </div>
+  
+          <div id="content-wrapper" :style="{fontSize: accessbilityFontSize}">
             <ContentRendererMarkdown :value="data" />
           </div>
   
@@ -59,7 +63,7 @@
             <div>
               <i class="fas fa-folder"></i>
               <nuxt-link :to="`/kategori/${slugify(data.category[0])}`
-                              ">{{ unslugify(data.category[0]) }}</nuxt-link>
+                                  ">{{ unslugify(data.category[0]) }}</nuxt-link>
             </div>
             <div>
               <i class="fas fa-tag"></i>
@@ -123,10 +127,23 @@ import { buildUrl, slugify, getGravatar, unslugify } from "#imports";
 import { useDarkMode } from "#imports";
 
 const { toggleDarkMode, isDarkMode } = useDarkMode();
+const accessbilityFontSize = ref<string>('1em');
+const accessbilityFontSizeNumber = ref<number>(1);
 
 const props = defineProps<{
   data?: any;
 }>();
+
+const changeFontSize = (size: number) => {
+  const varMap: { [key: number]: string } = {
+    1: '1em',
+    2: '1.125em',
+    3: '1.25em',
+    4: '1.325em',
+  };
+  accessbilityFontSize.value = varMap[size];
+  accessbilityFontSizeNumber.value = size;
+}
 
 const breadList = ref([
   { text: "Beranda", link: buildUrl("/") },
@@ -203,6 +220,11 @@ useJsonld({
     align-items: center;
     gap: .5rem;
     flex-direction: row;
+    background: lighten(#eee, 5%);
+
+    @at-root [data-bs-theme=dark] & {
+      background: mix(#fff, #010016, 10%);
+    }
   }
 
   #author-section {
@@ -228,7 +250,9 @@ useJsonld({
         }
 
         .profile-info {
-          h5, p {
+
+          h5,
+          p {
             color: var(--bs-white);
           }
 

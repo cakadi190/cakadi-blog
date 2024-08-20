@@ -46,4 +46,20 @@ blockquote {
     margin-bottom: 0 !important;
   }
 }
+
+[data-bs-theme="dark"] {
+  blockquote {
+    color: #cccccc;
+    background: #333333;
+    border-left-color: var(--bs-primary);
+
+    &::before {
+      color: var(--bs-primary);
+    }
+
+    cite {
+      color: #ffffff;
+    }
+  }
+}
 </style>
