@@ -9,7 +9,7 @@
       <div class="meta-data">
         <div>
           <i class="fas fa-calendar"></i>
-          <time :datetime="$dayjs(post.updated_at).utc().toString()">{{ $dayjs(post.updated_at).locale('id').format('dddd, D MMMM YYYY') }}</time>
+          <time :datetime="$dayjs(post.updated_at).format('YYYY-MM-DD HH:mm:ss')">{{ $dayjs(post.updated_at).locale('id').format('dddd, D MMMM YYYY') }}</time>
         </div>
       </div>
     </div>

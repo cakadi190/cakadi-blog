@@ -9,7 +9,7 @@
       <div class="card-meta">
         <div>
           <i class="fas fa-calendar"></i>
-          <time class="d-block mb-2 mb-lg-0 date" :datetime="$dayjs(data.created_at).utc().toString()">{{
+          <time class="d-block date" :datetime="$dayjs(data.created_at).format('YYYY-MM-DD HH:mm:ss')">{{
             $dayjs(data.created_at).format("LL")
             }}</time>
         </div>
@@ -60,6 +60,7 @@ onMounted(() => isLoaded.value = true);
   text-decoration: none;
   align-items: center;
   transition: all .2s;
+  margin-bottom: 1rem;
 
   &:hover {
     border-color: rgba(var(--bs-primary-rgb), .5);
@@ -79,6 +80,11 @@ onMounted(() => isLoaded.value = true);
     justify-content: center;
     flex-shrink: 0;
 
+    @media screen and (max-width: 992px) {
+      width: 5rem;
+      height: 5rem;
+    }
+
     img {
       height: 100%;
       width: 100%;
@@ -93,6 +99,10 @@ onMounted(() => isLoaded.value = true);
       font-family: var(--blog-font-merriweather);
       line-height: 1.5 !important;
       margin-bottom: 1rem;
+
+      @media screen and (max-width: 992px) {
+        font-size: 1rem;
+      }
     }
 
     .card-meta {

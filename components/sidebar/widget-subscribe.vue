@@ -2,7 +2,7 @@
   <div class="widget" id="subscribe">
     <h3 class="title"><span>Berlangganan</span></h3>
   
-    <div class="bg-light p-3 text-center rounded">
+    <div class="p-4 text-center rounded" id="card">
       <p>Mau dapetin info soal koding, desain dan juga soal kepramukaan? Yuk berlangganan dan dapetin semua benefit yang
         saya sebutkan tadi.</p>
   
@@ -21,6 +21,12 @@
 
 </script>
 
-<style>
+<style lang="scss">
+#subscribe #card {
+  background: var(--bs-light);
 
+  @at-root [data-bs-theme=dark] & {
+    background: rgba(var(--bs-white-rgb), .05);
+  }
+}
 </style>

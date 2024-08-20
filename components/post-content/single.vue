@@ -3,7 +3,8 @@
     <div class="meta-header">
       <div class="container">
   
-        <time class="d-block mb-2 mb-lg-0 date" :datetime="$dayjs(data.created_at).utc().toString()">{{ $dayjs(data.created_at).format("LLLL")
+        <time class="d-block mb-2 mb-lg-0 date" :datetime="$dayjs(data.created_at).format('YYYY-MM-DD HH:mm:ss')">{{
+          $dayjs(data.created_at).format("LLLL [WIB]")
           }}</time>
   
         <h1 class="title mb-0 mb-lg-2">{{ data.title }}</h1>
@@ -35,6 +36,22 @@
       <div class="row gy-4">
         <div class="col-md-8">
           <div id="content-wrapper">
+            <div id="toolbar-accessbility" class="card card-body">
+              <button class="btn btn-sm lh-1 align-middle p-2 d-flex gap-2 align-items-center" @click="() => toggleDarkMode()">
+                <i class="fas fa-fw" :class="{'fa-moon': isDarkMode, 'fa-sun': !isDarkMode}"></i>
+                <span class="d-none d-sm-inline">Ganti Ke {{ isDarkMode ? 'Mode Terang' :
+                  'Mode Gelap' }}</span>
+              </button>
+              <div class="vr" />
+
+              <div class="fw-normal lh-1 align-middle ms-auto"> 
+                <span class="d-none d-md-none d-lg-inline">Fitur Aksesbilitas</span>
+                <i class="fas fa-universal-access lh-1 align-middle d-lg-none"></i>
+                <span>&nbsp;</span>
+                <span class="badge bg-info">Beta</span>
+              </div>
+            </div>
+  
             <ContentRendererMarkdown :value="data" />
           </div>
   
@@ -42,7 +59,7 @@
             <div>
               <i class="fas fa-folder"></i>
               <nuxt-link :to="`/kategori/${slugify(data.category[0])}`
-                            ">{{ unslugify(data.category[0]) }}</nuxt-link>
+                              ">{{ unslugify(data.category[0]) }}</nuxt-link>
             </div>
             <div>
               <i class="fas fa-tag"></i>
@@ -103,6 +120,9 @@
 
 <script lang="ts" setup>
 import { buildUrl, slugify, getGravatar, unslugify } from "#imports";
+import { useDarkMode } from "#imports";
+
+const { toggleDarkMode, isDarkMode } = useDarkMode();
 
 const props = defineProps<{
   data?: any;
@@ -174,6 +194,17 @@ useJsonld({
     }
   }
 
+  #toolbar-accessbility {
+    position: sticky;
+    top: 6rem;
+    margin-bottom: 1rem;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    flex-direction: row;
+  }
+
   #author-section {
     margin-top: 2rem;
     margin-bottom: 2rem;
@@ -188,6 +219,28 @@ useJsonld({
       padding: 20px;
       background-color: #f5f5f5;
       border-radius: 10px;
+
+      @at-root [data-bs-theme=dark] & {
+        background: rgba(var(--bs-white-rgb), .05);
+
+        img {
+          border-color: rgba(var(--bs-white-rgb), .075);
+        }
+
+        .profile-info {
+          h5, p {
+            color: var(--bs-white);
+          }
+
+          h5 {
+            opacity: .975;
+          }
+
+          p {
+            opacity: .75;
+          }
+        }
+      }
 
       img {
         width: 100px;

@@ -1,9 +1,10 @@
 <template>
   <div class="card overflow-hidden">
-    <a :href="refinedSrc" class="card-img-top" data-fancybox>
+    <a :href="refinedSrc" class="card-img-top" :data-fancybox="gallery ? 'gallery' : ''" :data-src="refinedSrc"
+      :data-caption="galleryCaption">
       <component :is="imgComponent" class="w-100 d-block" :src="refinedSrc" :alt="alt" :width="width" :height="height" />
     </a>
-    <div class="card-header border-0 border-top" v-if="title">{{ title }}</div>
+    <div class="card-header border-0 border-top" v-if="title" v-html="title" />
   </div>
 </template>
 
@@ -19,6 +20,8 @@ const props = withDefaults(defineProps<{
   width?: string | number;
   height?: string | number;
   title?: string;
+  gallery?: boolean;
+  galleryCaption?: string;
 }>(), {
   alt: '',
   src: '',

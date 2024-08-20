@@ -19,6 +19,10 @@ const currentYear = new Date().getFullYear();
   background-color: #f5f5f5;
   padding: 1rem 0;
 
+  @at-root [data-bs-theme=dark] & {
+    background: var(--bs-body-bg);
+  }
+
   p, a {
     color: var(--bs-body-color);
     text-decoration: none;

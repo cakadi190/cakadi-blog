@@ -23,7 +23,7 @@
             </div>
           </span>
         </div>
-        <time class="date" :datetime="$dayjs(item.created_at).utc().toString()">{{ $dayjs(item.created_at).format("LL") }}</time>
+        <time class="date" :datetime="$dayjs(item.created_at).format('YYYY-MM-DD HH:mm:ss')">{{ $dayjs(item.created_at).format("LL") }}</time>
       </div>
     </div>
   </nuxt-link>

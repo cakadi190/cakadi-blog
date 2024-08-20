@@ -52,6 +52,11 @@ onBeforeUnmount(() => {
   margin-bottom: 1rem;
   z-index: 10;
 
+  @at-root [data-bs-theme=dark] & {
+    background: var(--bs-body-bg);
+    border-color: rgba(var(--bs-body-color-rgb), .25);
+  }
+
   &.show {
     margin-bottom: 0;
     opacity: 1;

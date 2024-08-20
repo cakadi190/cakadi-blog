@@ -38,7 +38,7 @@
             </div>
           </span>
         </div>
-        <time class="date" :datetime="$dayjs(post.created_at).utc().toString()">{{ $dayjs(post.created_at).format("LL")
+        <time class="date" :datetime="$dayjs(post.created_at).format('YYYY-MM-DD HH:mm:ss')">{{ $dayjs(post.created_at).format("LL")
           }}</time>
       </div>
     </div>

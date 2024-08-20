@@ -26,8 +26,8 @@ export const useDarkModeStore = defineStore('darkMode', {
      * 
      * @returns {void}
      */
-    toggleDarkMode() {
-      this.isDarkMode = !this.isDarkMode
+    toggleDarkMode(): void {
+      this.isDarkMode = !this.isDarkMode;
       this.applyTheme()
     },
 
@@ -36,8 +36,8 @@ export const useDarkModeStore = defineStore('darkMode', {
      * 
      * @returns {void}
      */
-    initDarkMode() {
-      if (process.client) {
+    initDarkMode(): void {
+      if (process.client || import.meta.client || import.meta.client) {
         const savedMode = localStorage.getItem('darkMode')
         this.isDarkMode = savedMode === 'true'
         this.applyTheme()
@@ -49,8 +49,8 @@ export const useDarkModeStore = defineStore('darkMode', {
      * 
      * @returns {void}
      */
-    applyTheme() {
-      if (process.client) {
+    applyTheme(): void {
+      if (process.client || import.meta.client) {
         document.documentElement.setAttribute('data-bs-theme', this.isDarkMode ? 'dark' : 'light')
         localStorage.setItem('darkMode', String(this.isDarkMode))
       }
@@ -61,8 +61,8 @@ export const useDarkModeStore = defineStore('darkMode', {
      * 
      * @returns {void}
      */
-    resetTheme() {
-      if (process.client) {
+    resetTheme(): void {
+      if (process.client || import.meta.client) {
         document.documentElement.setAttribute('data-bs-theme', 'light')
         localStorage.removeItem('darkMode')
         this.isDarkMode = false
