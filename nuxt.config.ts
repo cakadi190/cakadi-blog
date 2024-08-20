@@ -108,6 +108,10 @@ export default defineNuxtConfig({
     }
   },
 
+  disqus: {
+    shortname: "catatancakadi",
+  },
+
   content: {
     highlight: {
       theme: 'monokai',
@@ -122,6 +126,7 @@ export default defineNuxtConfig({
     "@nuxt/image",
     "dayjs-nuxt",
     // '@nuxtjs/critters',
+    'nuxt-disqus',
     'nuxt-jsonld',
     "@pinia/nuxt",
     'nuxt-delay-hydration',

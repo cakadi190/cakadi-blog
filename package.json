@@ -42,6 +42,7 @@
     "@types/bootstrap": "^5.2.10",
     "@types/jquery": "^3.5.30",
     "@types/md5": "^2.3.5",
-    "@types/uuid": "^10.0.0"
+    "@types/uuid": "^10.0.0",
+    "nuxt-disqus": "^1.0.1"
   }
 }

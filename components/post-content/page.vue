@@ -3,7 +3,7 @@
     <h1>{{ data.title }}</h1>
   
     <nav class="d-none d-md-none d-lg-inline-flex" aria-label="Breadcrumb Navigation">
-      <ul class="breadcrumb mb-0">
+      <ul class="breadcrumb">
         <li class="breadcrumb-item" v-for="item in breadcrumb" :key="item.label">
           <nuxt-link v-if="item.url" :to="item.url">{{ item.label }}</nuxt-link>
           <span v-else>{{ item.label }}</span>

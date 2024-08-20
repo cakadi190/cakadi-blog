@@ -25,12 +25,12 @@ import { copyFromElement } from '#imports';
 const props = withDefaults(defineProps<{
   code: string;
   language: string | null;
-  filename: string | null;
-  highlights: number[];
-  meta: string | null;
-  class: string | null;
-  enableCopy: boolean;
-  id: string | null;
+  filename?: string | null;
+  highlights?: number[];
+  meta?: string | null;
+  class?: string | null;
+  enableCopy?: boolean;
+  id?: string | null;
 }>(), {
   code: '',
   language: null,

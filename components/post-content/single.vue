@@ -62,7 +62,9 @@
           </div>
   
           <div id="content-wrapper" :style="{fontSize: accessbilityFontSize}">
-            <ContentRendererMarkdown :value="data" />
+            <client-only>
+              <ContentRendererMarkdown :value="data" />
+            </client-only>
           </div>
   
           <div class="meta-data">
@@ -110,9 +112,7 @@
           <div id="comment-section">
             <h4>Komentar</h4>
   
-            <div class="alert-info alert mb-0">
-              Bagian ini masih tahap pengerjaan ya. Nanti bakalan hadir dalam waktu dekat.
-            </div>
+            <DisqusComments :identifier="`/${data._dir}/${data._path.replace(/^\/[^\/]+\/[^\/]+\//, '')}`" />
           </div>
         </div>
         <div class="col-md-4">

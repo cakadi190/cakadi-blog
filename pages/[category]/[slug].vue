@@ -4,7 +4,7 @@
       <meta-seo :title="data.title" :description="data.description" :image="buildUrl(data.image)"
         :author="data.author.name" :url="metaUrl" type="article" />
   
-      <post-content-single :data="data" />
+      <lazy-post-content-single :data="data" />
 
       <div id="preview-draft" v-if="data.draft">Draf</div>
     </ContentRenderer>
