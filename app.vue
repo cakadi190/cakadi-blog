@@ -80,7 +80,8 @@ onMounted(() => {
 
 <style lang="scss">
 #post-single #content-wrapper {
-  >div> {
+  > div > {
+
     h1,
     h2,
     h3,
