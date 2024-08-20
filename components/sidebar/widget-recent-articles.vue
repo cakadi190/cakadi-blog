@@ -1,6 +1,6 @@
 <template>
   <div class="widget" id="recent-articles">
-    <h3 class="title"><span>Artikel Terbaru</span></h3>
+    <h3 class="title"><span>Artikel Lainnya</span></h3>
 
     <div class="article-list">
       <ContentList path="/articles">

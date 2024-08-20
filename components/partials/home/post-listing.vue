@@ -4,7 +4,7 @@
 			<main class="col-md-8">
         <header-line title="Daftar Artikel" :with-right-link="true" link="/artikel" external-link-text="Selengkapnya" />
         <div class="row gy-4">
-          <div class="col-md-6" v-for="item in data" :key="item.title">
+          <div class="col-md-6" v-for="item in sortByDate(data)" :key="item.title">
             <post-content-big-header color="#fff" :post="item" />
           </div>
         </div>
@@ -26,15 +26,16 @@ const { data, status, error } = await useLazyAsyncData<any[]>(
 		(queryContent("articles") as any)
 			.where({ draft: { $eq: false } })
 			.limit(12)
-			.find(),
-	{
-		transform: (items) =>
-			items?.sort(
-				(a, b) =>
-					new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime()
-			),
-	}
+			.find()
 );
+
+function sortByDate(list: any[]) {
+  return list?.slice().sort((a, b) => {
+    const dateA = new Date(a.updated_at || a.created_at).getTime();
+    const dateB = new Date(b.updated_at || b.created_at).getTime();
+    return dateB - dateA;
+  });
+}
 </script>
 
 <style lang="scss">

@@ -10,7 +10,7 @@
     <div class="container">
       <div v-if="articles" class="row gy-4">
         <!-- Tampilkan artikel di sini -->
-        <div class="col-md-4" v-for="article in articles" :key="article._id">
+        <div class="col-md-4" v-for="article in sortByDate(articles)" :key="article._id">
           <post-content-big-header color="#fff" :post="article" />
         </div>
       </div>
@@ -61,6 +61,14 @@ const { data: articles } = await useAsyncData<any>(
     return null;
   }
 );
+
+function sortByDate(list: any[]) {
+  return list.slice().sort((a, b) => {
+    const dateA = new Date(a.updated_at || a.created_at).getTime();
+    const dateB = new Date(b.updated_at || b.created_at).getTime();
+    return dateB - dateA;
+  });
+}
 
 // For Seo Meta
 const computedTitle = computed(() =>

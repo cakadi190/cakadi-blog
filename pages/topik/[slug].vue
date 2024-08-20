@@ -9,7 +9,7 @@
   
     <div class="container">
       <div v-if="tagArticles" class="row gy-4">
-        <div class="col-md-4" v-for="article in tagArticles" :key="article._id">
+        <div class="col-md-4" v-for="article in sortByDate(tagArticles)" :key="article._id">
           <post-content-big-header color="#fff" :post="article" />
         </div>
       </div>
@@ -50,6 +50,14 @@ const getArticlesByTag = async (tag: string) => {
   return data.value;
 }
 
+function sortByDate(list: any[]) {
+  return list.slice().sort((a, b) => {
+    const dateA = new Date(a.updated_at || a.created_at).getTime();
+    const dateB = new Date(b.updated_at || b.created_at).getTime();
+    return dateB - dateA;
+  });
+}
+
 // Fetch articles based on tag
 const { data: tagArticles } = await useAsyncData<any>(
   'tag-articles',
@@ -63,12 +71,12 @@ const { data: tagArticles } = await useAsyncData<any>(
 
 // For Seo Meta
 const pageTitle = computed(() =>
-  tagFetchError.value ? 'Halaman Tidak Ditemukan!' : `Tagar: ${tagMetaData.value?.data.name}`
+  tagFetchError.value ? 'Halaman Tidak Ditemukan!' : `Topik: ${tagMetaData.value?.data.name}`
 );
 
 const pageDescription = computed(() =>
   tagFetchError.value
     ? 'Halaman tidak dapat ditemukan untuk saat ini.'
-    : `Menampilkan artikel dengan tagar: ${tagMetaData.value?.data.name}`
+    : `Menampilkan artikel dengan topik: ${tagMetaData.value?.data.name}`
 );
 </script>

@@ -10,7 +10,7 @@
       <div class="row gy-4">
         <ContentList path="/articles">
           <template #default="{ list }">
-            <div class="col-md-4" v-for="data in list" :key="data._id">
+            <div class="col-md-4" v-for="data in sortByDate(list)" :key="data._id">
               <post-content-big-header color="#fff" :post="data" />
             </div>
           </template>
@@ -27,4 +27,12 @@
 
 <script lang="ts" setup>
 import { buildUrl } from '#imports';
+
+function sortByDate(list: any[]) {
+  return list.slice().sort((a, b) => {
+    const dateA = new Date(a.updated_at || a.created_at).getTime();
+    const dateB = new Date(b.updated_at || b.created_at).getTime();
+    return dateB - dateA;
+  });
+}
 </script>

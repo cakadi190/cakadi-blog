@@ -6,7 +6,7 @@
         <time class="d-block mb-2 mb-lg-0 date" :datetime="$dayjs(data.created_at).utc().toString()">{{ $dayjs(data.created_at).format("LLLL")
           }}</time>
   
-        <h1 class="title">{{ data.title }}</h1>
+        <h1 class="title mb-0 mb-lg-2">{{ data.title }}</h1>
   
         <nav class="d-none d-md-none d-lg-inline-flex" aria-label="Breadcrumb Navigation">
           <ul class="breadcrumb mb-0">
@@ -88,6 +88,7 @@
         </div>
         <div class="col-md-4">
           <aside class="sidebar-inner">
+            <sidebar-widget-subscribe />
             <sidebar-widget-socmed />
             <sidebar-widget-donate />
             <sidebar-widget-recent-articles />
@@ -159,6 +160,7 @@ useJsonld({
       border-radius: var(--bs-border-radius);
 
       @media screen and (max-width: 992px) {
+        margin-top: 1rem;
         margin-bottom: 1rem;
       }
 
