@@ -62,7 +62,6 @@
               <div class="vr" />
   
               <!-- Button Font Size Changer -->
-  
               <div class="d-flex gap-2 align-items-center d-none d-md-none d-lg-inline-flex ms-2">
                 <icon name="ic:round-text-fields" size="16" />
                 <button class="btn btn-sm outline-0" :class="{'btn-primary': i == accessbilityFontSizeNumber}" v-for="i in 4"
