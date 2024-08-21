@@ -115,6 +115,7 @@ const currentYear = new Date().getFullYear();
     background: rgba(255, 255, 255, .125);
     border-radius: .5rem;
     font-size: .875em;
+    color: var(--bs-white);
   
     &:hover {
       background-color: rgba(255, 255, 255, 1);

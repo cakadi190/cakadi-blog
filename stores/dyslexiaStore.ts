@@ -51,7 +51,7 @@ export const useDyslexiaStore = defineStore('dyslexia', {
     getDyslexiaStyle(state): ComputedRef<CSSProperties> {
       return computed(() => {
         const style: CSSProperties = {
-          fontFamily: state.isDyslexiaFontEnabled ? 'Open-Dyslexic' : 'var(--bs-family-sans-serif)',
+          fontFamily: state.isDyslexiaFontEnabled ? 'Open-Dyslexic !important' : 'var(--bs-family-sans-serif)',
         };
 
         if (state.isDyslexiaFontEnabled) {
