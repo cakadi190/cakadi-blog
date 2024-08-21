@@ -9,11 +9,6 @@
   
         <h1 class="title mb-0 mb-lg-2">{{ data.title }}</h1>
   
-        <!-- <div class="social-share">
-                          <SocialShare v-for="network in ['facebook', 'twitter', 'whatsapp', 'reddit', 'linkedin', 'email']"
-                            :key="network" :network="network" :styled="true" aria-label="Share Yuk!" :label="false" class="social-item" />
-                        </div> -->
-  
         <nav class="d-none d-md-none d-lg-inline-flex" aria-label="Breadcrumb Navigation">
           <ul class="breadcrumb mb-0">
             <li class="breadcrumb-item">

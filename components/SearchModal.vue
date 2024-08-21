@@ -15,9 +15,9 @@
         <h3 class="title">Artikel Terkini</h3>
   
         <div class="mt-3 row position-relative">
-          <ContentList path="/articles" :query="{ where: { draft: { $eq: false } }, limit: 4 }">
+          <ContentList path="/articles" :query="{ where: { draft: { $eq: false } }, limit: 4, sort: { date: -1 } }">
             <template #default="{ list }">
-              <div class="col-md-3" @click="toggle" v-for="data in sortByDate(list)" :key="data._id">
+              <div class="col-md-3" @click="toggle" v-for="data in list" :key="data._id">
                 <post-content-big-header color="#fff" :post="data" />
               </div>
             </template>

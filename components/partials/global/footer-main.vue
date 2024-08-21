@@ -32,10 +32,15 @@
             <div class="mb-4">
               <h3 class="text-merriweather">Surel</h3>
               <p class="mb-0 mt-3"><a href="mailto:catatancakadi@gmail.com"
-                  class="text-white text-decoration-none d-flex">catatancakadi@gmail.com</a></p>
+                  class="text-white text-truncate text-decoration-none d-flex">catatancakadi@gmail.com</a></p>
             </div>
           </div>
-          <div class="col-md-3 col-6"></div>
+          <div class="col-md-3 col-6">
+            <h5 class="h3 text-merriweather">Kategori</h5>
+            <ul class="list-unstyled list-category">
+              <li v-for="item in categories" :key="item.slug"><nuxt-link :to="`/kategori/${item.slug}`">{{ item.label }}</nuxt-link></li>
+            </ul>
+          </div>
           <div class="col-md-3">
             <div class="text-center rounded" id="card">
               <h5 class="text-center h3 text-merriweather mb-3">Berlangganan</h5>
@@ -67,12 +72,16 @@
 </template>
 
 <script lang="ts" setup>
+import { defaultCategory } from "@/utils/content";
+
 const links = ref([
   { label: 'Tentang', to: '/page/about-us' },
   { label: 'Catatan Rilis', to: '/page/catatan-rilis' },
   { label: 'Kebjakan Privasi', to: '/page/privacy-policy' },
   { label: 'Kebjakan Berkomentar', to: '/page/comment-policy' },
 ]);
+
+const categories = computed(() => defaultCategory());
 
 const scrollToTop = () => {
   window.scrollTo({
@@ -85,30 +94,6 @@ const currentYear = new Date().getFullYear();
 </script>
 
 <style lang="scss">
-.btn-footer {
-  border-radius: 0;
-  padding: 0.5rem 1rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  border: 1px solid transparent;
-  transition: background-color 0.3s ease, color 0.3s ease;
-
-  &.about {
-    background-color: #e0e0e0; /* Default warna background */
-    color: #000;
-
-    &:hover {
-      background-color: #1c1c1c; /* Warna background saat di-hover */
-      color: #fff;
-    }
-  }
-
-  &.archive {
-    background-color: #1c1c1c; /* Default warna background */
-    color: #fff;
-  }
-}
-
 .footer-core {
   background: var(--bs-dark);
   color: var(--bs-white);
@@ -118,6 +103,48 @@ const currentYear = new Date().getFullYear();
 
   @at-root [data-bs-theme=dark] & {
     border-color: rgba(var(--bs-white-rgb), .125);
+  }
+
+  .btn-footer {
+    border-radius: 0;
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    border: 1px solid rgba(255, 255, 255, .5);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    background: rgba(255, 255, 255, .125);
+    border-radius: .5rem;
+    font-size: .875em;
+  
+    &:hover {
+      background-color: rgba(255, 255, 255, 1);
+      color: var(--bs-dark);
+    }
+  }
+
+  .list-category {
+    list-style: none;
+    padding: 1rem 0 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    margin: 0;
+
+    li > a {
+      color: var(--bs-white);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255, 255, 255, .25);
+      padding-bottom: 0.5rem;
+      display: flex;
+
+      &:hover {
+        color: var(--bs-primary);
+      }
+    }
+
+    li:last-child > a {
+      border-bottom: none;
+    }
   }
 
   #footer-bottom {
