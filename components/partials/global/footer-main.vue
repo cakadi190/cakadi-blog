@@ -2,7 +2,7 @@
   <footer class="footer-core">
     <div class="footer-core__back-to-top">
       <ui-tooltip text="Kembali ke atas">
-        <a href="#" class="footer-core__back-to-top-link" @click="scrollToTop">
+        <a href="#" class="footer-core__back-to-top-link" aria-label="Back to top of the page" @click="scrollToTop">
           <i class="fas fa-fw fa-chevron-up"></i>
         </a>
       </ui-tooltip>

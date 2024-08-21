@@ -80,7 +80,7 @@ onMounted(() => {
 
 <style lang="scss">
 #post-single #content-wrapper {
-  > div > {
+  >div> {
 
     h1,
     h2,
@@ -95,6 +95,24 @@ onMounted(() => {
         height: 11rem;
         visibility: hidden;
       }
+    }
+  }
+}
+
+#page-section {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    &:before {
+      display: block;
+      content: " ";
+      margin-top: -6.25rem;
+      height: 6.25rem;
+      visibility: hidden;
     }
   }
 }
