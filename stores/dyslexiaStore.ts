@@ -37,6 +37,13 @@ export const useDyslexiaStore = defineStore('dyslexia', {
   },
   getters: {
     /**
+     * Computed property yang mengembalikan nilai a`isDyslexiaFontEnabled`.
+     * 
+     * @returns {ComputedRef<boolean>} Nilai a`isDyslexiaFontEnabled`.
+     */
+    isDyslexiaEnabled: (state): ComputedRef<boolean> => computed<boolean>(() => state.isDyslexiaFontEnabled),
+    
+    /**
      * Computed property yang mengembalikan gaya font berdasarkan pengaturan dyslexia.
      * 
      * @returns {ComputedRef<Object>} Objek dengan properti `fontFamily` berdasarkan status `isDyslexiaFontEnabled`.

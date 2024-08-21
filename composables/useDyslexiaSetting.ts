@@ -14,6 +14,7 @@ export function useDyslexiaSettings() {
 
   return {
     isDyslexiaFontEnabled: store.isDyslexiaFontEnabled,
+    isDyslexiaEnabled: store.isDyslexiaEnabled,
     toggleDyslexiaFont: store.toggleDyslexiaFont,
     initDyslexiaFont: store.initDyslexiaFont,
     resetDyslexiaSetting: store.resetDyslexiaSetting,

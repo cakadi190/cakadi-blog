@@ -114,7 +114,7 @@ const defaultCategories = ref([
 		@media screen and (max-width: 992px) {
 			width: 3rem;
 			height: 3rem;
-			font-size: 1.5em;
+			font-size: 1em;
 		}
 	}
 
