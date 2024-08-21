@@ -11,6 +11,7 @@ Catatan Rilis ini berisi catatan perubahan dan pembaruan yang telah dilakukan pa
 - **Minor Change**: Perbaikan tata letak pada share-url, footer color dan juga toolbar accessbility.
 - **Bug Fix**: Mengatasi masalah yang terjadi pada fitur pencarian. (Unfix)
 - **Share Feature**: Menambahkan fitur share url dan juga salin url pada postingan.
+- **New Feature**: Penambahan fitur komentar pada postingan dengan disqus.
 
 ## Versi 2.0.1 (2024-08-19)
 - **Minor Change**: Perbaikan pada beberapa tampilan.
