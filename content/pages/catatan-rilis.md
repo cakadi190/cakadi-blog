@@ -7,6 +7,11 @@ updated_at: 2024-07-05 13:30:00
 
 Catatan Rilis ini berisi catatan perubahan dan pembaruan yang telah dilakukan pada situs ini. Kami berkomitmen untuk terus meningkatkan dan memperbarui konten serta fitur-fitur di situs ini untuk memberikan pengalaman terbaik kepada pengunjung.
 
+## Versi 2.0.2 (2024-08-19)
+- **Minor Change**: Perbaikan tata letak pada share-url, footer color dan juga toolbar accessbility.
+- **Bug Fix**: Mengatasi masalah yang terjadi pada fitur pencarian. (Unfix)
+- **Share Feature**: Menambahkan fitur share url dan juga salin url pada postingan.
+
 ## Versi 2.0.1 (2024-08-19)
 - **Minor Change**: Perbaikan pada beberapa tampilan.
 

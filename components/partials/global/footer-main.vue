@@ -19,7 +19,7 @@
             <div class="d-flex justify-content-center justify-content-lg-start gap-2 flex-wrap">
               <nuxt-link class="btn btn-light text-dark btn-sm" to="/page/about-us">Tentang</nuxt-link>
               <nuxt-link class="btn btn-light text-dark btn-sm" to="/page/catatan-rilis">Catatan Rilis</nuxt-link>
-              <nuxt-link class="btn btn-light text-dark btn-sm" to="/page/privacy-and-policy">Kebjakan Privasi</nuxt-link>
+              <nuxt-link class="btn btn-light text-dark btn-sm" to="/page/privacy-policy">Kebjakan Privasi</nuxt-link>
               <nuxt-link class="btn btn-light text-dark btn-sm" to="/page/comment-policy">Kebjakan Berkomentar</nuxt-link>
             </div>
           </div>
