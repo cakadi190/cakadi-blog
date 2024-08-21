@@ -36,102 +36,107 @@
       <div class="row gy-4">
         <div class="col-md-8">
           <!-- Toolbar accessbility -->
-          <client-only>
-            <div id="toolbar-accessbility" class="card card-body">
-              <!-- Button Darkmode -->
-              <button class="btn outline-0 btn-sm lh-1 align-middle p-2 d-flex gap-2 align-items-center"
-                @click="() => toggleDarkMode()">
-                <i class="fas fa-fw" :class="{'fa-moon': isDarkMode, 'fa-sun': !isDarkMode}"></i>
-              </button>
-  
-              <!-- Separator -->
-              <div class="vr" />
-  
-              <!-- Button Dyslexia -->
-              <button class="btn outline-0 btn-sm lh-1 align-middle p-2 d-flex gap-2 align-items-center"
-                @click="() => toggleDyslexiaFont()">
-                <i class="fas fa-fw" :class="{'fa-eye-slash': isDyslexiaEnabled, 'fa-eye': !isDyslexiaEnabled}"></i>
-              </button>
-  
-              <!-- Separator -->
-              <div class="vr" />
-  
-              <!-- Button Font Size Changer -->
-              <div class="d-flex gap-2 align-items-center d-none d-md-none d-lg-inline-flex ms-2">
-                <icon name="ic:round-text-fields" size="16" />
-                <button class="btn btn-sm outline-0" :class="{'btn-primary': i == accessbilityFontSizeNumber}" v-for="i in 4"
-                  :key="i" @click="changeFontSize(i)">
-                  <span>{{ i }}x</span>
+          <div class="position-relati">
+            <client-only>
+              <div id="toolbar-accessbility" class="card card-body">
+                <!-- Button Darkmode -->
+                <button class="btn outline-0 btn-sm lh-1 align-middle p-2 d-flex gap-2 align-items-center"
+                  @click="() => toggleDarkMode()">
+                  <i class="fas fa-fw" :class="{'fa-moon': isDarkMode, 'fa-sun': !isDarkMode}"></i>
                 </button>
-              </div>
   
-              <div class="dropdown d-lg-none">
-                <button class="btn outline-0 d-flex gap-2 align-items-center btn-sm dropdown-toggle" type="button"
-                  id="dropdownFontSize" data-bs-toggle="dropdown" aria-expanded="false">
-                  <icon name="ic:round-text-fields" size="16"></icon>
-                  <span>{{ accessbilityFontSizeNumber }}x</span>
+                <!-- Separator -->
+                <div class="vr" />
+  
+                <!-- Button Dyslexia -->
+                <button class="btn outline-0 btn-sm lh-1 align-middle p-2 d-flex gap-2 align-items-center"
+                  @click="() => toggleDyslexiaFont()">
+                  <i class="fas fa-fw" :class="{'fa-eye-slash': isDyslexiaEnabled, 'fa-eye': !isDyslexiaEnabled}"></i>
                 </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownFontSize">
-                  <li>
-                    <button class="dropdown-item" :class="{ active: accessbilityFontSizeNumber == i }" v-for="i in 4" :key="i" @click="changeFontSize(i)">
-                      Ukuran Teks {{ i }}x
-                    </button>
-                  </li>
-                </ul>
-              </div>
   
-              <button class="btn outline-0 ms-auto" data-bs-toggle="modal" data-bs-target="#shareModal" aria-label="Share Yuk!">
-                <i class="fa-solid fa-share-nodes"></i>
-              </button>
+                <!-- Separator -->
+                <div class="vr" />
   
-              <!-- Teleport untuk memindahkan modal ke dalam body -->
-              <Teleport to="body">
-                <!-- Modal Bootstrap 5 -->
-                <div class="modal fade" id="shareModal" tabindex="-1" aria-labelledby="shareModalLabel"
-                  aria-hidden="true">
-                  <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                      <div class="modal-header border-0">
-                        <h5 class="modal-title" id="shareModalLabel">Share Yuk!</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                      </div>
-                      <div class="modal-body border-0 text-center">
-                        <p>Bagikan konten ini ke sosial media atau melalui tautan kalau dirasa artikel ini sangat
-                          bermanfaat dan atau dibutuhin sama orang lain!</p>
-                        <!-- Tambahkan konten modal di sini -->
-                        <div class="d-flex justify-content-center gap-2">
-                          <SocialShare
-                            v-for="network in ['facebook', 'twitter', 'whatsapp', 'reddit', 'linkedin', 'email']"
-                            :key="network" :network="network" :styled="true" aria-label="Share Yuk!" :label="false"
-                            class="social-item text-white text-decoration-none" />
+                <!-- Button Font Size Changer -->
+                <div class="d-flex gap-2 align-items-center d-none d-md-none d-lg-inline-flex ms-2">
+                  <icon name="ic:round-text-fields" size="16" />
+                  <button class="btn btn-sm outline-0" :class="{'btn-primary': i == accessbilityFontSizeNumber}"
+                    v-for="i in 4" :key="i" @click="changeFontSize(i)">
+                    <span>{{ i }}x</span>
+                  </button>
+                </div>
+  
+                <div class="dropdown d-lg-none">
+                  <button class="btn outline-0 d-flex gap-2 align-items-center btn-sm dropdown-toggle" type="button"
+                    id="dropdownFontSize" data-bs-toggle="dropdown" aria-expanded="false">
+                    <icon name="ic:round-text-fields" size="16"></icon>
+                    <span>{{ accessbilityFontSizeNumber }}x</span>
+                  </button>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownFontSize">
+                    <li>
+                      <button class="dropdown-item" :class="{ active: accessbilityFontSizeNumber == i }" v-for="i in 4"
+                        :key="i" @click="changeFontSize(i)">
+                        Ukuran Teks {{ i }}x
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+  
+                <button class="btn outline-0 ms-auto" data-bs-toggle="modal" data-bs-target="#shareModal"
+                  aria-label="Share Yuk!">
+                  <i class="fa-solid fa-share-nodes"></i>
+                </button>
+  
+                <!-- Teleport untuk memindahkan modal ke dalam body -->
+                <Teleport to="body">
+                  <!-- Modal Bootstrap 5 -->
+                  <div class="modal fade" id="shareModal" tabindex="-1" aria-labelledby="shareModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                      <div class="modal-content">
+                        <div class="modal-header border-0">
+                          <h5 class="modal-title" id="shareModalLabel">Share Yuk!</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-
-                        <div class="input-group mt-3">
-                          <div class="input-group-text border-0">
-                            <i class="fas fa-link fa-fw"></i>
+                        <div class="modal-body border-0 text-center">
+                          <p>Bagikan konten ini ke sosial media atau melalui tautan kalau dirasa artikel ini sangat
+                            bermanfaat dan atau dibutuhin sama orang lain!</p>
+                          <!-- Tambahkan konten modal di sini -->
+                          <div class="d-flex justify-content-center gap-2">
+                            <SocialShare
+                              v-for="network in ['facebook', 'twitter', 'whatsapp', 'reddit', 'linkedin', 'email']"
+                              :key="network" :network="network" :styled="true" aria-label="Share Yuk!" :label="false"
+                              class="social-item text-white text-decoration-none" />
                           </div>
-                          <input type="text" class="form-control border-0" id="share-link" :value="url" disabled />
-                          <button class="btn btn-primary" type="button" @click="copyInputValue('#share-link')">Salin</button>
+  
+                          <div class="input-group mt-3">
+                            <div class="input-group-text border-0">
+                              <i class="fas fa-link fa-fw"></i>
+                            </div>
+                            <input type="text" class="form-control border-0" id="share-link" :value="url" disabled />
+                            <button class="btn btn-primary" type="button"
+                              @click="copyInputValue('#share-link')">Salin</button>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </Teleport>
-            </div>
-          </client-only>
-  
-          <div id="content-wrapper" :style="{fontSize: accessbilityFontSize}">
-            <client-only>
-              <ContentRendererMarkdown :value="data" />
+                </Teleport>
+              </div>
             </client-only>
+  
+            <div id="content-wrapper" class="mt-3" :style="{fontSize: accessbilityFontSize}">
+              <client-only>
+                <ContentRendererMarkdown :value="data" />
+              </client-only>
+            </div>
           </div>
   
           <div class="meta-data">
             <div>
               <i class="fas fa-folder"></i>
               <nuxt-link :to="`/kategori/${slugify(data.category[0])}`
-                                                      ">{{ unslugify(data.category[0]) }}</nuxt-link>
+                                                        ">{{ unslugify(data.category[0]) }}</nuxt-link>
             </div>
             <div>
               <i class="fas fa-tag"></i>
@@ -282,7 +287,6 @@ useJsonld({
   #toolbar-accessbility {
     position: sticky;
     top: 6rem;
-    margin-bottom: 1rem;
     z-index: 1000;
     display: flex;
     align-items: center;

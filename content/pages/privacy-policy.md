@@ -5,7 +5,7 @@ created_at: 2024-06-09 11:30:00
 updated_at: 2024-06-09 12:30:00
 ---
 
-Ahsana Digital Intermedia mengoperasikan situs web https://www.catatancakadi.com, yang menyediakan LAYANAN.
+Ahsana Digital Intermedia mengoperasikan situs web https://blog.cakadi.id, yang menyediakan LAYANAN.
 
 Halaman ini digunakan untuk memberi informasi kepada pengunjung situs web mengenai kebijakan kami terkait pengumpulan, penggunaan, dan pengungkapan Informasi Pribadi jika ada yang memutuskan untuk menggunakan Layanan kami, yaitu situs web Catatan Cak Adi.
 
