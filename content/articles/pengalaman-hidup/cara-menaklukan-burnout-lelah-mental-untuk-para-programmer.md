@@ -1,7 +1,7 @@
 ---
 title: "Cara Menaklukan Burnout (Lelah Mental) Untuk Para Programmer"
 description:
-draft: true
+draft: false
 image: /uploads/cover/burnout.jpg
 category:
   - Pengalaman Hidup

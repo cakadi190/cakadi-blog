@@ -86,13 +86,13 @@ function sortByDate(list: any[]) {
   transform: translateY(-100%);
   transition: ease-in-out 0.3s;
   opacity: 0;
-  // transform: scale(0);
+  visibility: hidden;
   z-index: 1200;
 
   &.open {
     transform: translateY(0);
     opacity: 1;
-    // transform: scale(1);
+    visibility: visible;
   }
 }
 
