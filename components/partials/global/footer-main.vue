@@ -13,36 +13,39 @@
           <div class="col-md-3">
             <nuxt-link to="/" class="logo-wrapper mb-5">
               <nuxt-img :preload="true" format="webp" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 800px"
-              densities="x1 x2" alt="Logo Catatan Cak Adi" src="/images/brands/logo-white-long.svg" :width="48" height="auto" />
+                densities="x1 x2" alt="Logo Catatan Cak Adi" src="/images/brands/logo-white-long.svg" :width="48"
+                height="auto" />
             </nuxt-link>
-            
+  
             <div class="d-flex justify-content-center justify-content-lg-start gap-2 flex-wrap">
-              <nuxt-link class="btn btn-light text-dark btn-sm" to="/page/about-us">Tentang</nuxt-link>
-              <nuxt-link class="btn btn-light text-dark btn-sm" to="/page/catatan-rilis">Catatan Rilis</nuxt-link>
-              <nuxt-link class="btn btn-light text-dark btn-sm" to="/page/privacy-policy">Kebjakan Privasi</nuxt-link>
-              <nuxt-link class="btn btn-light text-dark btn-sm" to="/page/comment-policy">Kebjakan Berkomentar</nuxt-link>
+              <nuxt-link v-for="(link, index) in links" :key="index" class="btn-footer btn" :to="link.to">
+                {{ link.label }}
+              </nuxt-link>
             </div>
           </div>
-          <div class="col-md-3">
+          <div class="col-md-3 col-6">
             <div class="mb-4">
               <h3 class="text-merriweather">Hubungi</h3>
-              <p class="mb-0 mt-3"><a href="https://wa.me/6281333550746?text=Halo+Cak+Adi!" class="text-white text-decoration-none d-flex">(+62) 813-3355-0746</a></p>
+              <p class="mb-0 mt-3"><a href="https://wa.me/6281333550746?text=Halo+Cak+Adi!"
+                  class="text-white text-decoration-none d-flex">(+62) 813-3355-0746</a></p>
             </div>
             <div class="mb-4">
               <h3 class="text-merriweather">Surel</h3>
-              <p class="mb-0 mt-3"><a href="mailto:catatancakadi@gmail.com" class="text-white text-decoration-none d-flex">catatancakadi@gmail.com</a></p>
+              <p class="mb-0 mt-3"><a href="mailto:catatancakadi@gmail.com"
+                  class="text-white text-decoration-none d-flex">catatancakadi@gmail.com</a></p>
             </div>
           </div>
-          <div class="col-md-3"></div>
+          <div class="col-md-3 col-6"></div>
           <div class="col-md-3">
             <div class="text-center rounded" id="card">
               <h5 class="text-center h3 text-merriweather mb-3">Berlangganan</h5>
-              <p>Mau dapetin info soal koding, desain dan juga soal kepramukaan? Yuk berlangganan dan dapetin semua benefit yang
+              <p>Mau dapetin info soal koding, desain dan juga soal kepramukaan? Yuk berlangganan dan dapetin semua
+                benefit yang
                 saya sebutkan tadi.</p>
-          
+  
               <div class="d-grid">
-                <a href="https://catatancakadi.substack.com/?r=4azknq&utm_campaign=pub-share-checklist"
-                  target="_blank" class="btn btn-primary d-flex gap-2 align-items-center justify-content-center">
+                <a href="https://catatancakadi.substack.com/?r=4azknq&utm_campaign=pub-share-checklist" target="_blank"
+                  class="btn btn-primary d-flex gap-2 align-items-center justify-content-center">
                   <i class="fas fa-envelope"></i>
                   <span>Berlangganan Yuk</span>
                 </a>
@@ -64,6 +67,13 @@
 </template>
 
 <script lang="ts" setup>
+const links = ref([
+  { label: 'Tentang', to: '/page/about-us' },
+  { label: 'Catatan Rilis', to: '/page/catatan-rilis' },
+  { label: 'Kebjakan Privasi', to: '/page/privacy-policy' },
+  { label: 'Kebjakan Berkomentar', to: '/page/comment-policy' },
+]);
+
 const scrollToTop = () => {
   window.scrollTo({
     top: 0,
@@ -75,6 +85,30 @@ const currentYear = new Date().getFullYear();
 </script>
 
 <style lang="scss">
+.btn-footer {
+  border-radius: 0;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  &.about {
+    background-color: #e0e0e0; /* Default warna background */
+    color: #000;
+
+    &:hover {
+      background-color: #1c1c1c; /* Warna background saat di-hover */
+      color: #fff;
+    }
+  }
+
+  &.archive {
+    background-color: #1c1c1c; /* Default warna background */
+    color: #fff;
+  }
+}
+
 .footer-core {
   background: var(--bs-dark);
   color: var(--bs-white);
@@ -96,6 +130,7 @@ const currentYear = new Date().getFullYear();
       font-weight: 600;
     }
   }
+
   #footer-top {
     padding-bottom: 4rem;
     padding-top: 4rem;
@@ -106,7 +141,7 @@ const currentYear = new Date().getFullYear();
     align-items: center;
     height: 32px;
     width: auto;
-    
+
     img {
       height: 32px;
       width: auto;

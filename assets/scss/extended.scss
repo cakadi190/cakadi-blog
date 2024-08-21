@@ -1,5 +1,6 @@
 :root {
   --blog-font-merriweather: 'Merriweather', 'Times New Roman', serif;
+  --blog-font-lexend: 'Lexend Deca', Arial, Helvetica, sans-serif;
   --blog-font-baskerville: 'Baskervville', 'Times New Roman', serif;
   --blog-font-fira-code: 'Fira Code', 'Courier New', monospace;
   --blog-font-fira-sans: 'Fira Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -19,4 +20,8 @@
 
 .text-fira-sans {
   font-family: var(--blog-font-fira-sans);
+}
+
+.text-lexend {
+  font-family: var(--blog-font-lexend);
 }

@@ -13,6 +13,7 @@ export default defineNuxtConfig({
       'Fira Sans': true,
       'Merriweather': true,
       'Baskervville': true,
+      'Lexend Deca': true,
     },
     download: true,
     inject: true
