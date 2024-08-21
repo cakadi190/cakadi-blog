@@ -44,7 +44,7 @@
           <client-only>
             <div id="toolbar-accessbility" class="card card-body">
               <!-- Button Darkmode -->
-              <button class="btn btn-sm lh-1 align-middle p-2 d-flex gap-2 align-items-center"
+              <button class="btn outline-0 btn-sm lh-1 align-middle p-2 d-flex gap-2 align-items-center"
                 @click="() => toggleDarkMode()">
                 <i class="fas fa-fw" :class="{'fa-moon': isDarkMode, 'fa-sun': !isDarkMode}"></i>
               </button>
@@ -53,7 +53,7 @@
               <div class="vr" />
   
               <!-- Button Dyslexia -->
-              <button class="btn btn-sm lh-1 align-middle p-2 d-flex gap-2 align-items-center"
+              <button class="btn outline-0 btn-sm lh-1 align-middle p-2 d-flex gap-2 align-items-center"
                 @click="() => toggleDyslexiaFont()">
                 <i class="fas fa-fw" :class="{'fa-eye-slash': isDyslexiaEnabled, 'fa-eye': !isDyslexiaEnabled}"></i>
               </button>
@@ -65,14 +65,14 @@
   
               <div class="d-flex gap-2 align-items-center d-none d-md-none d-lg-inline-flex ms-2">
                 <icon name="ic:round-text-fields" size="16" />
-                <button class="btn btn-sm" :class="{'btn-primary': i == accessbilityFontSizeNumber}" v-for="i in 4"
+                <button class="btn btn-sm outline-0" :class="{'btn-primary': i == accessbilityFontSizeNumber}" v-for="i in 4"
                   :key="i" @click="changeFontSize(i)">
                   <span>{{ i }}x</span>
                 </button>
               </div>
   
               <div class="dropdown d-lg-none">
-                <button class="btn d-flex gap-2 align-items-center btn-sm dropdown-toggle" type="button"
+                <button class="btn outline-0 d-flex gap-2 align-items-center btn-sm dropdown-toggle" type="button"
                   id="dropdownFontSize" data-bs-toggle="dropdown" aria-expanded="false">
                   <icon name="ic:round-text-fields" size="16"></icon>
                   <span>{{ accessbilityFontSizeNumber }}x</span>
@@ -86,7 +86,7 @@
                 </ul>
               </div>
   
-              <button class="btn ms-auto" data-bs-toggle="modal" data-bs-target="#shareModal" aria-label="Share Yuk!">
+              <button class="btn outline-0 ms-auto" data-bs-toggle="modal" data-bs-target="#shareModal" aria-label="Share Yuk!">
                 <i class="fa-solid fa-share-nodes"></i>
               </button>
   
