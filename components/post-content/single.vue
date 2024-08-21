@@ -79,8 +79,8 @@
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownFontSize">
                   <li>
-                    <button class="dropdown-item" v-for="i in 4" :key="i" @click="changeFontSize(i)">
-                      Ukuran {{ i }}x
+                    <button class="dropdown-item" :class="{ active: accessbilityFontSizeNumber == i }" v-for="i in 4" :key="i" @click="changeFontSize(i)">
+                      Ukuran Teks {{ i }}x
                     </button>
                   </li>
                 </ul>
@@ -296,10 +296,6 @@ useJsonld({
     flex-direction: row;
     background: rgba(lighten(#eee, 5%), .75);
     backdrop-filter: blur(1rem);
-
-    @media screen and (max-width: 992px) {
-      border-radius: 99rem;
-    }
 
     @at-root [data-bs-theme=dark] & {
       background: rgba(mix(#fff, #010016, 10%), .75);
