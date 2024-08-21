@@ -12,8 +12,8 @@ tags:
 author:
   name: "Cak Adi"
   avatar: null
-  email: 'cakadi190@gmail.com'
-  description: 'Seorang Fullstack Web Developer berbasis di Kabupaten Ngawi, dengan passion mendalam dalam desain dan teknologi. Kini, ia juga tengah mengeksplorasi ketertarikannya yang baru terhadap geografi, memperluas cakrawalanya dalam dunia yang penuh inspirasi dan inovasi.'
+  email: "cakadi190@gmail.com"
+  description: "Seorang Fullstack Web Developer berbasis di Kabupaten Ngawi, dengan passion mendalam dalam desain dan teknologi. Kini, ia juga tengah mengeksplorasi ketertarikannya yang baru terhadap geografi, memperluas cakrawalanya dalam dunia yang penuh inspirasi dan inovasi."
 created_at: 2024-06-30 19:48:22
 updated_at: 2024-06-30 19:48:22
 ---
@@ -24,4 +24,4 @@ updated_at: 2024-06-30 19:48:22
 
 Sibuk, pastinya manusia zaman sekarang punya kesibukan. Apalagi di era serba digital ini yang mana semakin banyak tugas dan juga tuntutan dari kantor, sekolah atau bahkan keluarganya. Tak ayal, tak sedikit orang pasti akan merasa pusing, mual dan gampang sakit karena tuntutan pekerjaan atau tugas mereka yang banyak dan semakin menumpuk. Atau bahkan dari kalian ada nih yang udah punya rencana eh malah ketunda gegara teman, sodara atau relasi kamu lagi sibuk dan banyak kegiatan?
 
-Nah, pastinya kalian bakalan ngerasa sebel dan ngatain "ih itu kok si fulan kek sibuk banget sih, diajak jalan atau main aja gak mau." ke temen kalian. Dan *honestly* lho rek kita sebagai orang yang sibuk itu gak enak banget, karena banyak hal yang harus dikerjakan sampe istirahat aja gak ada waktunya.
+Nah, pastinya kalian bakalan ngerasa sebel dan ngatain "ih itu kok si fulan kek sibuk banget sih, diajak jalan atau main aja gak mau." ke temen kalian. Dan _honestly_ lho rek kita sebagai orang yang sibuk itu gak enak banget, karena banyak hal yang harus dikerjakan sampe istirahat aja gak ada waktunya.

@@ -12,8 +12,8 @@ tags:
 author:
   name: "Cak Adi"
   avatar: null
-  email: 'cakadi190@gmail.com'
-  description: 'Seorang Fullstack Web Developer berbasis di Kabupaten Ngawi, dengan passion mendalam dalam desain dan teknologi. Kini, ia juga tengah mengeksplorasi ketertarikannya yang baru terhadap geografi, memperluas cakrawalanya dalam dunia yang penuh inspirasi dan inovasi.'
+  email: "cakadi190@gmail.com"
+  description: "Seorang Fullstack Web Developer berbasis di Kabupaten Ngawi, dengan passion mendalam dalam desain dan teknologi. Kini, ia juga tengah mengeksplorasi ketertarikannya yang baru terhadap geografi, memperluas cakrawalanya dalam dunia yang penuh inspirasi dan inovasi."
 created_at: 2024-05-30 19:30:22
 updated_at: 2024-05-30 19:30:22
 ---
@@ -21,7 +21,6 @@ updated_at: 2024-05-30 19:30:22
 Pendidikan tinggi selalu menjadi topik yang menarik untuk diperbincangkan. Pertanyaan tentang apakah kita benar-benar membutuhkan kuliah atau tidak sering kali muncul, terutama di era digital saat ini di mana informasi dan pengetahuan bisa diakses dengan mudah. Mari kita eksplorasi lebih dalam mengenai topik ini dari berbagai sudut pandang.
 
 Well, jujur saja. Saat ini, harga pendidikan, yang bisa dibilang UKT (Uang Kuliah Tunggal), merangkak naik beriringan dengan faktor inflasi dan peningkatan biaya operasional institusi pendidikan. Kenaikan ini mencakup berbagai aspek seperti biaya fasilitas, gaji dosen, dan pemeliharaan infrastruktur. Akibatnya, banyak mahasiswa dan orang tua yang merasa terbebani dengan biaya yang semakin tinggi, sehingga menimbulkan pertanyaan tentang nilai dan keberlanjutan investasi dalam pendidikan tinggi.
-
 
 ## Perspektif Sejarah
 
