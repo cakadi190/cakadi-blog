@@ -49,9 +49,6 @@
 					a:hover {
 					text-decoration: none !important
 					}
-					td.url {
-						white-space: nowrap;
-					}
 				</style>
 			</head>
 			<body>
@@ -114,8 +111,8 @@
 		ini kosong.</xsl:when>
 									<xsl:when test="count(sitemap:urlset/sitemap:url)&gt;0">Peta Situs ini memiliki <xsl:value-of
 											select="count(sitemap:urlset/sitemap:url)" /> tautan </xsl:when>
-									<xsl:when test="sitemap:urlset and count(sitemap:urlset/sitemap:url)=0">This peta
-		situs kosong.</xsl:when>
+									<xsl:when test="sitemap:urlset and count(sitemap:urlset/sitemap:url)=0">Peta
+		situs ini kosong.</xsl:when>
 									<xsl:otherwise>Waduh! Peta Situs tidak lengkap.</xsl:otherwise>
 								</xsl:choose>
 							</h1>
@@ -236,7 +233,7 @@
 							<thead>
 								<tr>
 									<th class="border-0" scope="col">#</th>
-									<th class="border-0 text-left" scope="col">Lokasi</th>
+									<th class="border-0 text-left w-50" scope="col">Lokasi</th>
 									<xsl:if test="sitemap:url/sitemap:changefreq">
 										<th class="border-0 text-left text-truncate" scope="col">Frekuensi</th>
 									</xsl:if>
@@ -282,7 +279,7 @@
 										<th scope="row">
 											<xsl:value-of select="$url_num" />
 										</th>
-										<td colspan="{$url_col_loc}" class="url" nowrap="nowrap">
+										<td colspan="{$url_col_loc}" class="url text-truncate w-50" nowrap="nowrap">
 											<a class="text-decoration-none font-monospace" href="{$url_loc}">
 												<xsl:value-of select="$url_loc" />
 											</a>
