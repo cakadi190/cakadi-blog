@@ -1,6 +1,6 @@
 ---
 title: "Cara Menaklukan Burnout (Lelah Mental) Untuk Para Programmer"
-description:
+description: Burnout? Ini dia caranya biar kamu gak burnout dan bisa beraktivitas dengan normal.
 draft: false
 image: /uploads/cover/burnout.jpg
 category:
